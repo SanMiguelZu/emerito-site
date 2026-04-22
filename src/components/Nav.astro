@@ -1,11 +1,201 @@
 ---
-// Nav — built in Step 2
 interface Props {
   lang: 'es' | 'en';
   currentPath: string;
+  alternateHref?: string;
 }
-const { lang, currentPath } = Astro.props;
+
+const { lang, currentPath, alternateHref } = Astro.props;
+
+const isEs = lang === 'es';
+
+const navLinks = isEs
+  ? [
+      { href: '/metodologia', label: 'Metodología' },
+      { href: '/casos', label: 'Casos' },
+      { href: '/trabajo', label: 'Trabajo' },
+      { href: '/equipo', label: 'Equipo' },
+      { href: '/insights', label: 'Insights' },
+      { href: '/contacto', label: 'Contacto' },
+    ]
+  : [
+      { href: '/en/methodology', label: 'Methodology' },
+      { href: '/en/case-studies', label: 'Cases' },
+      { href: '/en/work', label: 'Work' },
+      { href: '/en/team', label: 'Team' },
+      { href: '/en/insights', label: 'Insights' },
+      { href: '/en/contact', label: 'Contact' },
+    ];
+
+const ctaLabel = isEs ? 'Hablemos' : "Let's talk";
+const ctaHref = isEs ? '/contacto' : '/en/contact';
+const altLabel = isEs ? 'EN' : 'ES';
+const altHref = alternateHref ?? (isEs ? '/en' : '/');
+const homeHref = isEs ? '/' : '/en';
+
+function isActive(href: string): boolean {
+  if (href === currentPath || href + '/' === currentPath) return true;
+  // Sub-pages: /casos matches /casos/trabajo-seguro-en-alturas
+  if (href !== '/' && currentPath.startsWith(href + '/')) return true;
+  return false;
+}
 ---
 
-<!-- TODO Step 2: full Nav with language toggle, mobile hamburger, CTA -->
-<nav><!-- placeholder --></nav>
+<!-- Fixed header -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-sand/95 backdrop-blur-sm border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+
+    <!-- Logo wordmark -->
+    <a
+      href={homeHref}
+      class="flex-shrink-0 font-extrabold text-xl tracking-tight text-ocean hover:text-ocean/80 transition-colors"
+      aria-label="Emerito — inicio"
+    >
+      Emerito
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav
+      class="hidden lg:flex items-center gap-7 text-sm font-medium"
+      aria-label="Navegación principal"
+    >
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={[
+            'transition-colors duration-200',
+            isActive(link.href)
+              ? 'text-ocean font-semibold'
+              : 'text-ink/60 hover:text-ocean',
+          ].join(' ')}
+          aria-current={isActive(link.href) ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Desktop: lang toggle + CTA -->
+    <div class="hidden lg:flex items-center gap-4">
+      <a
+        href={altHref}
+        class="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink/40 hover:text-ocean transition-colors"
+        aria-label={isEs ? 'Switch to English' : 'Cambiar a Español'}
+      >
+        {altLabel}
+      </a>
+      <a
+        href={ctaHref}
+        class="bg-ocean text-sand text-sm font-semibold px-5 py-2 rounded-sm hover:bg-ocean/85 transition-colors"
+      >
+        {ctaLabel}
+      </a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="nav-open"
+      class="lg:hidden p-2 -mr-2 text-ocean"
+      aria-label={isEs ? 'Abrir menú' : 'Open menu'}
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <span class="flex flex-col gap-[5px]">
+        <span class="block w-6 h-[2px] bg-ocean rounded-full"></span>
+        <span class="block w-6 h-[2px] bg-ocean rounded-full"></span>
+        <span class="block w-4 h-[2px] bg-ocean rounded-full"></span>
+      </span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Spacer that keeps content below the fixed header -->
+<div class="h-16" aria-hidden="true"></div>
+
+<!-- Mobile full-screen overlay -->
+<div
+  id="mobile-nav"
+  class="hidden fixed inset-0 z-50 bg-ocean flex-col"
+  aria-label={isEs ? 'Menú móvil' : 'Mobile menu'}
+  aria-hidden="true"
+>
+  <!-- Mobile header row -->
+  <div class="flex items-center justify-between px-6 h-16 flex-shrink-0">
+    <a href={homeHref} class="font-extrabold text-xl tracking-tight text-sand">
+      Emerito
+    </a>
+    <button
+      id="nav-close"
+      class="p-2 -mr-2 text-sand"
+      aria-label={isEs ? 'Cerrar menú' : 'Close menu'}
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile links -->
+  <nav class="flex-1 flex flex-col justify-center px-8 gap-5" aria-label="Menú">
+    {navLinks.map(link => (
+      <a
+        href={link.href}
+        class="text-sand text-3xl font-bold hover:text-accent transition-colors leading-tight"
+        data-mobile-link
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+
+  <!-- Mobile bottom row: lang toggle + CTA -->
+  <div class="px-8 pb-12 flex items-center justify-between flex-shrink-0">
+    <a
+      href={altHref}
+      class="text-[11px] font-semibold tracking-[0.12em] uppercase text-sand/50 hover:text-sand transition-colors"
+    >
+      {altLabel}
+    </a>
+    <a
+      href={ctaHref}
+      class="bg-sand text-ocean text-sm font-semibold px-6 py-3 rounded-sm hover:bg-cream transition-colors"
+    >
+      {ctaLabel}
+    </a>
+  </div>
+</div>
+
+<script>
+  const openBtn  = document.getElementById('nav-open');
+  const closeBtn = document.getElementById('nav-close');
+  const menu     = document.getElementById('mobile-nav');
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    menu?.classList.add('flex');
+    menu?.setAttribute('aria-hidden', 'false');
+    openBtn?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    menu?.classList.remove('flex');
+    menu?.setAttribute('aria-hidden', 'true');
+    openBtn?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  openBtn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+
+  document.querySelectorAll('[data-mobile-link]').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>

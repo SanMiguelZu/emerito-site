@@ -1,10 +1,100 @@
 ---
-// Footer — built in Step 2
 interface Props {
   lang: 'es' | 'en';
 }
+
 const { lang } = Astro.props;
+
+const isEs = lang === 'es';
+
+const navLinks = isEs
+  ? [
+      { href: '/metodologia', label: 'Metodología' },
+      { href: '/casos', label: 'Casos' },
+      { href: '/trabajo', label: 'Trabajo' },
+      { href: '/equipo', label: 'Equipo' },
+      { href: '/insights', label: 'Insights' },
+      { href: '/contacto', label: 'Contacto' },
+    ]
+  : [
+      { href: '/en/methodology', label: 'Methodology' },
+      { href: '/en/case-studies', label: 'Cases' },
+      { href: '/en/work', label: 'Work' },
+      { href: '/en/team', label: 'Team' },
+      { href: '/en/insights', label: 'Insights' },
+      { href: '/en/contact', label: 'Contact' },
+    ];
+
+const tagline = isEs
+  ? 'Comunicación que cambia comportamientos.'
+  : 'Communication that changes behavior.';
+
+const year = new Date().getFullYear();
 ---
 
-<!-- TODO Step 2: three-column footer, sitemap mirror, Hecho en Medellín -->
-<footer><!-- placeholder --></footer>
+<footer class="bg-ocean text-sand">
+  <!-- Three-column body -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+
+    <!-- Left: wordmark + tagline -->
+    <div>
+      <p class="font-extrabold text-xl tracking-tight mb-3">Emerito</p>
+      <p class="text-sand/55 text-sm leading-relaxed mb-5">{tagline}</p>
+      <p class="text-sand/35 text-xs tracking-wide">Medellín, Colombia</p>
+    </div>
+
+    <!-- Center: sitemap links -->
+    <nav class="flex flex-col gap-3" aria-label="Footer navigation">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="text-sand/60 text-sm hover:text-sand transition-colors duration-200"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Right: contact + social -->
+    <div class="flex flex-col gap-3">
+      <a
+        href="mailto:michael@emerito.co"
+        class="text-sand/60 text-sm hover:text-sand transition-colors duration-200"
+      >
+        michael@emerito.co
+      </a>
+      <!-- TODO: update social URLs once confirmed -->
+      <a
+        href="https://www.linkedin.com/company/emerito"
+        class="text-sand/60 text-sm hover:text-sand transition-colors duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+      <a
+        href="https://www.instagram.com/emerito.co"
+        class="text-sand/60 text-sm hover:text-sand transition-colors duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Bottom strip -->
+  <div class="border-t border-sand/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-sand/35">
+      <span>© Emerito {year}</span>
+      <span class="font-medium text-sand/50">Hecho en Medellín</span>
+      <a
+        href={isEs ? '/privacidad' : '/en/privacy'}
+        class="hover:text-sand/60 transition-colors"
+      >
+        {isEs ? 'Privacidad' : 'Privacy'}
+      </a>
+    </div>
+  </div>
+</footer>
