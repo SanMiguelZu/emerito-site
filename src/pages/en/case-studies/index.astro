@@ -2,10 +2,70 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Case Studies" lang="en">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Case Studies — Step 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">Case Studies</h1>
-    <p class="text-lg text-ink/70">Full content in Step 3.</p>
+<BaseLayout
+  title="Case Studies"
+  description="Behavior-science communication, validated in the field. Full cases: problem, diagnosis, intervention, result."
+  lang="en"
+  alternateHref="/casos"
+>
+
+  <section class="bg-sand py-24 lg:py-28">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">Cases</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-ocean leading-[1.05] mb-6">
+        Case Studies
+      </h1>
+      <p class="text-lg text-ink/60 leading-relaxed max-w-2xl">
+        Behavior-science-based communication, validated in the field.
+        Full cases: problem, diagnosis, intervention, result.
+      </p>
+    </div>
   </section>
+
+  <section class="bg-white border-y border-ink/6 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+        <figure class="bg-ink/8 rounded-sm aspect-[4/3] flex items-center justify-center">
+          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
+            [IMAGE: airfan_candles.jpg<br/>Candle row — storyboard still · 1200 × 900 px]
+          </figcaption>
+        </figure>
+
+        <div>
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">
+            Working safely at heights
+          </p>
+          <h2 class="text-3xl font-extrabold text-ocean leading-tight mb-4">
+            Veteran, Not Reckless
+          </h2>
+          <p class="text-ink/65 leading-relaxed mb-3">
+            How do we get veteran technicians to follow safety protocol when
+            crew culture punishes compliance?
+          </p>
+          <p class="text-xs text-ink/35 mb-8">
+            Client: Airfan · Industrial HVAC maintenance · 2025
+          </p>
+          <a
+            href="/en/case-studies/working-safely-at-heights"
+            class="inline-block bg-ocean text-sand text-sm font-semibold px-6 py-3 rounded-sm hover:bg-ocean/85 transition-colors"
+          >
+            Read full case →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sand py-16 lg:py-20">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <p class="text-ink/45 text-sm mb-6">More cases in production.</p>
+      <p class="text-ink/65 mb-8">Want to be next?</p>
+      <a href="/en/contact" class="text-sm font-semibold text-ocean hover:text-accent transition-colors">
+        Let's talk →
+      </a>
+    </div>
+  </section>
+
 </BaseLayout>

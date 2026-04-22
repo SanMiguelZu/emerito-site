@@ -2,10 +2,171 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Equipo" lang="es">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Equipo — Paso 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">Somos una empresa familiar.</h1>
-    <p class="text-lg text-ink/70">Contenido completo en el Paso 3.</p>
+<BaseLayout
+  title="Equipo"
+  description="Somos una empresa familiar. Gloria, Julieta y Miguel — estrategia, ciencia y narrativa bajo un mismo techo."
+  lang="es"
+  alternateHref="/en/team"
+>
+
+  <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
+  <section class="bg-ocean py-24 lg:py-32 text-sand">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] mb-6">
+        Somos una empresa familiar.
+      </h1>
+      <p class="text-xl text-sand/65 leading-relaxed max-w-2xl">
+        Tres disciplinas, una mesa. Por eso podemos comprometernos con resultados de
+        comportamiento, no solo con entregables.
+      </p>
+    </div>
   </section>
+
+  <!-- ─── 2. FOUNDERS' STORY ───────────────────────────────────────── -->
+  <section class="bg-white border-b border-ink/6 py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        Cómo empezó esto
+      </p>
+      {/* PLACEHOLDER: origen de la empresa — párrafo a ser escrito por Miguel. Debe incluir: Medellín, familia, el momento en que se dieron cuenta de que la comms tradicional falla porque ignora el comportamiento. */}
+      <div class="bg-cream rounded-sm p-6 lg:p-8 text-sm text-ink/60 italic leading-relaxed border border-ink/8">
+        [PLACEHOLDER: Historia de origen de la empresa — redactar en voz de Miguel. 2-3 párrafos.
+        Incluir: cómo Gloria, Julieta y Miguel llegaron a combinar prospectiva, ciencia del comportamiento
+        y producción creativa bajo un mismo techo; el momento específico que les hizo ver que la
+        comunicación tradicional falla porque ignora el comportamiento; qué hace única la perspectiva
+        de trabajar como familia. Específico, personal, en primera persona de plural.]
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. BIOS ──────────────────────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 space-y-20 lg:space-y-24">
+
+      <!-- Gloria -->
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">01</p>
+          <h2 class="text-2xl font-extrabold text-ocean mb-1">Gloria Sánchez</h2>
+          <p class="text-sm text-ink/45 italic mb-8">Pensamiento de Futuro</p>
+          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+            <p>
+              Gloria lleva más de veinte años trabajando en estrategia organizacional y prospectiva
+              en Colombia y América Latina. Su especialidad es ayudar a empresas a entender qué
+              fuerzas están transformando su industria y qué comportamientos colectivos necesitarán
+              para navegar esos cambios — antes de que se vuelvan urgentes.
+            </p>
+            {/* PLACEHOLDER: párrafo personal de Gloria — qué le importa, por qué hace este trabajo */}
+            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
+              [PLACEHOLDER: párrafo personal de Gloria — qué le importa, por qué eligió este camino,
+              qué la conecta con el trabajo de cambio de comportamiento.]
+            </p>
+          </div>
+          {/* TODO: LinkedIn de Gloria */}
+        </div>
+        <!-- PLACEHOLDER: foto_gloria.jpg — retrato de Gloria, 600×800px -->
+        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center">
+          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
+            [FOTO: foto_gloria.jpg<br/>Retrato · 600 × 800 px]
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Julieta -->
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <!-- PLACEHOLDER: foto_julieta.jpg -->
+        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center order-2 lg:order-1">
+          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
+            [FOTO: foto_julieta.jpg<br/>Retrato · 600 × 800 px]
+          </figcaption>
+        </figure>
+        <div class="order-1 lg:order-2">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">02</p>
+          <h2 class="text-2xl font-extrabold text-ocean mb-1">Julieta [apellido]</h2>
+          <p class="text-sm text-ink/45 italic mb-8">Ciencia del Comportamiento</p>
+          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+            <p>
+              Julieta es la arquitecta del diagnóstico en Emerito. Su trabajo empieza en campo:
+              observando, preguntando, entendiendo por qué la gente hace lo que hace — no lo que
+              dice que hace. Aplica el marco COM-B (Capability, Opportunity, Motivation) para
+              identificar las palancas exactas que una intervención necesita mover.
+            </p>
+            {/* PLACEHOLDER: párrafo personal de Julieta */}
+            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
+              [PLACEHOLDER: párrafo personal de Julieta — qué le importa, formación, por qué
+              la ciencia del comportamiento, qué la conecta con el trabajo de Emerito.]
+            </p>
+          </div>
+          {/* TODO: LinkedIn de Julieta */}
+        </div>
+      </div>
+
+      <!-- Miguel -->
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">03</p>
+          <h2 class="text-2xl font-extrabold text-ocean mb-1">Miguel Zuluaga</h2>
+          <p class="text-sm text-ink/45 italic mb-8">Contenido Creativo</p>
+          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+            <p>
+              Miguel es director creativo y productor. Su trabajo es tomar el diagnóstico conductual
+              y convertirlo en algo que la gente realmente vea y sienta. Personajes, historia,
+              arquitectura narrativa, dirección visual: los instrumentos que convierten un hallazgo
+              de ciencia del comportamiento en una pieza que cambia lo que la gente hace.
+            </p>
+            {/* PLACEHOLDER: párrafo personal de Miguel */}
+            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
+              [PLACEHOLDER: párrafo personal de Miguel — formación, por qué la narrativa, qué
+              lo conecta con el trabajo de cambio de comportamiento, algo personal sobre Medellín
+              o la familia.]
+            </p>
+          </div>
+          {/* TODO: LinkedIn de Miguel */}
+        </div>
+        <!-- PLACEHOLDER: foto_miguel.jpg -->
+        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center">
+          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
+            [FOTO: foto_miguel.jpg<br/>Retrato · 600 × 800 px]
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── 4. HOW WE WORK ───────────────────────────────────────────── -->
+  <section class="bg-white border-y border-ink/6 py-20 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        Cómo trabajamos
+      </p>
+      <ul class="space-y-5">
+        {[
+          { title: 'Iteración con el cliente', body: 'Trabajamos en sprints cortos con validación frecuente. Nunca desaparecemos seis semanas para volver con algo que no querías.' },
+          { title: 'Diagnóstico antes de producción', body: 'No producimos antes de entender el problema. Eso puede incomodar si ya tenés el video en mente — pero es lo que hace que el resultado funcione.' },
+          { title: 'Transparencia de precios', body: 'Las propuestas son claras y detalladas. Nada crece en silencio. Si hay un cambio de alcance, lo nombramos antes de ejecutarlo.' },
+          { title: 'Medición de resultados', body: 'Cuando el cliente nos da acceso a datos de campo, medimos. No prometemos métricas que no podemos controlar, pero sí nos comprometemos a aprender del resultado.' },
+        ].map(item => (
+          <li class="flex gap-5">
+            <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+            <div>
+              <p class="font-semibold text-ink mb-1">{item.title}</p>
+              <p class="text-sm text-ink/60 leading-relaxed">{item.body}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── CLOSING CTA ──────────────────────────────────────────────── -->
+  <section class="bg-ocean py-24 text-center">
+    <div class="max-w-xl mx-auto px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold text-sand mb-5">¿Trabajamos juntos?</h2>
+      <a href="/contacto" class="inline-block bg-sand text-ocean text-sm font-semibold px-8 py-4 rounded-sm hover:bg-cream transition-colors">
+        Hablemos →
+      </a>
+    </div>
+  </section>
+
 </BaseLayout>

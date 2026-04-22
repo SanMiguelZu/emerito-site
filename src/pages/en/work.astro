@@ -1,11 +1,55 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = [
+  { name: 'Palmódromo Medellín', desc: 'Urban narrative game for the City of Medellín. Role-play mechanics, interactive maps, and characters based on real neighborhood history.', year: '2024', file: 'palmodromo' },
+  { name: 'Home in Motion', desc: 'Pre-construction spatial visualization for homebuyers. Architectural animation that lets buyers walk through an apartment before it exists.', year: '2024', file: 'home_in_motion' },
+  { name: 'Bacano Go!', desc: 'Web3 monetization platform for independent content creators. Identity, motion design, and UX for the launch.', year: '2023', file: 'bacano_go' },
+  { name: 'Merch / Journey of Objects', desc: 'Physical merch design and production with integrated narrative. Each object tells an origin story.', year: '2023', file: 'merch' },
+];
 ---
 
-<BaseLayout title="Selected Work" lang="en">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Selected Work — Step 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">Selected Work</h1>
-    <p class="text-lg text-ink/70">Full content in Step 3.</p>
+<BaseLayout
+  title="Selected Work"
+  description="Other Emerito projects demonstrating creative and technical capability. Not behavior-change cases — just work."
+  lang="en"
+  alternateHref="/trabajo"
+>
+
+  <section class="bg-sand py-24 lg:py-28">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">Work</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-ocean leading-[1.05] mb-6">Selected Work</h1>
+      <p class="text-ink/60 leading-relaxed max-w-2xl">
+        Other projects we've produced. These are not behavior-change cases; they demonstrate
+        creative and technical capability. For full cases based on behavioral science, see{' '}
+        <a href="/en/case-studies" class="text-ocean hover:text-accent transition-colors font-medium">Case Studies</a>.
+      </p>
+    </div>
   </section>
+
+  <section class="bg-white border-y border-ink/6 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 gap-8 lg:gap-10">
+        {projects.map(p => (
+          <article>
+            <figure class="bg-ink/8 rounded-sm aspect-[4/3] flex items-center justify-center mb-5">
+              <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">[{p.file}.jpg · 800 × 600 px]</figcaption>
+            </figure>
+            <p class="text-xs text-ink/35 mb-2">{p.year}</p>
+            <h2 class="text-xl font-bold text-ocean mb-2">{p.name}</h2>
+            <p class="text-sm text-ink/60 leading-relaxed">{p.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sand py-16 lg:py-20 text-center">
+    <div class="max-w-xl mx-auto px-6 lg:px-8">
+      <p class="text-ink/60 mb-6">Looking for a production partner for a behavior-change project?</p>
+      <a href="/en/contact" class="text-sm font-semibold text-ocean hover:text-accent transition-colors">Let's talk →</a>
+    </div>
+  </section>
+
 </BaseLayout>

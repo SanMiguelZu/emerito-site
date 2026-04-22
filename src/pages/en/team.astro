@@ -2,10 +2,157 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Team" lang="en">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Team — Step 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">We are a family company.</h1>
-    <p class="text-lg text-ink/70">Full content in Step 3.</p>
+<BaseLayout
+  title="Team"
+  description="We are a family company. Gloria, Julieta, and Miguel — strategy, science, and narrative under one roof."
+  lang="en"
+  alternateHref="/equipo"
+>
+
+  <section class="bg-ocean py-24 lg:py-32 text-sand">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] mb-6">
+        We are a family company.
+      </h1>
+      <p class="text-xl text-sand/65 leading-relaxed max-w-2xl">
+        Three disciplines, one table. That's why we can commit to behavioral outcomes,
+        not just deliverables.
+      </p>
+    </div>
   </section>
+
+  <section class="bg-white border-b border-ink/6 py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        How this started
+      </p>
+      <div class="bg-cream rounded-sm p-6 lg:p-8 text-sm text-ink/60 italic leading-relaxed border border-ink/8">
+        [PLACEHOLDER: Company origin story — to be written in Miguel's voice. 2–3 paragraphs.
+        Include: how Gloria, Julieta, and Miguel came to combine foresight, behavioral science,
+        and creative production under one roof; the specific moment when they realized traditional
+        communication fails because it ignores behavior; what makes the family perspective unique.
+        Specific, personal, first-person plural.]
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 space-y-20 lg:space-y-24">
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">01</p>
+          <h2 class="text-2xl font-extrabold text-ocean mb-1">Gloria Sánchez</h2>
+          <p class="text-sm text-ink/45 italic mb-8">Future Thinking</p>
+          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+            <p>
+              Gloria has spent over twenty years working in organizational strategy and foresight
+              across Colombia and Latin America. Her specialty is helping companies understand what
+              forces are reshaping their industry and what collective behaviors they'll need to
+              navigate those changes — before they become urgent.
+            </p>
+            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
+              [PLACEHOLDER: Gloria's personal paragraph — what she cares about, her background,
+              why behavior change, what connects her to this work.]
+            </p>
+          </div>
+        </div>
+        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center">
+          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">[PHOTO: foto_gloria.jpg · 600 × 800 px]</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center order-2 lg:order-1">
+          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">[PHOTO: foto_julieta.jpg · 600 × 800 px]</figcaption>
+        </figure>
+        <div class="order-1 lg:order-2">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">02</p>
+          <h2 class="text-2xl font-extrabold text-ocean mb-1">Julieta [surname]</h2>
+          <p class="text-sm text-ink/45 italic mb-8">Behavioral Science</p>
+          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+            <p>
+              Julieta is the diagnostic architect at Emerito. Her work starts in the field: observing,
+              asking, understanding why people do what they do — not what they say they do. She applies
+              the COM-B framework to identify the exact levers an intervention needs to move.
+            </p>
+            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
+              [PLACEHOLDER: Julieta's personal paragraph — background, why behavioral science,
+              what connects her to Emerito's work.]
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div>
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">03</p>
+          <h2 class="text-2xl font-extrabold text-ocean mb-1">Miguel Zuluaga</h2>
+          <p class="text-sm text-ink/45 italic mb-8">Creative Content</p>
+          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+            <p>
+              Miguel is creative director and producer. His job is to take the behavioral diagnostic
+              and turn it into something people actually watch and feel. Character, story, narrative
+              architecture, visual direction — the instruments that convert a behavioral science
+              finding into a piece that changes what people do.
+            </p>
+            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
+              [PLACEHOLDER: Miguel's personal paragraph — background, why narrative, what connects
+              him to behavior-change work, something personal about Medellín or the family.]
+            </p>
+          </div>
+        </div>
+        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center">
+          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">[PHOTO: foto_miguel.jpg · 600 × 800 px]</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-white border-y border-ink/6 py-20 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">How we work</p>
+      <ul class="space-y-5">
+        <li class="flex gap-5">
+          <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+          <div>
+            <p class="font-semibold text-ink mb-1">Iteration with the client</p>
+            <p class="text-sm text-ink/60 leading-relaxed">We work in short sprints with frequent check-ins. We never disappear for six weeks to come back with something you didn't ask for.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+          <div>
+            <p class="font-semibold text-ink mb-1">Diagnosis before production</p>
+            <p class="text-sm text-ink/60 leading-relaxed">We don't produce before understanding the problem. That can feel uncomfortable if you already have a video in mind — but it's what makes the result work.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+          <div>
+            <p class="font-semibold text-ink mb-1">Transparent pricing</p>
+            <p class="text-sm text-ink/60 leading-relaxed">Proposals are clear and detailed. Nothing grows silently. If there's a scope change, we name it before executing it.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+          <div>
+            <p class="font-semibold text-ink mb-1">Measuring results</p>
+            <p class="text-sm text-ink/60 leading-relaxed">When the client gives us access to field data, we measure. We don't promise metrics we can't control, but we commit to learning from the outcome.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-ocean py-24 text-center">
+    <div class="max-w-xl mx-auto px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold text-sand mb-5">Shall we work together?</h2>
+      <a href="/en/contact" class="inline-block bg-sand text-ocean text-sm font-semibold px-8 py-4 rounded-sm hover:bg-cream transition-colors">
+        Let's talk →
+      </a>
+    </div>
+  </section>
+
 </BaseLayout>

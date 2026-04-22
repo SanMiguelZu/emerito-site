@@ -2,11 +2,246 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Veteran, Not Reckless" lang="en">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Working Safely at Heights — Step 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">Veteran, Not Reckless</h1>
-    <p class="text-ink/60 mb-2">Client: Airfan · Industry: Industrial maintenance · Year: 2025</p>
-    <p class="text-lg text-ink/70">Full content in Step 3.</p>
+<BaseLayout
+  title="Veteran, Not Reckless"
+  description="Case study: How do we get veteran technicians to follow safety protocol when crew culture punishes compliance? Client: Airfan."
+  lang="en"
+  alternateHref="/casos/trabajo-seguro-en-alturas"
+>
+
+  <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
+  <section class="bg-ocean py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">
+        Working safely at heights
+      </p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-sand leading-[1.05] mb-8">
+        Veteran, Not Reckless
+      </h1>
+      <p class="text-xl text-sand/65 leading-relaxed max-w-2xl mb-8">
+        How do we get veteran technicians to follow safety protocol when
+        crew culture punishes compliance?
+      </p>
+      <p class="text-xs text-sand/35">
+        Client: Airfan · Industry: Industrial air conditioning maintenance · Year: 2025
+      </p>
+      <!-- TODO: Airfan results data — add outcome chip once available -->
+    </div>
   </section>
+
+  <figure class="bg-ink/10 w-full aspect-[21/9] flex items-center justify-center">
+    <figcaption class="text-xs text-ink/30 font-mono text-center px-6">
+      [HERO IMAGE: airfan_hero.jpg — candle row or hand-catch still · 1920 × 900 px]
+    </figcaption>
+  </figure>
+
+  <!-- ─── 2. THE PROBLEM ───────────────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        The problem
+      </p>
+      <div class="space-y-6 text-ink/65 leading-relaxed">
+        <p>
+          In Colombia, working at heights is regulated by
+          <strong class="text-ink font-semibold">Resolución 1409 de 2012</strong>, one of the
+          country's most rigorous occupational safety standards. Anyone working more than 1.5 meters
+          above ground must be certified and follow a specific protocol. Non-compliance isn't just
+          a violation — it can be the difference between life and death.
+        </p>
+        <p>
+          The data is stark: <strong class="text-ink font-semibold">in 2023, 694 workers died
+          in Colombia</strong> from work-related causes. Falls from heights rank among the leading
+          causes of occupational death in industrial maintenance and construction — a sector that
+          saw a 47.4% increase compared to 2022.
+        </p>
+        <p>
+          Airfan, a leader in industrial HVAC maintenance, knew these numbers. Their technicians
+          were certified. Protocols existed. The company invested in training. And yet, in the field,
+          safe practices remained inconsistent — especially among the most experienced workers.
+        </p>
+        <p class="text-ocean font-semibold text-lg">
+          Airfan didn't have an information problem. They had a culture problem.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. THE BEHAVIORAL DIAGNOSIS ─────────────────────────────── -->
+  <section class="bg-white border-y border-ink/6 py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        The diagnosis
+      </p>
+
+      <h2 class="text-2xl font-extrabold text-ocean mb-8">What we found in the field</h2>
+      <div class="space-y-6 text-ink/65 leading-relaxed mb-14">
+        <p>
+          Before writing a single line of script, we went to the field. We watched technicians work.
+          We interviewed them — not in the office, but on the rooftops where they operate.
+          What we found explained everything.
+        </p>
+        <p>
+          Veteran technicians — the ones with 10, 15, 20 years without a fall — had developed
+          a deep certainty: <em class="text-ink">"I know what I'm doing. I know myself. I know
+          these heights."</em> This is what psychologists call survivorship bias: a track record
+          of success becomes evidence that precautions are for others — for the inexperienced,
+          for those who don't know better.
+        </p>
+        <p>
+          But there was something more. Within crew dynamics, following the protocol to the letter
+          had a visible social cost: you were "the slow one," "the one who does the whole process,"
+          the one who slows the group down. The fast worker — the one who "knows how to do it
+          without the full harness" — was admired, not sanctioned. Crew culture punished compliance.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-extrabold text-ocean mb-8">What COM-B tells us</h2>
+      <div class="bg-cream rounded-sm p-6 lg:p-8 mb-8">
+        <p class="text-xs font-semibold tracking-widest uppercase text-ink/40 mb-4">
+          COM-B Framework: Capability · Opportunity · Motivation → Behavior
+        </p>
+        <div class="grid sm:grid-cols-3 gap-6 text-sm">
+          <div>
+            <p class="font-bold text-ocean mb-2">Capability ✓</p>
+            <p class="text-ink/60 leading-relaxed">
+              Technicians <em>know</em> how to follow the protocol. There was no knowledge gap.
+              Training had worked at that level.
+            </p>
+          </div>
+          <div>
+            <p class="font-bold text-ocean mb-2">Opportunity ✗</p>
+            <p class="text-ink/60 leading-relaxed">
+              The social environment (<em>social opportunity</em>) penalized compliance.
+              The crew norm was speed, not safety.
+            </p>
+          </div>
+          <div>
+            <p class="font-bold text-ocean mb-2">Motivation ✗</p>
+            <p class="text-ink/60 leading-relaxed">
+              Automatic motivation reinforced the shortcut. The protocol required conscious effort;
+              the habit did not.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="text-ocean font-semibold">
+        The intervention couldn't be a video that taught the steps. It had to be a video that
+        changed how the group sees the person who follows them.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── 4. THE INTERVENTION ──────────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        The intervention
+      </p>
+      <h2 class="text-2xl font-extrabold text-ocean mb-8">Imprudencio</h2>
+      <div class="space-y-6 text-ink/65 leading-relaxed mb-14">
+        <p>
+          The central character is <strong class="text-ink font-semibold">Imprudencio</strong>: a
+          veteran technician in his fifties. The name isn't a surname — it's a narrative signal.
+          We're in fable territory, not documentary realism. That matters: the fable form lets us
+          address a taboo subject — the death of a colleague — without the weight of a documentary
+          or the distance of a report.
+        </p>
+        <p>
+          The story: Imprudencio is on a rooftop when a routine maneuver goes wrong. In the
+          instant before the accident, a younger version of himself appears — him at 25, just
+          starting out. Then another. And another. Across the rooftops of Medellín, Imprudencio
+          meets 22 previous versions of himself. Each one represents a year when he took
+          that same shortcut and survived. Survivorship bias, personified.
+        </p>
+        <p>
+          The climax: a row of 23 candles lighting one by one — each representing a version
+          that made it this far. Then, one by one, they go out. Until one remains, trembling.
+          The film never shows an impact, a fall, a victim. It doesn't need to. The emotion
+          is in what isn't shown.
+        </p>
+        <p>
+          The film's final line: <em class="text-ocean font-semibold">"The most experienced worker
+          isn't the one who needs fewer steps. It's the one who already does them without thinking."</em>
+          This line is the film's central operation: it redefines what it means to be a veteran.
+          Following the protocol is no longer a sign of inexperience — it's the mark of mastery.
+          The social norm shift the COM-B diagnostic identified as necessary.
+        </p>
+      </div>
+
+      <!-- PLACEHOLDER: video_imprudencio.mp4 or storyboard_strip.jpg -->
+      <figure class="bg-ink/8 rounded-sm aspect-video flex items-center justify-center">
+        <figcaption class="text-xs text-ink/30 font-mono text-center px-6 leading-relaxed">
+          [VIDEO: video_imprudencio.mp4 — when ready]<br/>
+          [or IMAGE: storyboard_strip.jpg — 6-panel storyboard strip]
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ─── 5. THE RESULTS ───────────────────────────────────────────── -->
+  <section class="bg-ocean py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-sand/35 mb-10">
+        The results
+      </p>
+      <!-- TODO: Airfan results — replace once available -->
+      <div class="bg-sand/8 rounded-sm p-8 lg:p-10">
+        <p class="text-sand/60 text-sm leading-relaxed italic mb-6">
+          Measurement in progress. The film was produced in 2025; post-implementation
+          behavioral validation is ongoing with Airfan.
+        </p>
+        <p class="text-sand/45 text-xs">
+          We'll update this section when we have field data. Publishing metrics without
+          validation would be exactly the kind of communication Cauce™ doesn't do.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. CREDITS ───────────────────────────────────────────────── -->
+  <section class="bg-sand py-16 lg:py-20 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-8">Credits</p>
+      <dl class="grid sm:grid-cols-2 gap-x-10 gap-y-4 text-sm">
+        <div>
+          <dt class="text-xs text-ink/40 mb-0.5">Strategy & Foresight</dt>
+          <dd class="font-semibold text-ink">Gloria Sánchez</dd>
+        </div>
+        <div>
+          <dt class="text-xs text-ink/40 mb-0.5">Behavioral Diagnosis</dt>
+          <dd class="font-semibold text-ink">Julieta [surname]</dd>
+        </div>
+        <div>
+          <dt class="text-xs text-ink/40 mb-0.5">Creative Direction & Production</dt>
+          <dd class="font-semibold text-ink">Miguel Zuluaga</dd>
+        </div>
+        <div>
+          <dt class="text-xs text-ink/40 mb-0.5">Client</dt>
+          <dd class="font-semibold text-ink">Airfan team</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-xs text-ink/40 mb-0.5">Tools & methods</dt>
+          <dd class="text-ink/65">COM-B framework · Field observation · Google Nano Banana (storyboard)</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ─── 7. CLOSING CTA ───────────────────────────────────────────── -->
+  <section class="bg-ocean py-24 lg:py-32 text-center">
+    <div class="max-w-xl mx-auto px-6 lg:px-8">
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-sand leading-tight mb-5">
+        Do you have a behavioral problem that traditional communication hasn't solved?
+      </h2>
+      <p class="text-sand/55 mb-10">Let's talk.</p>
+      <a
+        href="/en/contact"
+        class="inline-block bg-sand text-ocean text-sm font-semibold px-8 py-4 rounded-sm hover:bg-cream transition-colors"
+      >
+        Schedule a conversation →
+      </a>
+    </div>
+  </section>
+
 </BaseLayout>

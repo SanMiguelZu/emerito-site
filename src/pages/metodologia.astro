@@ -2,10 +2,296 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Metodología Cauce™" lang="es">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Metodología — Paso 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">Cauce™ — Nuestra metodología</h1>
-    <p class="text-lg text-ink/70">Contenido completo en el Paso 3.</p>
+<BaseLayout
+  title="Metodología Cauce™"
+  description="Cauce™ — la metodología de cambio de comportamiento de Emerito. Tres pilares: Pensamiento de Futuro, Ciencia del Comportamiento y Contenido Creativo."
+  lang="es"
+  alternateHref="/en/methodology"
+>
+
+  <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
+  <section class="bg-sand py-24 lg:py-36">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">
+        Metodología
+      </p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ocean leading-[1.05] mb-8">
+        Cauce™
+      </h1>
+      <p class="text-xl text-ink/65 leading-relaxed max-w-2xl">
+        El agua no pelea con el terreno. Encuentra — o talla — el camino de menor resistencia.
+        El comportamiento humano hace lo mismo. Diseñamos el cauce.
+      </p>
+    </div>
+    <!-- Cauce wave divider -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-16" aria-hidden="true">
+      <svg viewBox="0 0 1200 48" class="w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 24 Q300 0 600 24 Q900 48 1200 24" stroke="#3C9DC8" stroke-width="1.5" fill="none" opacity="0.25"/>
+        <path d="M0 32 Q300 8 600 32 Q900 56 1200 32" stroke="#0A3D62" stroke-width="1" fill="none" opacity="0.12"/>
+      </svg>
+    </div>
   </section>
+
+  <!-- ─── 2. THE PROBLEM WITH TRADITIONAL COMMS ────────────────────── -->
+  <section class="bg-white border-y border-ink/6 py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        Por qué la comunicación tradicional falla
+      </p>
+      <div class="space-y-6 text-ink/65 leading-relaxed">
+        <p>
+          La mayoría de los programas de seguridad, formación y cambio cultural asumen que el problema
+          es información: si la gente supiera qué hacer, lo haría. Entonces producen videos instructivos,
+          capacitaciones, afiches. Y los comportamientos no cambian.
+        </p>
+        <p>
+          El problema real casi nunca es lo que la gente no sabe. Es lo que su entorno, su grupo y su
+          carga cognitiva hacen fácil o difícil. Un protocolo de seguridad puede competir directamente
+          contra los hábitos automáticos del veterano, la presión de los compañeros o la lógica de la
+          producción bajo tiempo.
+        </p>
+        <p>
+          La comunicación que empuja a la gente cuesta arriba — contra esas fuerzas — no cambia
+          comportamientos. Los informa. Y la información sin diseño conductual es ruido.
+        </p>
+        <p class="font-semibold text-ocean">
+          Cauce™ parte de una premisa distinta: primero entendemos el terreno. Luego diseñamos
+          el camino de menor resistencia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. THREE PILLARS ─────────────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-3">
+        Los tres pilares
+      </p>
+      <h2 class="text-3xl font-extrabold text-ocean mb-16">
+        Tres pilares. Una corriente.
+      </h2>
+
+      <div class="space-y-16 lg:space-y-20">
+
+        <!-- Pillar 1: Future Thinking -->
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+          <div>
+            <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">01</p>
+            <h3 class="text-2xl font-extrabold text-ocean mb-2">
+              Pensamiento de Futuro
+            </h3>
+            <p class="text-base text-ink/50 italic mb-6">Leemos el terreno</p>
+            <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+              <p>
+                Antes de diseñar una intervención, necesitamos entender hacia dónde va la organización.
+                El Pensamiento de Futuro (prospectiva) nos permite identificar qué comportamientos serán
+                críticos en dos o tres años — no solo hoy — y asegurarnos de que lo que diseñamos
+                tenga relevancia duradera.
+              </p>
+              <p>
+                En un proyecto de seguridad, esto significa preguntar: ¿Qué nuevas tecnologías,
+                regulaciones o cambios de fuerza laboral afectarán los riesgos en el mediano plazo?
+                ¿El protocolo que estamos comunicando seguirá siendo relevante?
+              </p>
+            </div>
+            <div class="mt-8 pt-8 border-t border-ink/8">
+              <p class="text-sm font-semibold text-ocean">Gloria Sánchez</p>
+              <p class="text-xs text-ink/45 mt-1">Estrategia y Prospectiva</p>
+            </div>
+          </div>
+          <!-- PLACEHOLDER: foto_gloria_trabajo.jpg — Gloria en contexto de trabajo -->
+          <figure class="bg-ink/6 rounded-sm aspect-[4/3] flex items-center justify-center">
+            <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
+              [IMAGEN: foto_gloria.jpg — retrato o foto en trabajo<br/>800 × 600 px]
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Pillar 2: Behavioral Science -->
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+          <!-- PLACEHOLDER: foto_julieta_trabajo.jpg -->
+          <figure class="bg-ink/6 rounded-sm aspect-[4/3] flex items-center justify-center order-2 lg:order-1">
+            <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
+              [IMAGEN: foto_julieta.jpg — retrato o foto en trabajo<br/>800 × 600 px]
+            </figcaption>
+          </figure>
+          <div class="order-1 lg:order-2">
+            <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">02</p>
+            <h3 class="text-2xl font-extrabold text-ocean mb-2">
+              Ciencia del Comportamiento
+            </h3>
+            <p class="text-base text-ink/50 italic mb-6">Mapeamos la corriente</p>
+            <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+              <p>
+                El COM-B (Capability, Opportunity, Motivation – Behavior) es el marco que usamos para
+                diagnosticar por qué la gente no hace lo que debería. Nos permite distinguir si el problema
+                es de capacidad (no saben cómo), de oportunidad (el entorno no lo facilita o el grupo lo
+                penaliza) o de motivación (no lo ven como relevante o valioso).
+              </p>
+              <p>
+                El diagnóstico incluye observación de campo, entrevistas con trabajadores y supervisores,
+                y análisis de los factores situacionales. El resultado no es una encuesta de opinión:
+                es un mapa de las fuerzas que determinan el comportamiento real.
+              </p>
+            </div>
+            <div class="mt-8 pt-8 border-t border-ink/8">
+              <p class="text-sm font-semibold text-ocean">Julieta [apellido]</p>
+              <p class="text-xs text-ink/45 mt-1">Diagnóstico Conductual</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Creative Content -->
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+          <div>
+            <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">03</p>
+            <h3 class="text-2xl font-extrabold text-ocean mb-2">
+              Contenido Creativo
+            </h3>
+            <p class="text-base text-ink/50 italic mb-6">Trazamos el cauce</p>
+            <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+              <p>
+                El diagnóstico nos dice qué cambiar. El Contenido Creativo es cómo lo cambiamos.
+                No es "hacer un video bonito" — es construir un personaje, una historia y un arco
+                narrativo que estén diseñados para mover palancas específicas del COM-B.
+              </p>
+              <p>
+                Si el problema es de norma social (los compañeros penalizan el cumplimiento), la
+                intervención necesita replantear quién es el referente del grupo. Si el problema es
+                de motivación automática (el atajo es más fácil que el protocolo), la historia necesita
+                hacer el protocolo emocionalmente atractivo, no solo racionalmente correcto.
+              </p>
+            </div>
+            <div class="mt-8 pt-8 border-t border-ink/8">
+              <p class="text-sm font-semibold text-ocean">Miguel Zuluaga</p>
+              <p class="text-xs text-ink/45 mt-1">Dirección Creativa y Producción</p>
+            </div>
+          </div>
+          <!-- PLACEHOLDER: foto_miguel_trabajo.jpg -->
+          <figure class="bg-ink/6 rounded-sm aspect-[4/3] flex items-center justify-center">
+            <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
+              [IMAGEN: foto_miguel.jpg — retrato o foto en trabajo<br/>800 × 600 px]
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. THE CAUCE PROCESS ─────────────────────────────────────── -->
+  <section class="bg-ocean py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-sand/35 mb-3">
+        El proceso
+      </p>
+      <h2 class="text-3xl font-extrabold text-sand mb-14">
+        Cómo se aplica Cauce
+      </h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            n: '01',
+            label: 'ESCUCHAR',
+            en: 'Listen',
+            body: 'Conversaciones iniciales, observación de campo, entrevistas a trabajadores y supervisores. Entendemos el contexto antes de opinar.',
+          },
+          {
+            n: '02',
+            label: 'DIAGNOSTICAR',
+            en: 'Diagnose',
+            body: 'Aplicamos el marco COM-B + prospectiva. El resultado es un mapa de comportamiento: qué fuerzas sostienen el problema y dónde está el punto de palanca.',
+            note: '← Hasta aquí: Cauce Insight',
+          },
+          {
+            n: '03',
+            label: 'DISEÑAR',
+            en: 'Design',
+            body: 'Desarrollamos el concepto narrativo, el personaje, la arquitectura de la historia. Todo validado contra el diagnóstico.',
+          },
+          {
+            n: '04',
+            label: 'PRODUCIR',
+            en: 'Produce',
+            body: 'Producción audiovisual completa, validación con usuarios finales y entrega de los entregables.',
+            note: '← Hasta aquí: Cauce Studio',
+          },
+        ].map(stage => (
+          <div class="bg-sand/8 rounded-sm p-6">
+            <p class="text-[10px] font-bold tracking-widest text-accent mb-4">{stage.n}</p>
+            <p class="text-lg font-extrabold text-sand mb-1">{stage.label}</p>
+            <p class="text-xs text-sand/40 italic mb-4">{stage.en}</p>
+            <p class="text-sm text-sand/60 leading-relaxed">{stage.body}</p>
+            {stage.note && (
+              <p class="text-[10px] text-accent mt-5 font-semibold">{stage.note}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. TWO SERVICE TIERS ─────────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-3">
+        La oferta
+      </p>
+      <h2 class="text-3xl font-extrabold text-ocean mb-14">
+        Dos formas de empezar
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- Cauce Insight -->
+        <div class="bg-white border border-ink/8 rounded-sm p-8 lg:p-10">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-5">Cauce Insight</p>
+          <h3 class="text-2xl font-extrabold text-ocean mb-1">Diagnóstico</h3>
+          <p class="text-sm text-ink/45 mb-7">4 – 6 semanas</p>
+          <p class="text-sm text-ink/65 leading-relaxed mb-7">
+            Entregamos el mapa de comportamiento y la estrategia de intervención. Podés
+            llevarlos internamente o regresar para la producción.
+          </p>
+          <ul class="text-sm text-ink/60 space-y-2.5 mb-8">
+            {['Entrevistas a stakeholders','Observación de campo','Diagnóstico COM-B','Mapa de comportamiento','Estrategia de intervención','Presentación de hallazgos'].map(i => (
+              <li class="flex gap-3"><span class="text-accent leading-none mt-0.5 flex-shrink-0">·</span>{i}</li>
+            ))}
+          </ul>
+          <p class="text-xs text-ink/35 mb-8 leading-relaxed">
+            Para empresas que quieren entender el problema antes de comprometerse con la producción.
+          </p>
+          <a href="/contacto" class="block text-center bg-ocean text-sand text-sm font-semibold px-6 py-3 rounded-sm hover:bg-ocean/85 transition-colors">
+            Hablemos sobre tu proyecto
+          </a>
+        </div>
+
+        <!-- Cauce Studio -->
+        <div class="bg-ocean rounded-sm p-8 lg:p-10">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-5">Cauce Studio</p>
+          <h3 class="text-2xl font-extrabold text-sand mb-1">Diagnóstico + Producción</h3>
+          <p class="text-sm text-sand/45 mb-7">12 – 20 semanas</p>
+          <p class="text-sm text-sand/65 leading-relaxed mb-7">
+            El diagnóstico más la producción completa de la intervención que entra en campo.
+          </p>
+          <ul class="text-sm text-sand/60 space-y-2.5 mb-8">
+            {['Todo lo de Cauce Insight','Concepto y arquitectura narrativa','Diseño de personajes e historia','Producción audiovisual completa','Validación con usuarios finales','Entregables finales'].map(i => (
+              <li class="flex gap-3"><span class="text-accent leading-none mt-0.5 flex-shrink-0">·</span>{i}</li>
+            ))}
+          </ul>
+          <p class="text-xs text-sand/35 mb-8 leading-relaxed">
+            Para empresas listas para producir una pieza de cambio de comportamiento.
+          </p>
+          <a href="/contacto" class="block text-center bg-sand text-ocean text-sm font-semibold px-6 py-3 rounded-sm hover:bg-cream transition-colors">
+            Hablemos sobre tu proyecto
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- V2: PDF download lead magnet — launch without this -->
+  <!-- TODO V2: Descarga del marco Cauce — PDF gated with Resend email capture -->
+
 </BaseLayout>

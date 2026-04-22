@@ -2,14 +2,350 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Inicio" lang="es">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Inicio — Paso 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">
-      Hacemos comunicación que cambia comportamientos.
-    </h1>
-    <p class="text-lg text-ink/70">
-      Diseñamos diagnósticos y videos para empresas donde la seguridad, la formación o el cambio cultural no pueden fallar.
-    </p>
+<BaseLayout
+  title="Inicio"
+  description="Hacemos comunicación que cambia comportamientos. Diagnósticos y videos para empresas donde la seguridad, la formación o el cambio cultural no pueden fallar."
+  lang="es"
+  alternateHref="/en"
+>
+
+  <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
+  <section class="bg-sand py-24 lg:py-36">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+      <div>
+        <p class="text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-6">
+          Estudio de cambio de comportamiento · Medellín
+        </p>
+        <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-ocean leading-[1.05] mb-6">
+          Hacemos comunicación que cambia comportamientos.
+        </h1>
+        <p class="text-lg text-ink/60 leading-relaxed mb-10 max-w-lg">
+          Diseñamos diagnósticos y videos para empresas donde la seguridad,
+          la formación o el cambio cultural no pueden fallar.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/casos/trabajo-seguro-en-alturas"
+            class="bg-ocean text-sand text-sm font-semibold px-6 py-3 rounded-sm hover:bg-ocean/85 transition-colors"
+          >
+            Ver el caso: Veterano, no temerario →
+          </a>
+          <a
+            href="/contacto"
+            class="text-ocean text-sm font-semibold px-6 py-3 rounded-sm border border-ocean/25 hover:border-ocean/60 transition-colors"
+          >
+            Hablemos
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero visual: Cauce SVG motif — replace with motion graphic or Imprudencio still -->
+      <!-- PLACEHOLDER: hero_visual.jpg/mp4 — Cauce motion graphic o still de Imprudencio -->
+      <figure class="bg-ocean/5 rounded-sm aspect-[4/3] flex items-center justify-center" aria-hidden="true">
+        <svg viewBox="0 0 480 320" class="w-full h-full p-16 opacity-50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 160 Q120 80 240 160 Q360 240 480 160" stroke="#3C9DC8" stroke-width="2.5" fill="none"/>
+          <path d="M0 200 Q120 120 240 200 Q360 280 480 200" stroke="#3C9DC8" stroke-width="1.5" fill="none" opacity="0.5"/>
+          <path d="M0 240 Q120 160 240 240 Q360 320 480 240" stroke="#0A3D62" stroke-width="1" fill="none" opacity="0.3"/>
+          <circle cx="240" cy="160" r="5" fill="#3C9DC8" opacity="0.9"/>
+          <line x1="240" y1="168" x2="240" y2="230" stroke="#0A3D62" stroke-width="1" stroke-dasharray="3 3" opacity="0.2"/>
+        </svg>
+      </figure>
+
+    </div>
   </section>
+
+  <!-- ─── 2. THREE PILLARS ─────────────────────────────────────────── -->
+  <section class="bg-white border-y border-ink/6 py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-xs font-semibold tracking-[0.15em] uppercase text-ink/35 text-center mb-14">
+        Tres disciplinas. Un cauce.
+      </p>
+      <div class="grid md:grid-cols-3 gap-10 lg:gap-0">
+
+        <div class="lg:pr-12">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">01</p>
+          <h3 class="text-lg font-bold text-ocean mb-1">Pensamiento de Futuro</h3>
+          <p class="text-sm text-ink/45 italic mb-4">Leemos el terreno</p>
+          <p class="text-sm text-ink/65 leading-relaxed mb-6">
+            Entendemos hacia dónde va la organización y qué comportamientos importarán en tres años.
+            La estrategia foresight que orienta todo lo que diseñamos.
+          </p>
+          <p class="text-xs text-ink/35">Gloria Sánchez</p>
+        </div>
+
+        <div class="lg:px-12 lg:border-x lg:border-ink/8">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">02</p>
+          <h3 class="text-lg font-bold text-ocean mb-1">Ciencia del Comportamiento</h3>
+          <p class="text-sm text-ink/45 italic mb-4">Mapeamos la corriente</p>
+          <p class="text-sm text-ink/65 leading-relaxed mb-6">
+            Diagnosticamos el problema real con COM-B: qué capacidades, oportunidades y motivaciones
+            determinan por qué la gente hace — o no hace — lo que debe.
+          </p>
+          <p class="text-xs text-ink/35">Julieta [apellido]</p>
+        </div>
+
+        <div class="lg:pl-12">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">03</p>
+          <h3 class="text-lg font-bold text-ocean mb-1">Contenido Creativo</h3>
+          <p class="text-sm text-ink/45 italic mb-4">Trazamos el cauce</p>
+          <p class="text-sm text-ink/65 leading-relaxed mb-6">
+            Construimos la intervención: el personaje, la historia, el video que la gente realmente ve
+            y que, por diseño, cambia la manera de actuar.
+          </p>
+          <p class="text-xs text-ink/35">Miguel Zuluaga</p>
+        </div>
+
+      </div>
+      <div class="mt-14 text-center">
+        <a href="/metodologia" class="text-sm font-semibold text-ocean hover:text-accent transition-colors">
+          Conoce la metodología completa →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. FEATURED CASE ─────────────────────────────────────────── -->
+  <section class="bg-ocean py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-sand/35 mb-10">
+        Caso de estudio
+      </p>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- Image placeholder -->
+        <!-- PLACEHOLDER: airfan_candles.jpg — fila de velas, still del storyboard de Imprudencio, 1200×900px -->
+        <figure class="bg-sand/8 rounded-sm aspect-[4/3] flex items-center justify-center order-2 lg:order-1">
+          <figcaption class="text-[10px] text-sand/25 font-mono text-center px-6 leading-relaxed">
+            [IMAGEN: airfan_candles.jpg<br/>Fila de velas — still del storyboard<br/>1200 × 900 px]
+          </figcaption>
+        </figure>
+
+        <div class="order-1 lg:order-2">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">
+            Trabajo seguro en alturas
+          </p>
+          <h2 class="text-3xl lg:text-4xl font-extrabold text-sand leading-tight mb-5">
+            Veterano, no temerario
+          </h2>
+          <p class="text-sand/65 text-base leading-relaxed mb-6">
+            ¿Cómo logramos que técnicos veteranos sigan los protocolos de seguridad
+            cuando la cultura de cuadrilla penaliza la obediencia?
+          </p>
+          <p class="text-sand/40 text-xs mb-8">
+            Cliente: Airfan · Mantenimiento industrial de HVAC · 2025
+          </p>
+          <!-- TODO: Airfan results data — add outcome chip once Airfan provides metrics -->
+          <a
+            href="/casos/trabajo-seguro-en-alturas"
+            class="inline-block bg-sand text-ocean text-sm font-semibold px-6 py-3 rounded-sm hover:bg-cream transition-colors"
+          >
+            Leer el caso completo →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 4. SERVICE TIERS ──────────────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 text-center mb-3">
+        Cómo trabajamos contigo
+      </p>
+      <h2 class="text-3xl font-extrabold text-ocean text-center mb-14">
+        Dos formas de empezar
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- Cauce Insight -->
+        <div class="bg-white border border-ink/8 rounded-sm p-8 lg:p-10">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-5">Cauce Insight</p>
+          <h3 class="text-2xl font-extrabold text-ocean mb-1">Diagnóstico</h3>
+          <p class="text-sm text-ink/45 mb-7">4 – 6 semanas</p>
+          <p class="text-sm text-ink/65 leading-relaxed mb-7">
+            Identificamos el problema de comportamiento real antes de producir nada.
+            El resultado: un mapa diagnóstico y una estrategia de intervención.
+          </p>
+          <ul class="text-sm text-ink/60 space-y-2.5 mb-8">
+            {[
+              'Entrevistas a stakeholders',
+              'Observación de campo',
+              'Diagnóstico COM-B',
+              'Mapa de comportamiento',
+              'Estrategia de intervención',
+              'Presentación de hallazgos',
+            ].map(item => (
+              <li class="flex gap-3">
+                <span class="text-accent leading-none mt-0.5 flex-shrink-0">·</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-xs text-ink/35 mb-8 leading-relaxed">
+            Para empresas que quieren entender el problema de comportamiento
+            antes de comprometerse con la producción.
+          </p>
+          <a
+            href="/contacto"
+            class="block text-center bg-ocean text-sand text-sm font-semibold px-6 py-3 rounded-sm hover:bg-ocean/85 transition-colors"
+          >
+            Conversemos
+          </a>
+        </div>
+
+        <!-- Cauce Studio -->
+        <div class="bg-ocean rounded-sm p-8 lg:p-10">
+          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-5">Cauce Studio</p>
+          <h3 class="text-2xl font-extrabold text-sand mb-1">Diagnóstico + Producción</h3>
+          <p class="text-sm text-sand/45 mb-7">12 – 20 semanas</p>
+          <p class="text-sm text-sand/65 leading-relaxed mb-7">
+            Todo lo de Insight más la producción completa de la intervención:
+            el video, la serie o la campaña que entra en campo.
+          </p>
+          <ul class="text-sm text-sand/60 space-y-2.5 mb-8">
+            {[
+              'Todo lo de Cauce Insight',
+              'Desarrollo de concepto y narrativa',
+              'Diseño de personajes e historia',
+              'Producción audiovisual completa',
+              'Validación con usuarios finales',
+              'Entrega de entregables finales',
+            ].map(item => (
+              <li class="flex gap-3">
+                <span class="text-accent leading-none mt-0.5 flex-shrink-0">·</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-xs text-sand/35 mb-8 leading-relaxed">
+            Para empresas listas para producir una pieza de cambio de comportamiento.
+          </p>
+          <a
+            href="/contacto"
+            class="block text-center bg-sand text-ocean text-sm font-semibold px-6 py-3 rounded-sm hover:bg-cream transition-colors"
+          >
+            Conversemos
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. WHY THIS MATTERS ───────────────────────────────────────── -->
+  <section class="bg-cream border-y border-ink/6 py-20 lg:py-28">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-12">
+        Por qué esto importa
+      </p>
+      <p class="text-6xl lg:text-7xl font-extrabold text-ocean leading-none mb-3">694</p>
+      <p class="text-lg font-semibold text-ocean mb-2">
+        trabajadores murieron en Colombia en 2023
+      </p>
+      <p class="text-sm text-ink/50 mb-3">
+        por causas asociadas al trabajo. La construcción aumentó 47.4% respecto a 2022.
+      </p>
+      <p class="text-[10px] text-ink/30 italic mb-12">
+        Fuente: Consejo Colombiano de Seguridad / Fasecolda, 2023
+      </p>
+      <p class="text-ink/65 leading-relaxed">
+        La mayoría de las muertes por accidentes laborales no ocurren por desconocimiento.
+        Ocurren porque los protocolos de seguridad chocan contra la cultura, los hábitos
+        y las presiones operativas. Eso es lo que diseñamos para cambiar.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── 6. SELECTED WORK STRIP ───────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-12">
+        También hacemos
+      </p>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        {[
+          { name: 'Palmódromo Medellín', desc: 'Juego de narrativa', file: 'palmodromo' },
+          { name: 'Home in Motion', desc: 'Visualización pre-construcción', file: 'home_in_motion' },
+          { name: 'Bacano Go!', desc: 'Web3 para creadores', file: 'bacano_go' },
+          { name: 'Merch / Journey of Objects', desc: 'Diseño de merch', file: 'merch' },
+        ].map(p => (
+          <figure>
+            <!-- PLACEHOLDER: {p.file}.jpg — thumbnail de proyecto -->
+            <div class="bg-ink/8 aspect-square rounded-sm flex items-center justify-center mb-3">
+              <span class="text-[9px] text-ink/25 font-mono text-center px-2">[IMG: {p.file}.jpg]</span>
+            </div>
+            <figcaption>
+              <p class="text-sm font-semibold text-ink">{p.name}</p>
+              <p class="text-xs text-ink/45 mt-0.5">{p.desc}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="mt-10">
+        <a href="/trabajo" class="text-sm font-semibold text-ocean hover:text-accent transition-colors">
+          Ver más trabajo →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 7. TEAM TEASER ───────────────────────────────────────────── -->
+  <section class="bg-white border-y border-ink/6 py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <div class="grid grid-cols-3 gap-5">
+        {[
+          { name: 'Gloria Sánchez', role: 'Futuro', file: 'gloria' },
+          { name: 'Julieta [apellido]', role: 'Comportamiento', file: 'julieta' },
+          { name: 'Miguel Zuluaga', role: 'Creativo', file: 'miguel' },
+        ].map(p => (
+          <figure>
+            <!-- PLACEHOLDER: foto_{p.file}.jpg — retrato fundador/a -->
+            <div class="bg-ink/8 aspect-square rounded-sm flex items-center justify-center mb-2">
+              <span class="text-[8px] text-ink/25 font-mono text-center px-1">{p.file}.jpg</span>
+            </div>
+            <figcaption>
+              <p class="text-xs font-semibold text-ink leading-tight">{p.name}</p>
+              <p class="text-[10px] text-ink/40 mt-0.5">{p.role}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div>
+        <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-5">
+          Somos una empresa familiar
+        </p>
+        <p class="text-ink/65 leading-relaxed mb-7">
+          Estrategia, ciencia y narrativa bajo un mismo techo. Por eso podemos comprometernos
+          con resultados de comportamiento, no solo con entregables creativos.
+        </p>
+        <a href="/equipo" class="text-sm font-semibold text-ocean hover:text-accent transition-colors">
+          Conoce al equipo →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── 8. CLOSING CTA ───────────────────────────────────────────── -->
+  <section class="bg-ocean py-24 lg:py-36 text-center">
+    <div class="max-w-xl mx-auto px-6 lg:px-8">
+      <h2 class="text-3xl lg:text-4xl font-extrabold text-sand leading-tight mb-5">
+        ¿Tu próximo proyecto necesita cambiar comportamientos?
+      </h2>
+      <p class="text-sand/55 text-lg mb-10">
+        Hablemos. La primera conversación es gratuita.
+      </p>
+      <a
+        href="/contacto"
+        class="inline-block bg-sand text-ocean text-sm font-semibold px-8 py-4 rounded-sm hover:bg-cream transition-colors"
+      >
+        Agendar conversación →
+      </a>
+    </div>
+  </section>
+
 </BaseLayout>

@@ -1,11 +1,73 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allPosts = await getCollection('blog', ({ data }) =>
+  data.lang === 'es' && !data.draft
+);
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Insights" lang="es">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Insights — Paso 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">Insights</h1>
-    <p class="text-lg text-ink/70">Notas sobre cambio de comportamiento, futuro empresarial y comunicación creativa.</p>
+<BaseLayout
+  title="Insights"
+  description="Notas sobre cambio de comportamiento, futuro empresarial y comunicación creativa."
+  lang="es"
+  alternateHref="/en/insights"
+>
+
+  <!-- ─── HERO ───────────────────────────────────────────────────── -->
+  <section class="bg-sand py-24 lg:py-28">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">
+        Insights
+      </p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-ocean leading-[1.05] mb-6">
+        Insights
+      </h1>
+      <p class="text-lg text-ink/60 leading-relaxed max-w-2xl">
+        Notas sobre cambio de comportamiento, futuro empresarial y comunicación creativa.
+      </p>
+    </div>
   </section>
+
+  <!-- ─── POST GRID ─────────────────────────────────────────────── -->
+  <section class="bg-white border-y border-ink/6 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      {posts.length > 0 ? (
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map(post => (
+            <article>
+              <!-- PLACEHOLDER: post cover image -->
+              <figure class="bg-ink/8 rounded-sm aspect-video flex items-center justify-center mb-4">
+                <figcaption class="text-[9px] text-ink/25 font-mono px-2 text-center">
+                  [IMG: cover_{post.id}.jpg]
+                </figcaption>
+              </figure>
+              <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-2">
+                {post.data.category}
+              </p>
+              <h2 class="text-lg font-bold text-ocean leading-snug mb-2">
+                <a href={`/insights/${post.id}`} class="hover:text-accent transition-colors">
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="text-xs text-ink/40 mb-2">
+                {post.data.pubDate.toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
+              <p class="text-sm text-ink/60 leading-relaxed">{post.data.description}</p>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <p class="text-ink/40 text-sm mb-4">Próximos artículos en camino.</p>
+          {/* TODO: Migrar posts de Webflow — colocar archivos .md en src/content/blog/ */}
+          <p class="text-[10px] text-ink/25 font-mono">
+            [TODO: migrar posts de Webflow → src/content/blog/*.md]
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+
 </BaseLayout>

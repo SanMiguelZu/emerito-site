@@ -1,11 +1,88 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    name: 'Palmódromo Medellín',
+    desc: 'Juego de narrativa urbana para la Alcaldía de Medellín. Mecánicas de rol, mapas interactivos y personajes basados en la historia real del barrio.',
+    year: '2024',
+    file: 'palmodromo',
+  },
+  {
+    name: 'Home in Motion',
+    desc: 'Visualización espacial pre-construcción para compradores de vivienda. Animación arquitectónica que permite recorrer un apartamento antes de que exista.',
+    year: '2024',
+    file: 'home_in_motion',
+  },
+  {
+    name: 'Bacano Go!',
+    desc: 'Plataforma de monetización Web3 para creadores de contenido independientes. Identidad, motion design y UX para el lanzamiento.',
+    year: '2023',
+    file: 'bacano_go',
+  },
+  {
+    name: 'Merch / Journey of Objects',
+    desc: 'Diseño y producción de merch físico con narrativa integrada. Cada objeto cuenta una historia de origen.',
+    year: '2023',
+    file: 'merch',
+  },
+];
 ---
 
-<BaseLayout title="Trabajo seleccionado" lang="es">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Trabajo — Paso 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">Trabajo seleccionado</h1>
-    <p class="text-lg text-ink/70">Contenido completo en el Paso 3.</p>
+<BaseLayout
+  title="Trabajo seleccionado"
+  description="Otros proyectos de Emerito que demuestran capacidad creativa y técnica. No son casos de cambio de comportamiento — son trabajo."
+  lang="es"
+  alternateHref="/en/work"
+>
+
+  <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
+  <section class="bg-sand py-24 lg:py-28">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">Trabajo</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-ocean leading-[1.05] mb-6">
+        Trabajo seleccionado
+      </h1>
+      <p class="text-ink/60 leading-relaxed max-w-2xl">
+        Otros proyectos que hemos producido. No son casos de cambio de comportamiento;
+        son trabajo que demuestra capacidad creativa y técnica. Para casos completos basados
+        en ciencia del comportamiento, ver{' '}
+        <a href="/casos" class="text-ocean hover:text-accent transition-colors font-medium">Casos de estudio</a>.
+      </p>
+    </div>
   </section>
+
+  <!-- ─── 2. PROJECT GRID ───────────────────────────────────────────── -->
+  <section class="bg-white border-y border-ink/6 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 gap-8 lg:gap-10">
+        {projects.map(p => (
+          <article>
+            <!-- PLACEHOLDER: {p.file}.jpg — thumbnail del proyecto, 800×600px -->
+            <figure class="bg-ink/8 rounded-sm aspect-[4/3] flex items-center justify-center mb-5">
+              <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
+                [{p.file}.jpg · 800 × 600 px]
+              </figcaption>
+            </figure>
+            <p class="text-xs text-ink/35 mb-2">{p.year}</p>
+            <h2 class="text-xl font-bold text-ocean mb-2">{p.name}</h2>
+            <p class="text-sm text-ink/60 leading-relaxed">{p.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CLOSING CTA ──────────────────────────────────────────────── -->
+  <section class="bg-sand py-16 lg:py-20 text-center">
+    <div class="max-w-xl mx-auto px-6 lg:px-8">
+      <p class="text-ink/60 mb-6">
+        ¿Buscás un socio de producción para un proyecto de cambio de comportamiento?
+      </p>
+      <a href="/contacto" class="text-sm font-semibold text-ocean hover:text-accent transition-colors">
+        Hablemos →
+      </a>
+    </div>
+  </section>
+
 </BaseLayout>

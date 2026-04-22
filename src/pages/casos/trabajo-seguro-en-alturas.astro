@@ -2,11 +2,258 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Veterano, no temerario" lang="es">
-  <section class="px-6 py-24 max-w-4xl mx-auto">
-    <p class="text-sm font-semibold text-current uppercase tracking-widest mb-4">Trabajo seguro en alturas — Paso 3</p>
-    <h1 class="text-4xl font-bold text-ocean mb-6">Veterano, no temerario</h1>
-    <p class="text-ink/60 mb-2">Cliente: Airfan · Industria: Mantenimiento industrial · Año: 2025</p>
-    <p class="text-lg text-ink/70">Contenido completo en el Paso 3.</p>
+<BaseLayout
+  title="Veterano, no temerario"
+  description="Caso de estudio: ¿Cómo logramos que técnicos veteranos sigan los protocolos de seguridad cuando la cultura de cuadrilla penaliza la obediencia? Cliente: Airfan."
+  lang="es"
+  alternateHref="/en/case-studies/working-safely-at-heights"
+>
+
+  <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
+  <section class="bg-ocean py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">
+        Trabajo seguro en alturas
+      </p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-sand leading-[1.05] mb-8">
+        Veterano, no temerario
+      </h1>
+      <p class="text-xl text-sand/65 leading-relaxed max-w-2xl mb-8">
+        ¿Cómo logramos que técnicos veteranos sigan los protocolos de seguridad
+        cuando la cultura de cuadrilla penaliza la obediencia?
+      </p>
+      <p class="text-xs text-sand/35">
+        Cliente: Airfan · Industria: Mantenimiento industrial de aire acondicionado · Año: 2025
+      </p>
+      <!-- TODO: Airfan results data — add outcome chip once Airfan provides quantitative metrics -->
+    </div>
   </section>
+
+  <!-- Hero image -->
+  <!-- PLACEHOLDER: airfan_hero.jpg — imagen hero principal, candle row o hand-catch, 1920×900px -->
+  <figure class="bg-ink/10 w-full aspect-[21/9] flex items-center justify-center">
+    <figcaption class="text-xs text-ink/30 font-mono text-center px-6">
+      [IMAGEN HERO: airfan_hero.jpg — fila de velas o toma hand-catch · 1920 × 900 px]
+    </figcaption>
+  </figure>
+
+  <!-- ─── 2. THE PROBLEM ───────────────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        El problema
+      </p>
+      <div class="space-y-6 text-ink/65 leading-relaxed">
+        <p>
+          En Colombia, el trabajo en alturas está regulado por la
+          <strong class="text-ink font-semibold">Resolución 1409 de 2012</strong>, una de las
+          normas de seguridad laboral más exigentes del país. Toda persona que trabaje a más de
+          1,50 metros de altura debe estar certificada y seguir un protocolo específico. El incumplimiento
+          no es solo una infracción: puede ser la diferencia entre vivir y morir.
+        </p>
+        <p>
+          Los datos son contundentes: <strong class="text-ink font-semibold">en 2023, 694 trabajadores
+          murieron en Colombia</strong> por causas asociadas al trabajo. Las caídas en alturas
+          figuran entre las principales causas de muerte laboral en el sector de mantenimiento
+          industrial y construcción, que registró un aumento del 47.4% respecto a 2022.
+        </p>
+        <p>
+          Airfan, empresa líder en mantenimiento de aires acondicionados industriales, conocía
+          estas cifras. Sus técnicos estaban certificados. Los protocolos existían. La empresa
+          invertía en capacitación. Y aun así, en campo, las prácticas seguras seguían siendo
+          inconsistentes — especialmente entre los trabajadores más experimentados.
+        </p>
+        <p class="text-ocean font-semibold text-lg">
+          Airfan no tenía un problema de información. Tenía un problema de cultura.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. THE BEHAVIORAL DIAGNOSIS ─────────────────────────────── -->
+  <section class="bg-white border-y border-ink/6 py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        El diagnóstico
+      </p>
+
+      <h2 class="text-2xl font-extrabold text-ocean mb-8">Lo que encontramos en campo</h2>
+      <div class="space-y-6 text-ink/65 leading-relaxed mb-14">
+        <p>
+          Antes de escribir una sola línea de guión, fuimos a campo. Observamos a los técnicos
+          trabajar. Los entrevistamos — no en la oficina, sino en las azoteas donde operan. Lo que
+          encontramos explicaba todo.
+        </p>
+        <p>
+          Los técnicos veteranos — los que llevan 10, 15, 20 años sin caerse — habían desarrollado
+          una certeza profunda: <em class="text-ink">"Yo sé lo que hago. Me conozco. Conozco estas
+          alturas."</em> Es lo que los psicólogos llaman sesgo de supervivencia: el historial de
+          éxito se convierte en evidencia de que las precauciones son para otros, para los inexpertos,
+          para los que no saben.
+        </p>
+        <p>
+          Pero había algo más. En la dinámica de cuadrilla, seguir el protocolo al pie de la letra
+          tenía un costo social visible: eras "el lento", "el que hace todo el proceso", el que frena
+          al grupo. El trabajador rápido — el que "sabe cómo hacerlo sin el arnés completo" — era
+          admirado, no sancionado. La cultura del grupo penalizaba la obediencia.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-extrabold text-ocean mb-8">Qué dice COM-B</h2>
+      <div class="bg-cream rounded-sm p-6 lg:p-8 mb-8">
+        <p class="text-xs font-semibold tracking-widest uppercase text-ink/40 mb-4">
+          Marco COM-B: Capability · Opportunity · Motivation → Behavior
+        </p>
+        <div class="grid sm:grid-cols-3 gap-6 text-sm">
+          <div>
+            <p class="font-bold text-ocean mb-2">Capability ✓</p>
+            <p class="text-ink/60 leading-relaxed">
+              Los técnicos <em>saben</em> cómo hacer el protocolo. No hay déficit de conocimiento.
+              La capacitación había funcionado en ese nivel.
+            </p>
+          </div>
+          <div>
+            <p class="font-bold text-ocean mb-2">Opportunity ✗</p>
+            <p class="text-ink/60 leading-relaxed">
+              El entorno social (<em>social opportunity</em>) penalizaba el cumplimiento.
+              La norma del grupo era la rapidez, no la seguridad.
+            </p>
+          </div>
+          <div>
+            <p class="font-bold text-ocean mb-2">Motivation ✗</p>
+            <p class="text-ink/60 leading-relaxed">
+              La motivación automática (<em>automatic motivation</em>) reforzaba el atajo.
+              El protocolo requería esfuerzo consciente; el hábito no.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="text-ocean font-semibold">
+        La intervención no podía ser un video que enseñara los pasos. Tenía que ser un video
+        que cambiara cómo el grupo ve a quien los sigue.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── 4. THE INTERVENTION ──────────────────────────────────────── -->
+  <section class="bg-sand py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+        La intervención
+      </p>
+      <h2 class="text-2xl font-extrabold text-ocean mb-8">Imprudencio</h2>
+      <div class="space-y-6 text-ink/65 leading-relaxed mb-14">
+        <p>
+          El personaje central es <strong class="text-ink font-semibold">Imprudencio</strong>: un
+          técnico veterano en sus cincuenta. El nombre no es un apellido — es un señalador narrativo.
+          Estamos en territorio de fábula, no de realismo documental. Eso importa: la fábula nos
+          permite hablar de un tema tabú — la muerte de un compañero — sin la pesadez del
+          documental ni la distancia del informe.
+        </p>
+        <p>
+          La historia: Imprudencio está en una azotea cuando una maniobra rutinaria sale mal.
+          En el instante antes del accidente, aparece frente a él una versión más joven de
+          sí mismo — él a los 25 años, cuando empezaba. Luego otra. Y otra. A lo largo de los
+          techos de Medellín, Imprudencio se encuentra con 22 versiones anteriores de sí mismo.
+          Cada una representa un año en que tomó ese mismo atajo y sobrevivió. Sesgo de
+          supervivencia, personificado.
+        </p>
+        <p>
+          El clímax: una fila de 23 velas encendiéndose una a una — cada una representando a
+          una versión que llegó hasta aquí. Luego, una por una, se apagan. Hasta que queda una
+          sola, temblando. El video nunca muestra un impacto, una caída, una víctima. No lo
+          necesita. La emoción está en lo que no se muestra.
+        </p>
+        <p>
+          La línea final del film: <em class="text-ocean font-semibold">"El más experimentado no es
+          el que necesita menos pasos. Es el que ya los hace sin pensarlo."</em> Esta frase
+          es la operación central del video: redefine qué significa ser un veterano. Seguir el
+          protocolo ya no es señal de inexperto — es la marca del maestro. El giro de norma social
+          que el diagnóstico COM-B identificó como necesario.
+        </p>
+      </div>
+
+      <!-- Video / Storyboard placeholder -->
+      <!-- PLACEHOLDER: video_imprudencio.mp4 — video terminado, o storyboard_strip.jpg — 6 paneles del storyboard -->
+      <figure class="bg-ink/8 rounded-sm aspect-video flex items-center justify-center">
+        <figcaption class="text-xs text-ink/30 font-mono text-center px-6 leading-relaxed">
+          [VIDEO: video_imprudencio.mp4 — cuando esté listo]<br/>
+          [o IMAGEN: storyboard_strip.jpg — tira de 6 paneles del storyboard de Imprudencio]
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ─── 5. THE RESULTS ───────────────────────────────────────────── -->
+  <section class="bg-ocean py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-sand/35 mb-10">
+        Los resultados
+      </p>
+      <!-- TODO: Airfan results data — replace this section once Airfan provides metrics:
+           - Views / alcance
+           - Recall scores
+           - Observación conductual pre/post
+           - Cambio en tasa de incidentes
+           Si no hay datos cuantitativos, usar: testimonial del contacto en Airfan + notas de campo -->
+      <div class="bg-sand/8 rounded-sm p-8 lg:p-10">
+        <p class="text-sand/60 text-sm leading-relaxed italic mb-6">
+          Medición en curso. El video se produjo en 2025; la validación de comportamiento
+          post-implementación está en proceso con Airfan.
+        </p>
+        <p class="text-sand/45 text-xs">
+          Actualizaremos esta sección cuando tengamos datos de campo. Publicar métricas
+          sin validación sería exactamente el tipo de comunicación que Cauce™ no hace.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 6. CREDITS ───────────────────────────────────────────────── -->
+  <section class="bg-sand py-16 lg:py-20 border-b border-ink/8">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-8">
+        Créditos
+      </p>
+      <dl class="grid sm:grid-cols-2 gap-x-10 gap-y-4 text-sm">
+        <div>
+          <dt class="text-xs text-ink/40 mb-0.5">Estrategia y Prospectiva</dt>
+          <dd class="font-semibold text-ink">Gloria Sánchez</dd>
+        </div>
+        <div>
+          <dt class="text-xs text-ink/40 mb-0.5">Diagnóstico Conductual</dt>
+          <dd class="font-semibold text-ink">Julieta [apellido]</dd>
+        </div>
+        <div>
+          <dt class="text-xs text-ink/40 mb-0.5">Dirección Creativa y Producción</dt>
+          <dd class="font-semibold text-ink">Miguel Zuluaga</dd>
+        </div>
+        <div>
+          <dt class="text-xs text-ink/40 mb-0.5">Cliente</dt>
+          <dd class="font-semibold text-ink">Equipo Airfan</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-xs text-ink/40 mb-0.5">Herramientas y métodos</dt>
+          <dd class="text-ink/65">Marco COM-B · Observación de campo · Google Nano Banana (storyboard)</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ─── 7. CLOSING CTA ───────────────────────────────────────────── -->
+  <section class="bg-ocean py-24 lg:py-32 text-center">
+    <div class="max-w-xl mx-auto px-6 lg:px-8">
+      <h2 class="text-2xl lg:text-3xl font-extrabold text-sand leading-tight mb-5">
+        ¿Tenés un problema de comportamiento que la comunicación tradicional no resuelve?
+      </h2>
+      <p class="text-sand/55 mb-10">Hablemos.</p>
+      <a
+        href="/contacto"
+        class="inline-block bg-sand text-ocean text-sm font-semibold px-8 py-4 rounded-sm hover:bg-cream transition-colors"
+      >
+        Agendar conversación →
+      </a>
+    </div>
+  </section>
+
 </BaseLayout>
