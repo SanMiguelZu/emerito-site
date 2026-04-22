@@ -156,4 +156,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 </BaseLayout>
 
-<!-- Step 4: wire submit handler here — see src/pages/api/contact.ts -->
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const successBox = document.getElementById('form-success');
+  const errorBox = document.getElementById('form-error');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form || !submitBtn) return;
+
+    errorBox?.classList.add('hidden');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const data = await res.json() as { ok?: boolean; error?: string };
+
+      if (data.ok) {
+        form.classList.add('hidden');
+        successBox?.classList.remove('hidden');
+      } else {
+        if (errorBox) {
+          errorBox.textContent = data.error ?? 'Algo salió mal. Intentá de nuevo.';
+          errorBox.classList.remove('hidden');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar';
+      }
+    } catch {
+      if (errorBox) {
+        errorBox.textContent = 'Error de conexión. Intentá de nuevo.';
+        errorBox.classList.remove('hidden');
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar';
+    }
+  });
+</script>
