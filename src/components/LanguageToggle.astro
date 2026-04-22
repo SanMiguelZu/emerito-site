@@ -1,0 +1,12 @@
+---
+// LanguageToggle — built in Step 2
+// Swaps between the equivalent page in the other locale
+interface Props {
+  lang: 'es' | 'en';
+  alternateHref: string;
+}
+const { lang, alternateHref } = Astro.props;
+---
+
+<!-- TODO Step 2: ES/EN toggle -->
+<a href={alternateHref}>{lang === 'es' ? 'EN' : 'ES'}</a>

@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-ocean: #0A3D62;
+  --color-current: #3C9DC8;
+  --color-sand: #F5F1E8;
+  --color-ink: #1A1A1A;
+  --color-cream: #FFF7E6;
+
+  /* Typography */
+  --font-sans: "Inter", "General Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    color: var(--color-ink);
+    background-color: var(--color-sand);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}

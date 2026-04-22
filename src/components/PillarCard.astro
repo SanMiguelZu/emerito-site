@@ -1,0 +1,20 @@
+---
+// PillarCard — built in Step 3
+interface Props {
+  name: string;
+  role: string;
+  description: string;
+  person: string;
+  href: string;
+}
+const { name, role, description, person, href } = Astro.props;
+---
+
+<!-- TODO Step 3: full pillar card layout -->
+<div>
+  <h3>{name}</h3>
+  <p>{role}</p>
+  <p>{description}</p>
+  <p>{person}</p>
+  <a href={href}>Ver metodología</a>
+</div>

@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'es' | 'en';
+}
+
+const { title, description = 'Emerito — Comunicación que cambia comportamientos.', lang = 'es' } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} — Emerito</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Nav placeholder: Step 2 -->
+    <header class="bg-ocean text-white px-6 py-4 flex items-center justify-between">
+      <a href={lang === 'en' ? '/en' : '/'} class="font-bold text-lg tracking-tight">Emerito</a>
+      <nav class="text-sm opacity-80">Nav — Step 2</nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer placeholder: Step 2 -->
+    <footer class="bg-ocean text-white px-6 py-10 text-sm opacity-80 text-center">
+      © Emerito 2026 · Hecho en Medellín — Footer: Step 2
+    </footer>
+  </body>
+</html>

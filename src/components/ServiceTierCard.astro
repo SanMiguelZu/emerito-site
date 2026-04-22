@@ -1,0 +1,23 @@
+---
+// ServiceTierCard — built in Step 3
+interface Props {
+  name: string;
+  duration: string;
+  description: string;
+  includes: string[];
+  forWhom: string;
+  ctaLabel: string;
+  ctaHref: string;
+}
+const { name, duration, description, includes, forWhom, ctaLabel, ctaHref } = Astro.props;
+---
+
+<!-- TODO Step 3: full service tier card layout -->
+<div>
+  <h3>{name}</h3>
+  <p>{duration}</p>
+  <p>{description}</p>
+  <ul>{includes.map(item => <li>{item}</li>)}</ul>
+  <p>{forWhom}</p>
+  <a href={ctaHref}>{ctaLabel}</a>
+</div>

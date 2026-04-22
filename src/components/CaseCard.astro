@@ -1,0 +1,23 @@
+---
+// CaseCard — built in Step 3
+interface Props {
+  title: string;
+  eyebrow: string;
+  question: string;
+  client: string;
+  year: number;
+  href: string;
+  imageSrc?: string;
+}
+const { title, eyebrow, question, client, year, href, imageSrc } = Astro.props;
+---
+
+<!-- TODO Step 3: full case card layout -->
+<article>
+  <a href={href}>
+    <p>{eyebrow}</p>
+    <h2>{title}</h2>
+    <p>{question}</p>
+    <p>{client} · {year}</p>
+  </a>
+</article>
