@@ -8,6 +8,8 @@ interface Props {
   description?: string;
   lang?: 'es' | 'en';
   alternateHref?: string;
+  ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -15,9 +17,21 @@ const {
   description = 'Emerito — Comunicación que cambia comportamientos.',
   lang = 'es',
   alternateHref,
+  ogImage = '/og-default.png',
+  noindex = false,
 } = Astro.props;
 
+const siteUrl = 'https://emerito.co';
 const currentPath = Astro.url.pathname;
+const canonicalUrl = new URL(currentPath, siteUrl).href;
+const alternateUrl = alternateHref ? new URL(alternateHref, siteUrl).href : null;
+const alternateLang = lang === 'es' ? 'en' : 'es';
+// x-default always points to the Spanish (root) version
+const xDefaultUrl = lang === 'es' ? canonicalUrl : (alternateUrl ?? canonicalUrl);
+const ogImageUrl = new URL(ogImage, siteUrl).href;
+const ogLocale = lang === 'es' ? 'es_CO' : 'en_US';
+const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_CO';
+const pageTitle = `${title} — Emerito`;
 ---
 
 <!doctype html>
@@ -27,14 +41,40 @@ const currentPath = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang={lang} href={canonicalUrl} />
+    {alternateUrl && <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />}
+    <link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={ogLocale} />
+    {alternateUrl && <meta property="og:locale:alternate" content={ogLocaleAlt} />}
+    <meta property="og:site_name" content="Emerito" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} — Emerito</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>{pageTitle}</title>
   </head>
   <body class="min-h-screen flex flex-col bg-sand">
     <Nav lang={lang} currentPath={currentPath} alternateHref={alternateHref} />
