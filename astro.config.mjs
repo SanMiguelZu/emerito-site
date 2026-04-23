@@ -24,5 +24,8 @@ export default defineConfig({
   },
 
   integrations: [mdx(), sitemap()],
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'passthrough',
+    platformProxy: { enabled: true },
+  }),
 });

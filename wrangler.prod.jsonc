@@ -1,0 +1,17 @@
+// Production deployment config — used by GitHub Actions (wrangler deploy --config wrangler.prod.jsonc).
+// Do NOT use for local dev; wrangler.jsonc handles that.
+{
+  "name": "emerito-site",
+  "compatibility_date": "2026-04-22",
+  "main": "dist/server/entry.mjs",
+  "assets": {
+    "directory": "dist/client",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "CONTACT_EMAIL": "michael@emerito.co"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

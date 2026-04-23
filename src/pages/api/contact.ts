@@ -10,7 +10,7 @@ const TYPE_LABELS: Record<string, string> = {
   other: 'Otro',
 };
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   const json = (data: object, status = 200) =>
     new Response(JSON.stringify(data), {
       status,
@@ -26,7 +26,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   // Honeypot — bots fill this; real users never see it
   if (body.get('website')) {
-    return json({ ok: true }); // Silent success to confuse bots
+    return json({ ok: true });
   }
 
   const nombre = (body.get('nombre') as string | null)?.trim() ?? '';
@@ -44,11 +44,14 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ error: 'El email no es válido.' }, 422);
   }
 
-  const apiKey = import.meta.env.RESEND_API_KEY;
-  const contactEmail = import.meta.env.CONTACT_EMAIL ?? 'michael@emerito.co';
+  // In production (Cloudflare Workers), secrets live in locals.runtime.env.
+  // In local dev, they fall back to Vite's import.meta.env (loaded from .env).
+  const runtimeEnv = (locals as { runtime?: { env?: Record<string, string> } }).runtime?.env;
+  const apiKey = runtimeEnv?.RESEND_API_KEY ?? import.meta.env.RESEND_API_KEY;
+  const contactEmail = runtimeEnv?.CONTACT_EMAIL ?? import.meta.env.CONTACT_EMAIL ?? 'michael@emerito.co';
 
   if (!apiKey) {
-    console.error('RESEND_API_KEY not set');
+    console.error('RESEND_API_KEY not configured');
     return json({ error: 'Error de configuración. Escribinos directamente a michael@emerito.co' }, 500);
   }
 
