@@ -30,11 +30,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </section>
 
   <!-- Hero image -->
-  <!-- PLACEHOLDER: airfan_hero.jpg — imagen hero principal, candle row o hand-catch, 1920×900px -->
-  <figure class="bg-ink/10 w-full aspect-[21/9] flex items-center justify-center">
-    <figcaption class="text-xs text-ink/30 font-mono text-center px-6">
-      [IMAGEN HERO: airfan_hero.jpg — fila de velas o toma hand-catch · 1920 × 900 px]
-    </figcaption>
+  <figure class="w-full overflow-hidden max-h-[520px]">
+    <img
+      src="/images/Trabajo_Seguro_En_Alturas/EquipoCambiandose.png"
+      alt="El equipo de Airfan preparándose antes de una jornada de trabajo en alturas"
+      class="w-full object-cover object-center"
+    />
   </figure>
 
   <!-- ─── 2. THE PROBLEM ───────────────────────────────────────────── -->
@@ -141,40 +142,88 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
         La intervención
       </p>
-      <h2 class="text-2xl font-extrabold text-ocean mb-8">Imprudencio</h2>
-      <div class="space-y-6 text-ink/65 leading-relaxed mb-14">
-        <p>
-          El personaje central es <strong class="text-ink font-semibold">Imprudencio</strong>: un
-          técnico veterano en sus cincuenta. El nombre no es un apellido — es un señalador narrativo.
-          Estamos en territorio de fábula, no de realismo documental. Eso importa: la fábula nos
-          permite hablar de un tema tabú — la muerte de un compañero — sin la pesadez del
-          documental ni la distancia del informe.
+
+      <div class="grid sm:grid-cols-2 gap-10 items-start mb-14">
+        <div>
+          <h2 class="text-2xl font-extrabold text-ocean mb-8">Imprudencio</h2>
+          <div class="space-y-6 text-ink/65 leading-relaxed">
+            <p>
+              El personaje central es <strong class="text-ink font-semibold">Imprudencio</strong>: un
+              técnico veterano en sus cincuenta. El nombre no es un apellido — es un señalador narrativo.
+              Estamos en territorio de fábula, no de realismo documental. Eso importa: la fábula nos
+              permite hablar de un tema tabú — la muerte de un compañero — sin la pesadez del
+              documental ni la distancia del informe.
+            </p>
+            <p>
+              La historia: Imprudencio está en una azotea cuando una maniobra rutinaria sale mal.
+              En el instante antes del accidente, aparece frente a él una versión más joven de
+              sí mismo — él a los 25 años, cuando empezaba. Luego otra. Y otra. A lo largo de los
+              techos de Medellín, Imprudencio se encuentra con 22 versiones anteriores de sí mismo.
+              Cada una representa un año en que tomó ese mismo atajo y sobrevivió. Sesgo de
+              supervivencia, personificado.
+            </p>
+            <p>
+              El clímax: una fila de 23 velas encendiéndose una a una — cada una representando a
+              una versión que llegó hasta aquí. Luego, una por una, se apagan. Hasta que queda una
+              sola, temblando. El video nunca muestra un impacto, una caída, una víctima. No lo
+              necesita. La emoción está en lo que no se muestra.
+            </p>
+            <p>
+              La línea final del film: <em class="text-ocean font-semibold">"El más experimentado no es
+              el que necesita menos pasos. Es el que ya los hace sin pensarlo."</em> Esta frase
+              es la operación central del video: redefine qué significa ser un veterano. Seguir el
+              protocolo ya no es señal de inexperto — es la marca del maestro. El giro de norma social
+              que el diagnóstico COM-B identificó como necesario.
+            </p>
+          </div>
+        </div>
+
+        <figure class="sticky top-8">
+          <img
+            src="/images/Trabajo_Seguro_En_Alturas/Imprudencio.png"
+            alt="Imprudencio — personaje principal de la campaña Trabajo Seguro en Alturas de Airfan"
+            class="w-full max-w-xs mx-auto"
+          />
+          <figcaption class="text-[10px] text-ink/35 text-center mt-3 font-mono tracking-wide uppercase">
+            Imprudencio · Personaje principal
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Supporting cast -->
+      <div class="border-t border-ink/8 pt-12 mb-14">
+        <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-8">
+          Elenco de personajes
         </p>
-        <p>
-          La historia: Imprudencio está en una azotea cuando una maniobra rutinaria sale mal.
-          En el instante antes del accidente, aparece frente a él una versión más joven de
-          sí mismo — él a los 25 años, cuando empezaba. Luego otra. Y otra. A lo largo de los
-          techos de Medellín, Imprudencio se encuentra con 22 versiones anteriores de sí mismo.
-          Cada una representa un año en que tomó ese mismo atajo y sobrevivió. Sesgo de
-          supervivencia, personificado.
-        </p>
-        <p>
-          El clímax: una fila de 23 velas encendiéndose una a una — cada una representando a
-          una versión que llegó hasta aquí. Luego, una por una, se apagan. Hasta que queda una
-          sola, temblando. El video nunca muestra un impacto, una caída, una víctima. No lo
-          necesita. La emoción está en lo que no se muestra.
-        </p>
-        <p>
-          La línea final del film: <em class="text-ocean font-semibold">"El más experimentado no es
-          el que necesita menos pasos. Es el que ya los hace sin pensarlo."</em> Esta frase
-          es la operación central del video: redefine qué significa ser un veterano. Seguir el
-          protocolo ya no es señal de inexperto — es la marca del maestro. El giro de norma social
-          que el diagnóstico COM-B identificó como necesario.
-        </p>
+        <div class="grid grid-cols-3 gap-6">
+          <figure class="text-center">
+            <img
+              src="/images/Trabajo_Seguro_En_Alturas/Cesar.png"
+              alt="Cesar — personaje de la campaña Airfan"
+              class="w-full max-w-[160px] mx-auto"
+            />
+            <figcaption class="text-xs text-ink/45 mt-2 font-semibold">Cesar</figcaption>
+          </figure>
+          <figure class="text-center">
+            <img
+              src="/images/Trabajo_Seguro_En_Alturas/Franklin.png"
+              alt="Franklin — personaje de la campaña Airfan"
+              class="w-full max-w-[160px] mx-auto"
+            />
+            <figcaption class="text-xs text-ink/45 mt-2 font-semibold">Franklin</figcaption>
+          </figure>
+          <figure class="text-center">
+            <img
+              src="/images/Trabajo_Seguro_En_Alturas/Luisa.png"
+              alt="Luisa — personaje de la campaña Airfan"
+              class="w-full max-w-[160px] mx-auto"
+            />
+            <figcaption class="text-xs text-ink/45 mt-2 font-semibold">Luisa</figcaption>
+          </figure>
+        </div>
       </div>
 
       <!-- Video / Storyboard placeholder -->
-      <!-- PLACEHOLDER: video_imprudencio.mp4 — video terminado, o storyboard_strip.jpg — 6 paneles del storyboard -->
       <figure class="bg-ink/8 rounded-sm aspect-video flex items-center justify-center">
         <figcaption class="text-xs text-ink/30 font-mono text-center px-6 leading-relaxed">
           [VIDEO: video_imprudencio.mp4 — cuando esté listo]<br/>

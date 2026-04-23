@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#0A3D62"/>
-  <text x="16" y="22.5" font-family="Inter, system-ui, sans-serif" font-size="19" font-weight="800" text-anchor="middle" fill="#F5F1E8">E</text>
+  <!-- Fruit body (black outer ring) -->
+  <circle cx="16" cy="19" r="12.5" fill="#111111"/>
+  <!-- Orange interior (slightly off-center for the organic look) -->
+  <circle cx="15" cy="19.5" r="9" fill="#F5820A"/>
+  <!-- Leaf left — curves upward -->
+  <path d="M15.5 8.5 C13.5 5 15 2 17 3 C16.5 5 15.5 8.5 15.5 8.5Z" fill="#111111"/>
+  <!-- Leaf right — angles out -->
+  <path d="M18.5 7.5 C21 4 25 6 23.5 9.5 C21.5 9 18.5 7.5 18.5 7.5Z" fill="#111111"/>
 </svg>
