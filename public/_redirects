@@ -1,0 +1,11 @@
+# Legacy URL redirects (old domain/CMS -> new Astro site)
+# 301 permanent redirects preserve SEO equity from the old pages.
+
+/portfolio                              /trabajo         301
+/contact                                /                 301
+/blog-emerito-creative-agency           /insights         301
+/cauce                                  /metodologia      301
+
+/works/palmodromo-medellin              /trabajo/palmodromo-medellin    301
+/works/gro-op                           /trabajo/home-in-motion         301
+/works/zero-risk-zone                   /trabajo/zero-risk-zone         301
