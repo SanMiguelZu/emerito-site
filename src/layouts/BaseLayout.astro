@@ -22,9 +22,10 @@ const {
 } = Astro.props;
 
 const siteUrl = 'https://emerito.co';
+const withTrailingSlash = (path: string) => (path.endsWith('/') ? path : `${path}/`);
 const currentPath = Astro.url.pathname;
 const canonicalUrl = new URL(currentPath, siteUrl).href;
-const alternateUrl = alternateHref ? new URL(alternateHref, siteUrl).href : null;
+const alternateUrl = alternateHref ? new URL(withTrailingSlash(alternateHref), siteUrl).href : null;
 const alternateLang = lang === 'es' ? 'en' : 'es';
 // x-default always points to the Spanish (root) version
 const xDefaultUrl = lang === 'es' ? canonicalUrl : (alternateUrl ?? canonicalUrl);
