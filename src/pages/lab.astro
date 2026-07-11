@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// El Lab: experimentos rápidos de creación de contenido. Un día o menos, publicados a la vista.
+// Agrega nuevas entradas ARRIBA de este arreglo. Sé honesto: solo experimentos reales y terminados.
+const experiments = [
+  {
+    no: '001',
+    title: 'Tela en movimiento',
+    tags: 'Simulación de tela · Blender',
+    desc: 'Simulación de prendas sobre un ciclo de caminado: piezas vivas y fluidas inspiradas en una colección de diseño de vestuario, probadas para caída, rebote y actitud. La pregunta detrás: ¿puede la tela simulada moverse como si fuera dueña de la pasarela? ¿Y qué pasa cuando la modelo hace breakdance?',
+    media: [
+      { type: 'video', src: '/images/LAB/CatWalk_V020001-0109.mp4', caption: 'Pasarela' },
+      { type: 'video', src: '/images/LAB/Render_HipHop_V010001-0069.mp4', caption: 'Prueba de estrés' },
+    ],
+  },
+] as const;
+
+// Ideas en cola para futuros experimentos. Se muestran como intenciones, nunca como trabajo terminado.
+const upNext = [
+  'Logo 3D interactivo: partículas que puedes empujar con el cursor',
+  'Video con IA: reestilizar un interior real sin artefactos',
+  'Juguetes de código: pequeños experimentos en el navegador con los personajes de Emerito',
+] as const;
+---
+
+<BaseLayout
+  title="El Lab: experimentos rápidos de creación de contenido"
+  description="El laboratorio de Emerito para experimentos rápidos de creación de contenido: probamos técnicas de 3D, IA, simulación y código creativo para validar su viabilidad y desarrollar nuevas formas de crear contenido."
+  lang="es"
+  alternateHref="/en/lab"
+>
+  <div class="pop-root relative w-full overflow-hidden">
+
+    <!-- ══ HEADER ══ -->
+    <section class="bg-cream pt-20 pb-14 px-6 lg:px-[46px] border-b-[3px] border-blue-black">
+      <div class="max-w-7xl mx-auto">
+        <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">El Lab</p>
+        <h1 class="font-display font-medium text-[clamp(40px,5.6vw,84px)] leading-[0.9] tracking-[-0.025em] text-blue-black mb-6">
+          Experimentos rápidos de <em class="italic text-orange">creación de contenido.</em>
+        </h1>
+        <p class="text-lg leading-[1.6] text-blue-black/70 max-w-[620px]">
+          Distintas técnicas, 3D, IA, simulación, código creativo, probadas para validar qué
+          es viable y desarrollar nuevas formas de crear contenido. Un día o menos por
+          experimento, publicado tal cual. Algunos serán hermosos, otros estarán rotos. Ese es el punto.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ EXPERIMENTOS ══ -->
+    <section class="bg-cream py-[80px] px-6 lg:px-[46px]">
+      <div class="max-w-7xl mx-auto flex flex-col gap-[90px]">
+        {experiments.map((e) => (
+          <article>
+            <div class="reveal flex items-baseline gap-5 flex-wrap mb-3">
+              <span class="pop-badge text-xs px-3 py-1 bg-blue-black text-cream">EXP {e.no}</span>
+              <span class="font-mono text-[11px] font-bold tracking-[0.08em] uppercase text-blue-black/50">{e.tags}</span>
+            </div>
+            <h2 class="reveal font-display font-medium text-[clamp(28px,3.6vw,46px)] leading-[1] text-blue-black mb-4">{e.title}</h2>
+            <p class="reveal text-[16px] leading-[1.6] text-blue-black/75 max-w-[620px] mb-8">{e.desc}</p>
+            <div class="reveal grid sm:grid-cols-2 gap-5">
+              {e.media.map((m) => (
+                <figure class="pop-card pop-tile pop-border pop-shadow-md m-0 rounded-[20px] overflow-hidden bg-ocean relative">
+                  {m.type === 'video' ? (
+                    <video src={m.src} autoplay muted loop playsinline class="w-full aspect-video object-cover"></video>
+                  ) : (
+                    <img src={m.src} alt="" class="w-full aspect-video object-cover" loading="lazy" />
+                  )}
+                  <span class="font-mono absolute bottom-3 left-3.5 text-[10px] font-bold tracking-[0.08em] uppercase text-cream/80 bg-blue-black/60 rounded-full px-2.5 py-1">{m.caption}</span>
+                </figure>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ══ PRÓXIMAMENTE ══ -->
+    <section class="bg-blue-black py-[70px] px-6 lg:px-[46px] border-y-[3px] border-blue-black">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="reveal font-display font-medium text-[clamp(26px,3.4vw,44px)] leading-[1] text-cream mb-8">
+          Lo que <em class="italic text-orange">viene.</em>
+        </h2>
+        <div class="reveal grid md:grid-cols-3 gap-5">
+          {upNext.map((idea, i) => (
+            <div class="pop-border rounded-[20px] p-[22px_20px] bg-skill-blue text-cream">
+              <span class="pop-badge self-start text-xs px-2.5 py-1 bg-orange text-blue-black">{String(experiments.length + i + 1).padStart(3, '0')}</span>
+              <p class="text-[14.5px] leading-[1.5] mt-4 opacity-90">{idea}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="bg-orange py-[80px] px-6 lg:px-[46px] text-center">
+      <div class="max-w-[640px] mx-auto">
+        <h2 class="font-display font-medium text-[clamp(30px,4.2vw,54px)] leading-[0.98] text-blue-black mb-4">
+          ¿Tienes un reto <em class="italic">para nosotros?</em>
+        </h2>
+        <p class="text-[16px] leading-[1.6] text-blue-black/75 mb-8">
+          Si se puede hacer en un día, queremos intentarlo.
+        </p>
+        <a
+          href="/#contacto"
+          data-cursor="cta"
+          class="pop-btn pop-border inline-block bg-blue-black text-cream text-[16px] font-extrabold px-8 py-4 rounded-full"
+          style="box-shadow: 7px 7px 0 #FFF6E4;"
+        >
+          Envíalo →
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

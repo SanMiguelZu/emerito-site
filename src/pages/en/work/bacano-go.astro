@@ -1,0 +1,65 @@
+---
+import ProjectLayout from '../../../components/ProjectLayout.astro';
+// NOTE: Bacano Go! is an independent brand. Emerito does NOT own this project.
+// This page is a portfolio credit: Emerito helped with animation, social media
+// strategy, and distribution. All copy must reflect that relationship.
+---
+
+<ProjectLayout
+  alternateHref="/trabajo/bacano-go"
+  title="Bacano Go!"
+  titleImage={{ src: '/images/Bacano Go/BacanoPNG.png', alt: 'Bacano Go!' }}
+  label="Digital collectibles · Portfolio credit"
+  description="The dances of the Carnaval de Barranquilla's authentic groups, captured with motion capture and preserved as digital collectibles. Colombian culture, exported with professional 3D animation."
+  intro="<strong>Bacano Go!</strong> captured the dances of the Carnaval de Barranquilla's authentic groups and turned them into digital collectibles: the Carnaval de Barranquilla, a <strong>UNESCO-listed</strong> celebration, preserved and exported to the world with professional 3D animation using Motion Capture. <em>Bacano Go! is an independent brand. We helped them with the animation, social media strategy, and distribution.</em>"
+  hero={{ type: 'video', src: '/images/Bacano Go/Carnaval_Icons_Web.mp4' }}
+  sections={[
+    {
+      text: 'It got serious the day the team sat down with the leaders of the main comparsas. <strong>Image-licensing agreements</strong> were worked out with each group, and only then did the design begin: <strong>Cumbiamba el Tanganazo, Cipote Garabato, Las Puloy de Montecristo, To’ Monocuco, Las Marimondas de Barrio Abajo, El Mohicano Dorado</strong>. Respect first, design second.',
+      media: [
+        { type: 'img', src: '/images/Bacano Go/Carnaval_Banner_HomePage.webp', alt: 'Bacano Go! carnival characters banner', caption: 'The carnival collection' },
+      ],
+    },
+    {
+      text: 'To make them dance like the real thing, the animations were built with <strong>motion capture</strong>, recording the original carnival dances in high fidelity and transferring every step to the characters. No canned animations: the cumbia moves like cumbia.',
+      media: [
+        { type: 'video', src: '/images/Bacano Go/Mocap_Web.mp4', caption: 'Motion capture session' },
+      ],
+    },
+    {
+      layout: 'stacked',
+      text: 'NFT collectibles of the original carnival dances from the authentic parade groups, staged in scenarios built from the carnival’s own parades: <strong>La Guacherna, the Carnaval de los Niños, the Batalla de Flores</strong>. Each one a little piece of the party you can keep. <strong>Smart contracts split every sale automatically</strong> between the carnival group representatives and the creators.',
+      media: [
+        { type: 'video', src: '/images/Bacano Go/Puloy_Loop.mp4', caption: 'Puloy', portrait: true },
+        { type: 'video', src: '/images/Bacano Go/Marimonda_Loop.mp4', caption: 'Marimonda', portrait: true },
+        { type: 'video', src: '/images/Bacano Go/Cumbiamberos_Loop.mp4', caption: 'Cumbiamberos', portrait: true },
+      ],
+    },
+    {
+      layout: 'carousel',
+      text: 'Then came the least digital part: taking it to the carnival. Free <strong>trading cards</strong> as gifts, banners, flyers, and BTL everywhere. A giant Marimonda mascot working the streets all day, a deal with <strong>La Mega</strong> radio, and a Jeep full of characters touring Barranquilla. "Lots of fun" falls short.',
+      media: [
+        { type: 'img', src: '/images/Bacano Go/ManiLaMegaJeepeta_Web.webp', alt: 'Maní the Marimonda mascot riding the Jeep with La Mega', caption: 'La Mega Jeep' },
+        { type: 'img', src: '/images/Bacano Go/ManiLaMegaStudio_Web.jpg', alt: 'Maní the Marimonda mascot at the La Mega studio', caption: 'La Mega Studio', portrait: true },
+        { type: 'img', src: '/images/Bacano Go/GarabatoCarnival.jpg', alt: 'Garabato at the carnival', caption: 'Garabato in the streets' },
+        { type: 'video', src: '/images/Bacano Go/Twitter_Reel_Web.mp4', caption: 'The campaign' },
+        { type: 'img', src: '/images/Bacano Go/PuloyParade.jpeg', alt: 'Puloys at the parade in Barranquilla', caption: 'The parade' },
+        { type: 'img', src: '/images/Bacano Go/AllPuloysCar.jpeg', alt: 'The Puloys with the car in Barranquilla', caption: 'Puloys on wheels' },
+      ],
+    },
+    {
+      text: 'During the carnival, <strong>LINE NEXT</strong> brought the project to its global NFT platform <strong>DOSI</strong>: a limited edition of 300,000 Marimonda-themed DOSI Citizen NFTs given to new users around the world, introducing the Carnaval de Barranquilla to a global audience. <a href="https://www.linecorp.com/pr/news/global/2023/120" target="_blank" rel="noopener" class="font-bold underline">Read LINE’s announcement →</a>',
+      media: [
+        { type: 'video', src: '/images/Bacano Go/DosiBGO.mp4', caption: 'DOSI × Bacano Go!', portrait: true },
+      ],
+    },
+    {
+      layout: 'stacked',
+      text: 'Beyond the carnival, <strong>Bacano Go! is about licensing characters</strong>: a roster of original IP built to be licensed, collected, and loved. <strong>The role:</strong> we served on the core team behind this work, across character design, 3D animation, and on-the-ground activation. It’s the project where the skills that became Emerito were forged, and the reason character IP and fair cultural licensing are in this studio’s DNA.',
+      media: [
+        { type: 'img', src: '/images/Bacano Go/AllTogether_Characters.webp', alt: 'The full Bacano Go! character roster', transparent: true },
+      ],
+    },
+  ]}
+  next={{ title: 'Zero Risk Zone', href: '/en/work/zero-risk-zone' }}
+/>

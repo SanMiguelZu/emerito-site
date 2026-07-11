@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local working material — never deploy or commit
+_archive_unused_media/
+Rediseño de página existente/
+Rediseño de página existente.zip
+src/_archive/

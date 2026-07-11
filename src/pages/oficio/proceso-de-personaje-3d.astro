@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// El proceso de personaje 3D, contado a través de San Miguel (la rana amarilla de Emerito).
+const stages = [
+  {
+    no: '01',
+    title: 'Concepto y exploración',
+    desc: 'Todo personaje empieza como una pregunta: ¿quién es esto y qué representa? San Miguel empezó como páginas de opciones, siluetas, pruebas de color y actitudes, hasta que una rana amarilla se negó a ser descartada.',
+    media: [
+      { type: 'img', src: '/images/Personajes/Opciones.webp', alt: 'Opciones de concepto de San Miguel', caption: 'Opciones' },
+      { type: 'img', src: '/images/Personajes/Sanmiguel Zu_Noise_Low.webp', alt: 'Arte de marca de San Miguel', caption: 'Arte de marca' },
+    ],
+  },
+  {
+    no: '02',
+    title: 'Poses y personalidad',
+    desc: 'Un personaje no es un modelo, es una personalidad. Las hojas de poses definen cómo se para San Miguel, cómo se recuesta, celebra y se enfurruña, para que cada animación futura se mantenga en carácter.',
+    media: [
+      { type: 'img', src: '/images/Personajes/Poses3.jpg', alt: 'Hoja de poses de San Miguel', caption: 'Hoja de poses' },
+    ],
+  },
+  {
+    no: '03',
+    title: 'Topología',
+    desc: 'El oficio invisible: una topología limpia, el flujo de geometría del modelo 3D, decide si una cara puede sonreír sin romperse. Aburrida de ver, imposible de saltar.',
+    media: [
+      { type: 'img', src: '/images/Personajes/Topology.jpg', alt: 'Wireframe de topología 3D de San Miguel', caption: 'Wireframe' },
+    ],
+  },
+  {
+    no: '04',
+    title: 'Look development',
+    desc: 'Materiales, iluminación y pruebas de render hasta que el personaje se ve igual en cada toma: el amarillo exacto, los ojos exactos, el encanto exacto.',
+    media: [
+      { type: 'img', src: '/images/Personajes/Render_V010070.webp', alt: 'Prueba de render de San Miguel', caption: 'Prueba de render' },
+    ],
+  },
+  {
+    no: '05',
+    title: 'Turntable',
+    desc: 'El rito de paso de todo personaje 3D: una rotación completa bajo luz neutra. Ningún ángulo donde esconderse.',
+    media: [
+      { type: 'video', src: '/images/Personajes/turntable.mp4', caption: 'Turntable' },
+    ],
+  },
+  {
+    no: '06',
+    title: 'Animación',
+    desc: 'Y entonces el personaje cobra vida: primero los ciclos de caminado, la personalidad después. Si el caminado se lee como San Miguel desde el otro lado del cuarto, el rig está listo para lo que sea, incluyendo pasos de baile cuestionables.',
+    media: [
+      { type: 'video', src: '/images/Personajes/WalkingCycleEdit_V01.mp4', caption: 'Ciclo de caminado' },
+      { type: 'video', src: '/images/Personajes/FunnyDanceVideo0001-0137.mp4', caption: 'Pasos de baile cuestionables' },
+    ],
+  },
+] as const;
+---
+
+<BaseLayout
+  title="San Miguel: el proceso de diseño de personaje 3D"
+  description="Cómo cobra vida un personaje 3D: concepto, poses, topología, look development, turntable y animación. Todo el proceso de diseño de personaje detrás de San Miguel, la rana amarilla de Emerito."
+  lang="es"
+  alternateHref="/en/craft/3d-character-process"
+>
+  <div class="pop-root relative w-full overflow-hidden">
+
+    <!-- ══ HEADER ══ -->
+    <section class="bg-cream pt-20 pb-14 px-6 lg:px-[46px] border-b-[3px] border-blue-black">
+      <div class="max-w-7xl mx-auto">
+        <a href="/" class="pop-nav-link inline-block font-mono text-[12px] font-bold tracking-[0.08em] uppercase text-blue-black/55 mb-7">← Inicio</a>
+        <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">Proceso de personaje</p>
+        <h1 class="font-display font-medium text-[clamp(40px,5.6vw,84px)] leading-[0.9] tracking-[-0.025em] text-blue-black mb-6">
+          Cómo cobra vida <em class="italic text-orange">un personaje 3D.</em>
+        </h1>
+        <p class="text-lg leading-[1.6] text-blue-black/70 max-w-[620px]">
+          Conoce a <strong>San Miguel</strong>, la rana amarilla de Emerito, y todo el proceso
+          de diseño de personaje detrás de él: concepto, poses, topología, look development y
+          animación. El mismo pipeline detrás de cada personaje que entregamos.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ ETAPAS ══ -->
+    <section class="bg-cream py-[80px] px-6 lg:px-[46px]">
+      <div class="max-w-7xl mx-auto flex flex-col gap-[90px]">
+        {stages.map((s, i) => (
+          <article class:list={['grid gap-10 items-center', 'lg:grid-cols-[0.9fr_1.1fr]']}>
+            <div class:list={['reveal', i % 2 === 1 ? 'lg:order-2' : '']}>
+              <span class="pop-badge text-xs px-3 py-1 bg-blue-black text-cream">Etapa {s.no}</span>
+              <h2 class="font-display font-medium text-[clamp(26px,3.4vw,44px)] leading-[1] text-blue-black mt-4 mb-4">{s.title}</h2>
+              <p class="text-[16px] leading-[1.6] text-blue-black/75 max-w-[520px]">{s.desc}</p>
+            </div>
+            <div class:list={['reveal grid gap-5', s.media.length > 1 ? 'sm:grid-cols-2' : '', i % 2 === 1 ? 'lg:order-1' : '']}>
+              {s.media.map((m) => (
+                <figure class="pop-card pop-tile pop-border pop-shadow-md m-0 rounded-[20px] overflow-hidden bg-ocean relative">
+                  {m.type === 'video' ? (
+                    <video src={m.src} autoplay muted loop playsinline class="w-full aspect-[4/3] object-cover"></video>
+                  ) : (
+                    <img src={m.src} alt={m.alt ?? ''} class="w-full aspect-[4/3] object-cover" loading="lazy" />
+                  )}
+                  <span class="font-mono absolute bottom-3 left-3.5 text-[10px] font-bold tracking-[0.08em] uppercase text-cream/80 bg-blue-black/60 rounded-full px-2.5 py-1">{m.caption}</span>
+                </figure>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="bg-orange py-[80px] px-6 lg:px-[46px] text-center border-t-[3px] border-blue-black">
+      <div class="max-w-[680px] mx-auto">
+        <h2 class="font-display font-medium text-[clamp(30px,4.2vw,54px)] leading-[0.98] text-blue-black mb-4">
+          Tu marca merece <em class="italic">una cara así.</em>
+        </h2>
+        <p class="text-[16px] leading-[1.6] text-blue-black/75 mb-8">
+          Diseño de personaje original, IP completa, y todo el pipeline bajo un mismo techo.
+        </p>
+        <a
+          href="/#contacto"
+          data-cursor="cta"
+          class="pop-btn pop-border inline-block bg-blue-black text-cream text-[16px] font-extrabold px-8 py-4 rounded-full"
+          style="box-shadow: 7px 7px 0 #FFF6E4;"
+        >
+          Diseñemos el tuyo →
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

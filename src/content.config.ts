@@ -10,6 +10,7 @@ const blog = defineCollection({
     category: z.enum(['Comportamiento', 'Futuro', 'Producción', 'Casos']),
     lang: z.enum(['es', 'en']).default('es'),
     draft: z.boolean().default(false),
+    cover: z.string().optional(),
   }),
 });
 

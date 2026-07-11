@@ -1,158 +1,187 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// The studio is presented through its disciplines, not individual bios.
+// Miguel (founder / creative director) is the only person named on the site.
+const disciplines = [
+  {
+    no: '01',
+    name: 'Future Thinking',
+    sub: 'We read the terrain',
+    body: 'Before making anything, we look at where the organization — and its audience — is heading. Which behaviors and stories will matter in three years, not just this quarter. It keeps the work relevant long after launch.',
+  },
+  {
+    no: '02',
+    name: 'Behavioral Science',
+    sub: 'We map the current',
+    body: "Our diagnostic work starts in the field: observing, asking, understanding why people do what they do — not what they say they do. The COM-B framework tells us exactly which levers a story needs to move.",
+  },
+  {
+    no: '03',
+    name: 'Creative Content',
+    sub: 'We trace the channel',
+    body: 'Character, story, narrative architecture, visual direction — the craft that turns a finding into something people actually watch and feel. From the first sketch to the final render, in-house.',
+  },
+] as const;
 ---
 
 <BaseLayout
-  title="Team"
-  description="We are a family company. Gloria, Julieta, and Miguel — strategy, science, and narrative under one roof."
+  title="The Studio"
+  description="Emerito is a creative content studio in Medellín. Original characters, worlds, and stories — strategy, science, and craft under one roof."
   lang="en"
   alternateHref="/equipo"
 >
+  <div class="pop-root relative w-full overflow-hidden">
 
-  <section class="bg-ocean py-24 lg:py-32 text-sand">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] mb-6">
-        We are a family company.
-      </h1>
-      <p class="text-xl text-sand/65 leading-relaxed max-w-2xl">
-        Three disciplines, one table. That's why we can commit to behavioral outcomes,
-        not just deliverables.
-      </p>
-    </div>
-  </section>
-
-  <section class="bg-white border-b border-ink/6 py-20 lg:py-28">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
-        How this started
-      </p>
-      <div class="bg-cream rounded-sm p-6 lg:p-8 text-sm text-ink/60 italic leading-relaxed border border-ink/8">
-        [PLACEHOLDER: Company origin story — to be written in Miguel's voice. 2–3 paragraphs.
-        Include: how Gloria, Julieta, and Miguel came to combine foresight, behavioral science,
-        and creative production under one roof; the specific moment when they realized traditional
-        communication fails because it ignores behavior; what makes the family perspective unique.
-        Specific, personal, first-person plural.]
+    <!-- ══ HERO ══ -->
+    <section class="bg-ocean py-24 lg:py-32 text-cream border-b-[3px] border-blue-black">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">The studio</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] mb-6">
+          We build worlds <em class="italic text-orange">from Medellín.</em>
+        </h1>
+        <p class="text-xl text-cream/65 leading-relaxed max-w-2xl">
+          Emerito is a creative content studio. Original characters, stories, and worlds —
+          made for brands that want to be remembered, not just seen.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="bg-sand py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 space-y-20 lg:space-y-24">
-
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-        <div>
-          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">01</p>
-          <h2 class="text-2xl font-extrabold text-ocean mb-1">Gloria Sánchez</h2>
-          <p class="text-sm text-ink/45 italic mb-8">Future Thinking</p>
-          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+    <!-- ══ THE DREAM & THE COMPANY ══ -->
+    <section class="bg-cream py-20 lg:py-28 border-b-[3px] border-blue-black">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 space-y-14">
+        <div class="reveal">
+          <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">The dream</p>
+          <h2 class="font-display font-medium text-[clamp(26px,3.2vw,40px)] leading-[1.0] text-blue-black mb-5">
+            Characters that outlive <em class="italic text-orange">the campaign.</em>
+          </h2>
+          <div class="space-y-4 text-[15.5px] leading-[1.65] text-blue-black/75 max-w-2xl">
             <p>
-              Gloria has spent over twenty years working in organizational strategy and foresight
-              across Colombia and Latin America. Her specialty is helping companies understand what
-              forces are reshaping their industry and what collective behaviors they'll need to
-              navigate those changes — before they become urgent.
+              Most branded content dies the week it ships. The content people actually love —
+              the shows they quote, the characters they tattoo — was built as a world, not as
+              an ad. Emerito exists to close that gap: to make content for companies with the
+              same craft and care the entertainment industry puts into its best stories.
             </p>
-            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
-              [PLACEHOLDER: Gloria's personal paragraph — what she cares about, her background,
-              why behavior change, what connects her to this work.]
+            <p>
+              The dream is a studio from Medellín whose original characters live everywhere —
+              training rooms, feeds, games, collectibles — and keep working for the brand years
+              after the first episode.
             </p>
           </div>
         </div>
-        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center">
-          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">[PHOTO: foto_gloria.jpg · 600 × 800 px]</figcaption>
-        </figure>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center order-2 lg:order-1">
-          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">[PHOTO: foto_julieta.jpg · 600 × 800 px]</figcaption>
-        </figure>
-        <div class="order-1 lg:order-2">
-          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">02</p>
-          <h2 class="text-2xl font-extrabold text-ocean mb-1">Julieta [surname]</h2>
-          <p class="text-sm text-ink/45 italic mb-8">Behavioral Science</p>
-          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
+        <div class="reveal">
+          <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">The company</p>
+          <h2 class="font-display font-medium text-[clamp(26px,3.2vw,40px)] leading-[1.0] text-blue-black mb-5">
+            One studio, <em class="italic text-orange">full pipeline.</em>
+          </h2>
+          <div class="space-y-4 text-[15.5px] leading-[1.65] text-blue-black/75 max-w-2xl">
             <p>
-              Julieta is the diagnostic architect at Emerito. Her work starts in the field: observing,
-              asking, understanding why people do what they do — not what they say they do. She applies
-              the COM-B framework to identify the exact levers an intervention needs to move.
+              Emerito is an independent studio founded in Medellín, Colombia. Everything happens
+              in-house: character design, 3D modeling and animation, script and narrative,
+              video production, and the AI-assisted workflows that keep budgets realistic
+              without giving up craft.
             </p>
-            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
-              [PLACEHOLDER: Julieta's personal paragraph — background, why behavioral science,
-              what connects her to Emerito's work.]
+            <p>
+              We stay deliberately small and senior. That's what lets us move like a lab,
+              commit like a partner, and put real design behind every frame we ship.
             </p>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-        <div>
-          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">03</p>
-          <h2 class="text-2xl font-extrabold text-ocean mb-1">Miguel Zuluaga</h2>
-          <p class="text-sm text-ink/45 italic mb-8">Creative Content</p>
-          <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
-            <p>
-              Miguel is creative director and producer. His job is to take the behavioral diagnostic
-              and turn it into something people actually watch and feel. Character, story, narrative
-              architecture, visual direction — the instruments that convert a behavioral science
-              finding into a piece that changes what people do.
-            </p>
-            <p class="bg-cream rounded-sm p-4 text-xs italic text-ink/50 border border-ink/8">
-              [PLACEHOLDER: Miguel's personal paragraph — background, why narrative, what connects
-              him to behavior-change work, something personal about Medellín or the family.]
-            </p>
-          </div>
+    <!-- ══ DISCIPLINES ══ -->
+    <section class="bg-cream py-20 lg:py-28 border-b-[3px] border-blue-black">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h2 class="reveal font-display font-medium text-[clamp(30px,3.8vw,48px)] leading-[0.98] text-blue-black mb-3">
+          Three disciplines, <em class="italic text-orange">one roof.</em>
+        </h2>
+        <p class="reveal text-base text-blue-black/65 max-w-xl mb-12">
+          Most studios pick one. We built Emerito so strategy, science, and craft
+          never lose each other in a handoff.
+        </p>
+        <div class="reveal-stagger grid md:grid-cols-3 gap-6">
+          {disciplines.map((d) => (
+            <div class="pop-card pop-border pop-shadow-md bg-cream rounded-[22px] p-7">
+              <p class="pop-badge text-xs px-2.5 py-1 bg-orange text-blue-black mb-5">{d.no}</p>
+              <h3 class="font-display text-[22px] text-blue-black mb-1">{d.name}</h3>
+              <p class="font-display italic text-sm text-ocean mb-4">{d.sub}</p>
+              <p class="text-sm leading-[1.6] text-blue-black/65">{d.body}</p>
+            </div>
+          ))}
         </div>
-        <figure class="bg-ink/8 rounded-sm aspect-[3/4] flex items-center justify-center">
-          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">[PHOTO: foto_miguel.jpg · 600 × 800 px]</figcaption>
-        </figure>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- ══ FOUNDER ══ -->
+    <section class="bg-orange py-20 lg:py-24 border-b-[3px] border-blue-black">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <p class="reveal pop-badge text-xs px-3.5 py-1.5 bg-cream text-blue-black border-[2.5px] border-blue-black mb-8">
+          Creative direction
+        </p>
+        <h2 class="reveal font-display font-medium text-[clamp(28px,3.4vw,42px)] leading-[1.0] text-blue-black mb-5">
+          Miguel Zuluaga
+        </h2>
+        <div class="reveal space-y-4 text-[15.5px] leading-[1.65] text-blue-black/80 max-w-2xl">
+          <p>
+            Miguel is Emerito's founder, creative director, and producer. His job is to take an
+            idea — or a diagnostic — and turn it into something people actually watch and feel:
+            characters, story, narrative architecture, and the 3D craft behind them.
+          </p>
+          <p>
+            Everything on this site — from the character above to the training series in the
+            portfolio — was designed, modeled, and directed in-house in Medellín.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section class="bg-white border-y border-ink/6 py-20 lg:py-24">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">How we work</p>
-      <ul class="space-y-5">
-        <li class="flex gap-5">
-          <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
-          <div>
-            <p class="font-semibold text-ink mb-1">Iteration with the client</p>
-            <p class="text-sm text-ink/60 leading-relaxed">We work in short sprints with frequent check-ins. We never disappear for six weeks to come back with something you didn't ask for.</p>
-          </div>
-        </li>
-        <li class="flex gap-5">
-          <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
-          <div>
-            <p class="font-semibold text-ink mb-1">Diagnosis before production</p>
-            <p class="text-sm text-ink/60 leading-relaxed">We don't produce before understanding the problem. That can feel uncomfortable if you already have a video in mind — but it's what makes the result work.</p>
-          </div>
-        </li>
-        <li class="flex gap-5">
-          <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
-          <div>
-            <p class="font-semibold text-ink mb-1">Transparent pricing</p>
-            <p class="text-sm text-ink/60 leading-relaxed">Proposals are clear and detailed. Nothing grows silently. If there's a scope change, we name it before executing it.</p>
-          </div>
-        </li>
-        <li class="flex gap-5">
-          <span class="text-accent text-lg leading-none flex-shrink-0 mt-0.5">·</span>
-          <div>
-            <p class="font-semibold text-ink mb-1">Measuring results</p>
-            <p class="text-sm text-ink/60 leading-relaxed">When the client gives us access to field data, we measure. We don't promise metrics we can't control, but we commit to learning from the outcome.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+    <!-- ══ HOW WE WORK ══ -->
+    <section class="bg-cream py-20 lg:py-24">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-10">How we work</p>
+        <ul class="space-y-5">
+          <li class="flex gap-5">
+            <span class="text-orange text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+            <div>
+              <p class="font-semibold text-blue-black mb-1">Iteration with the client</p>
+              <p class="text-sm text-blue-black/60 leading-relaxed">We work in short sprints with frequent check-ins. We never disappear for six weeks to come back with something you didn't ask for.</p>
+            </div>
+          </li>
+          <li class="flex gap-5">
+            <span class="text-orange text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+            <div>
+              <p class="font-semibold text-blue-black mb-1">Understanding before production</p>
+              <p class="text-sm text-blue-black/60 leading-relaxed">We don't produce before understanding the problem. That can feel uncomfortable if you already have a video in mind — but it's what makes the result work.</p>
+            </div>
+          </li>
+          <li class="flex gap-5">
+            <span class="text-orange text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+            <div>
+              <p class="font-semibold text-blue-black mb-1">Transparent pricing</p>
+              <p class="text-sm text-blue-black/60 leading-relaxed">Proposals are clear and detailed. Nothing grows silently. If there's a scope change, we name it before executing it.</p>
+            </div>
+          </li>
+          <li class="flex gap-5">
+            <span class="text-orange text-lg leading-none flex-shrink-0 mt-0.5">·</span>
+            <div>
+              <p class="font-semibold text-blue-black mb-1">Measuring results</p>
+              <p class="text-sm text-blue-black/60 leading-relaxed">When the client gives us access to field data, we measure. We don't promise metrics we can't control, but we commit to learning from the outcome.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-  <section class="bg-ocean py-24 text-center">
-    <div class="max-w-xl mx-auto px-6 lg:px-8">
-      <h2 class="text-2xl font-extrabold text-sand mb-5">Shall we work together?</h2>
-      <a href="/en/contact" class="inline-block bg-sand text-ocean text-sm font-semibold px-8 py-4 rounded-sm hover:bg-cream transition-colors">
-        Let's talk →
-      </a>
-    </div>
-  </section>
+    <!-- ══ CTA ══ -->
+    <section class="bg-ocean py-24 text-center border-t-[3px] border-blue-black">
+      <div class="max-w-xl mx-auto px-6 lg:px-8">
+        <h2 class="text-2xl text-cream mb-5">Shall we work <em class="italic text-orange">together?</em></h2>
+        <a href="/en#contacto" class="pop-btn pop-border pop-shadow-md inline-block bg-orange text-blue-black text-sm font-extrabold px-8 py-4 rounded-full">
+          Let's talk →
+        </a>
+      </div>
+    </section>
 
+  </div>
 </BaseLayout>

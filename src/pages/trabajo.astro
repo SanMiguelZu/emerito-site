@@ -3,86 +3,106 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const projects = [
   {
-    name: 'Palmódromo Medellín',
-    desc: 'Juego de narrativa urbana para la Alcaldía de Medellín. Mecánicas de rol, mapas interactivos y personajes basados en la historia real del barrio.',
-    year: '2024',
-    file: 'palmodromo',
+    title: 'Zero Risk Zone',
+    label: 'Serie de formación',
+    desc: 'Protocolos de seguridad que la gente sí quiere ver, con Luisa, Andrés y la cuadrilla de Air Fan.',
+    href: '/trabajo/zero-risk-zone',
+    media: { type: 'img', src: '/images/Proyecto 1-Trabajo_Seguro_En_Alturas-AI/EquipoCambiandose.webp', alt: 'Zero Risk Zone, la cuadrilla de Air Fan' },
   },
   {
-    name: 'Home in Motion',
-    desc: 'Visualización espacial pre-construcción para compradores de vivienda. Animación arquitectónica que permite recorrer un apartamento antes de que exista.',
-    year: '2024',
-    file: 'home_in_motion',
+    title: 'Palmódromo Medellín',
+    label: 'Juegos y experiencias',
+    desc: 'Un juego de carreras narrativo nacido de la cultura callejera de carros de Medellín.',
+    href: '/trabajo/palmodromo-medellin',
+    media: { type: 'video', src: '/images/Palmodromo/DriftRender.mp4' },
   },
   {
-    name: 'Bacano Go!',
-    desc: 'Plataforma de monetización Web3 para creadores de contenido independientes. Identidad, motion design y UX para el lanzamiento.',
-    year: '2023',
-    file: 'bacano_go',
+    title: 'Bacano Go!',
+    label: 'Coleccionables · Crédito de equipo',
+    desc: 'El Carnaval de Barranquilla como coleccionables digitales. Un proyecto que nuestro fundador ayudó a construir.',
+    href: '/trabajo/bacano-go',
+    media: { type: 'video', src: '/images/Bacano Go/Carnaval_Icons_Web.mp4' },
   },
   {
-    name: 'Merch / Journey of Objects',
-    desc: 'Diseño y producción de merch físico con narrativa integrada. Cada objeto cuenta una historia de origen.',
-    year: '2023',
-    file: 'merch',
+    title: 'Home in Motion',
+    label: 'Contenido inmobiliario',
+    desc: 'Un espacio, muchas historias. Reveals en 3D y contenido personalizado con IA para inmuebles.',
+    href: '/trabajo/home-in-motion',
+    media: { type: 'video', src: '/images/HomeInMotion/Render1_Loop.mp4' },
   },
-];
+  {
+    title: 'El Lab',
+    label: 'Experimentos',
+    desc: 'Experimentos rápidos en 3D, simulación, IA y código creativo. Un día o menos, publicados tal cual.',
+    href: '/lab',
+    media: { type: 'video', src: '/images/LAB/CatWalk_V020001-0109.mp4' },
+  },
+] as const;
 ---
 
 <BaseLayout
-  title="Trabajo seleccionado"
-  description="Otros proyectos de Emerito que demuestran capacidad creativa y técnica. No son casos de cambio de comportamiento — son trabajo."
+  title="Trabajo"
+  description="Portafolio de Emerito: series de formación con personajes, juegos, activaciones, moda digital y animación arquitectónica. Mundos que la gente recuerda."
   lang="es"
   alternateHref="/en/work"
 >
+  <div class="pop-root relative w-full overflow-hidden">
 
-  <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
-  <section class="bg-sand py-24 lg:py-28">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">Trabajo</p>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-ocean leading-[1.05] mb-6">
-        Trabajo seleccionado
-      </h1>
-      <p class="text-ink/60 leading-relaxed max-w-2xl">
-        Otros proyectos que hemos producido. No son casos de cambio de comportamiento;
-        son trabajo que demuestra capacidad creativa y técnica. Para casos completos basados
-        en ciencia del comportamiento, ver{' '}
-        <a href="/casos" class="text-ocean hover:text-accent transition-colors font-medium">Casos de estudio</a>.
-      </p>
-    </div>
-  </section>
+    <!-- ══ HEADER ══ -->
+    <section class="bg-cream pt-20 pb-14 px-6 lg:px-[46px] border-b-[3px] border-blue-black">
+      <div class="max-w-7xl mx-auto">
+        <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">Portafolio</p>
+        <h1 class="font-display font-medium text-[clamp(44px,6vw,92px)] leading-[0.9] tracking-[-0.025em] text-blue-black mb-6">
+          Personajes, historias y mundos <em class="italic text-orange">que la gente recuerda.</em>
+        </h1>
+        <p class="text-lg leading-[1.6] text-blue-black/70 max-w-[560px]">
+          Series de formación, juegos, activaciones, moda digital. Todo proyecto empieza
+          como un personaje o una historia, y termina como un mundo.
+        </p>
+      </div>
+    </section>
 
-  <!-- ─── 2. PROJECT GRID ───────────────────────────────────────────── -->
-  <section class="bg-white border-y border-ink/6 py-16 lg:py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid sm:grid-cols-2 gap-8 lg:gap-10">
-        {projects.map(p => (
-          <article>
-            <!-- PLACEHOLDER: {p.file}.jpg — thumbnail del proyecto, 800×600px -->
-            <figure class="bg-ink/8 rounded-sm aspect-[4/3] flex items-center justify-center mb-5">
-              <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
-                [{p.file}.jpg · 800 × 600 px]
-              </figcaption>
-            </figure>
-            <p class="text-xs text-ink/35 mb-2">{p.year}</p>
-            <h2 class="text-xl font-bold text-ocean mb-2">{p.name}</h2>
-            <p class="text-sm text-ink/60 leading-relaxed">{p.desc}</p>
-          </article>
+    <!-- ══ GRID DE PROYECTOS ══ -->
+    <section class="bg-cream py-[80px] px-6 lg:px-[46px]">
+      <div class="max-w-7xl mx-auto grid sm:grid-cols-2 gap-7">
+        {projects.map((p, i) => (
+          <a
+            href={p.href}
+            data-cursor="cta"
+            class:list={['pop-card pop-tile pop-border pop-shadow-md block rounded-[22px] overflow-hidden bg-cream', i === 0 ? 'sm:col-span-2' : '']}
+          >
+            <div class:list={['overflow-hidden bg-ocean relative', i === 0 ? 'aspect-[16/7]' : 'aspect-[16/10]']}>
+              {p.media.type === 'video' ? (
+                <video src={p.media.src} autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+              ) : (
+                <img src={p.media.src} alt={'alt' in p.media ? p.media.alt : ''} class="w-full h-full object-cover" loading={i === 0 ? 'eager' : 'lazy'} />
+              )}
+              <span class="pop-badge absolute top-3.5 left-3.5 text-[10px] px-2.5 py-1 bg-orange text-blue-black">{p.label}</span>
+            </div>
+            <div class="p-[18px_22px_20px]">
+              <p class="font-display text-[26px] leading-[1.05] text-blue-black mb-1">{p.title}</p>
+              <p class="text-[14px] leading-[1.5] text-blue-black/60">{p.desc} →</p>
+            </div>
+          </a>
         ))}
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ─── CLOSING CTA ──────────────────────────────────────────────── -->
-  <section class="bg-sand py-16 lg:py-20 text-center">
-    <div class="max-w-xl mx-auto px-6 lg:px-8">
-      <p class="text-ink/60 mb-6">
-        ¿Buscás un socio de producción para un proyecto de cambio de comportamiento?
-      </p>
-      <a href="/contacto" class="text-sm font-semibold text-ocean hover:text-accent transition-colors">
-        Hablemos →
-      </a>
-    </div>
-  </section>
+    <!-- ══ CTA ══ -->
+    <section class="bg-ocean py-[90px] px-6 lg:px-[46px] text-center border-t-[3px] border-blue-black">
+      <div class="max-w-[640px] mx-auto">
+        <h2 class="font-display font-medium text-[clamp(34px,4.6vw,60px)] leading-[0.95] text-cream mb-5">
+          Tu proyecto podría ser <em class="italic text-orange">el siguiente.</em>
+        </h2>
+        <a
+          href="/#contacto"
+          data-cursor="cta"
+          class="pop-btn pop-border pop-shadow-md inline-block bg-orange text-blue-black text-[16px] font-extrabold px-8 py-4 rounded-full"
+        >
+          Hablemos →
+        </a>
+      </div>
+    </section>
 
+  </div>
 </BaseLayout>

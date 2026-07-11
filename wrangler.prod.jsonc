@@ -8,9 +8,8 @@
     "directory": "dist/client",
     "binding": "ASSETS"
   },
-  "vars": {
-    "CONTACT_EMAIL": "michael@emerito.co"
-  },
+  // Contact form now runs through Formspree client-side; no server env vars needed.
+  "vars": {},
   "observability": {
     "enabled": true
   }

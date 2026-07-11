@@ -10,15 +10,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
 
   <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
-  <section class="bg-sand py-24 lg:py-36">
+  <section class="bg-cream py-24 lg:py-36 border-b-[3px] border-blue-black">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">
+      <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">
         Metodología
       </p>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ocean leading-[1.05] mb-8">
-        Cauce™
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl text-blue-black leading-[1.05] mb-8">
+        Cauce<span class="text-orange">™</span>
       </h1>
-      <p class="text-xl text-ink/65 leading-relaxed max-w-2xl">
+      <p class="text-xl text-blue-black/65 leading-relaxed max-w-2xl">
         El agua no pelea con el terreno. Encuentra — o talla — el camino de menor resistencia.
         El comportamiento humano hace lo mismo. Diseñamos el cauce.
       </p>
@@ -26,16 +26,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Cauce wave divider -->
     <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-16" aria-hidden="true">
       <svg viewBox="0 0 1200 48" class="w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 24 Q300 0 600 24 Q900 48 1200 24" stroke="#3C9DC8" stroke-width="1.5" fill="none" opacity="0.25"/>
-        <path d="M0 32 Q300 8 600 32 Q900 56 1200 32" stroke="#0A3D62" stroke-width="1" fill="none" opacity="0.12"/>
+        <path d="M0 24 Q300 0 600 24 Q900 48 1200 24" stroke="#FF7A18" stroke-width="1.5" fill="none" opacity="0.3"/>
+        <path d="M0 32 Q300 8 600 32 Q900 56 1200 32" stroke="#0A3D62" stroke-width="1" fill="none" opacity="0.15"/>
       </svg>
     </div>
   </section>
 
   <!-- ─── 2. THE PROBLEM WITH TRADITIONAL COMMS ────────────────────── -->
-  <section class="bg-white border-y border-ink/6 py-20 lg:py-28">
+  <section class="bg-cream border-b-[3px] border-blue-black py-20 lg:py-28">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-10">
+      <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-10">
         Por qué la comunicación tradicional falla
       </p>
       <div class="space-y-6 text-ink/65 leading-relaxed">
@@ -54,7 +54,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           La comunicación que empuja a la gente cuesta arriba — contra esas fuerzas — no cambia
           comportamientos. Los informa. Y la información sin diseño conductual es ruido.
         </p>
-        <p class="font-semibold text-ocean">
+        <p class="font-display italic text-orange text-lg">
           Cauce™ parte de una premisa distinta: primero entendemos el terreno. Luego diseñamos
           el camino de menor resistencia.
         </p>
@@ -63,13 +63,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── 3. THREE PILLARS ─────────────────────────────────────────── -->
-  <section class="bg-sand py-20 lg:py-28">
+  <section class="bg-cream py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-3">
+      <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-4 inline-block">
         Los tres pilares
       </p>
-      <h2 class="text-3xl font-extrabold text-ocean mb-16">
-        Tres pilares. Una corriente.
+      <h2 class="text-3xl text-blue-black mb-16">
+        Tres pilares. <span class="italic text-orange">Una corriente.</span>
       </h2>
 
       <div class="space-y-16 lg:space-y-20">
@@ -77,11 +77,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Pillar 1: Future Thinking -->
         <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           <div>
-            <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">01</p>
-            <h3 class="text-2xl font-extrabold text-ocean mb-2">
+            <p class="pop-badge text-xs px-2.5 py-1 bg-orange text-blue-black mb-4">01</p>
+            <h3 class="text-2xl text-blue-black mb-2">
               Pensamiento de Futuro
             </h3>
-            <p class="text-base text-ink/50 italic mb-6">Leemos el terreno</p>
+            <p class="text-base text-blue-black/50 italic mb-6">Leemos el terreno</p>
             <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
               <p>
                 Antes de diseñar una intervención, necesitamos entender hacia dónde va la organización.
@@ -95,33 +95,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 ¿El protocolo que estamos comunicando seguirá siendo relevante?
               </p>
             </div>
-            <div class="mt-8 pt-8 border-t border-ink/8">
-              <p class="text-sm font-semibold text-ocean">Gloria Sánchez</p>
-              <p class="text-xs text-ink/45 mt-1">Estrategia y Prospectiva</p>
+            <div class="mt-8 pt-8 border-t-[3px] border-blue-black">
+              <p class="font-mono text-xs text-blue-black/45">Estrategia y Prospectiva</p>
             </div>
           </div>
-          <!-- PLACEHOLDER: foto_gloria_trabajo.jpg — Gloria en contexto de trabajo -->
-          <figure class="bg-ink/6 rounded-sm aspect-[4/3] flex items-center justify-center">
-            <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
-              [IMAGEN: foto_gloria.jpg — retrato o foto en trabajo<br/>800 × 600 px]
-            </figcaption>
+          <figure class="pop-border pop-shadow-sm rounded-[18px] aspect-[4/3] overflow-hidden bg-cream m-0">
+            <img src="/images/Proyecto 1-Trabajo_Seguro_En_Alturas-AI/Sketch_Storyboard.webp" alt="Storyboard — pensar la historia antes de producirla" class="w-full h-full object-cover" loading="lazy" />
           </figure>
         </div>
 
         <!-- Pillar 2: Behavioral Science -->
         <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-          <!-- PLACEHOLDER: foto_julieta_trabajo.jpg -->
-          <figure class="bg-ink/6 rounded-sm aspect-[4/3] flex items-center justify-center order-2 lg:order-1">
-            <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
-              [IMAGEN: foto_julieta.jpg — retrato o foto en trabajo<br/>800 × 600 px]
-            </figcaption>
+          <figure class="pop-border pop-shadow-sm rounded-[18px] aspect-[4/3] overflow-hidden bg-ocean order-2 lg:order-1 m-0">
+            <img src="/images/Proyecto 1-Trabajo_Seguro_En_Alturas-AI/EquipoCambiandose.webp" alt="Cuadrilla en campo — entender el comportamiento donde ocurre" class="w-full h-full object-cover" loading="lazy" />
           </figure>
           <div class="order-1 lg:order-2">
-            <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">02</p>
-            <h3 class="text-2xl font-extrabold text-ocean mb-2">
+            <p class="pop-badge text-xs px-2.5 py-1 bg-orange text-blue-black mb-4">02</p>
+            <h3 class="text-2xl text-blue-black mb-2">
               Ciencia del Comportamiento
             </h3>
-            <p class="text-base text-ink/50 italic mb-6">Mapeamos la corriente</p>
+            <p class="text-base text-blue-black/50 italic mb-6">Mapeamos la corriente</p>
             <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
               <p>
                 El COM-B (Capability, Opportunity, Motivation – Behavior) es el marco que usamos para
@@ -135,9 +128,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 es un mapa de las fuerzas que determinan el comportamiento real.
               </p>
             </div>
-            <div class="mt-8 pt-8 border-t border-ink/8">
-              <p class="text-sm font-semibold text-ocean">Julieta [apellido]</p>
-              <p class="text-xs text-ink/45 mt-1">Diagnóstico Conductual</p>
+            <div class="mt-8 pt-8 border-t-[3px] border-blue-black">
+              <p class="font-mono text-xs text-blue-black/45">Diagnóstico Conductual</p>
             </div>
           </div>
         </div>
@@ -145,11 +137,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Pillar 3: Creative Content -->
         <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           <div>
-            <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">03</p>
-            <h3 class="text-2xl font-extrabold text-ocean mb-2">
+            <p class="pop-badge text-xs px-2.5 py-1 bg-orange text-blue-black mb-4">03</p>
+            <h3 class="text-2xl text-blue-black mb-2">
               Contenido Creativo
             </h3>
-            <p class="text-base text-ink/50 italic mb-6">Trazamos el cauce</p>
+            <p class="text-base text-blue-black/50 italic mb-6">Trazamos el cauce</p>
             <div class="space-y-4 text-ink/65 leading-relaxed text-sm">
               <p>
                 El diagnóstico nos dice qué cambiar. El Contenido Creativo es cómo lo cambiamos.
@@ -163,16 +155,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 hacer el protocolo emocionalmente atractivo, no solo racionalmente correcto.
               </p>
             </div>
-            <div class="mt-8 pt-8 border-t border-ink/8">
-              <p class="text-sm font-semibold text-ocean">Miguel Zuluaga</p>
-              <p class="text-xs text-ink/45 mt-1">Dirección Creativa y Producción</p>
+            <div class="mt-8 pt-8 border-t-[3px] border-blue-black">
+              <p class="text-sm font-bold text-blue-black">Miguel Zuluaga</p>
+              <p class="font-mono text-xs text-blue-black/45 mt-1">Dirección Creativa y Producción</p>
             </div>
           </div>
-          <!-- PLACEHOLDER: foto_miguel_trabajo.jpg -->
-          <figure class="bg-ink/6 rounded-sm aspect-[4/3] flex items-center justify-center">
-            <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
-              [IMAGEN: foto_miguel.jpg — retrato o foto en trabajo<br/>800 × 600 px]
-            </figcaption>
+          <figure class="pop-border pop-shadow-sm rounded-[18px] aspect-[4/3] overflow-hidden bg-cream m-0">
+            <img src="/images/Personajes/Opciones.webp" alt="Exploración de diseño de personaje — variaciones de un personaje Emerito" class="w-full h-full object-cover" loading="lazy" />
           </figure>
         </div>
 
@@ -181,12 +170,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── 4. THE CAUCE PROCESS ─────────────────────────────────────── -->
-  <section class="bg-ocean py-20 lg:py-28">
+  <section class="bg-ocean py-20 lg:py-28 border-y-[3px] border-blue-black">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-sand/35 mb-3">
+      <p class="pop-badge text-xs px-3.5 py-1.5 bg-cream text-blue-black border-[2.5px] border-blue-black mb-4 inline-block">
         El proceso
       </p>
-      <h2 class="text-3xl font-extrabold text-sand mb-14">
+      <h2 class="text-3xl text-cream mb-14">
         Cómo se aplica Cauce
       </h2>
 
@@ -219,13 +208,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             note: '← Hasta aquí: Cauce Studio',
           },
         ].map(stage => (
-          <div class="bg-sand/8 rounded-sm p-6">
-            <p class="text-[10px] font-bold tracking-widest text-accent mb-4">{stage.n}</p>
-            <p class="text-lg font-extrabold text-sand mb-1">{stage.label}</p>
-            <p class="text-xs text-sand/40 italic mb-4">{stage.en}</p>
-            <p class="text-sm text-sand/60 leading-relaxed">{stage.body}</p>
+          <div class="border-[3px] border-cream/25 rounded-[16px] p-6">
+            <p class="pop-badge text-xs px-2.5 py-1 bg-orange text-blue-black mb-4">{stage.n}</p>
+            <p class="text-lg font-bold text-cream mb-1">{stage.label}</p>
+            <p class="font-mono text-xs text-cream/40 italic mb-4">{stage.en}</p>
+            <p class="text-sm text-cream/60 leading-relaxed">{stage.body}</p>
             {stage.note && (
-              <p class="text-[10px] text-accent mt-5 font-semibold">{stage.note}</p>
+              <p class="font-mono text-[10px] text-orange mt-5 font-semibold">{stage.note}</p>
             )}
           </div>
         ))}
@@ -234,55 +223,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- ─── 5. TWO SERVICE TIERS ─────────────────────────────────────── -->
-  <section class="bg-sand py-20 lg:py-28">
+  <section class="bg-cream py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-ink/35 mb-3">
+      <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-4 inline-block">
         La oferta
       </p>
-      <h2 class="text-3xl font-extrabold text-ocean mb-14">
+      <h2 class="text-3xl text-blue-black mb-14">
         Dos formas de empezar
       </h2>
       <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
 
         <!-- Cauce Insight -->
-        <div class="bg-white border border-ink/8 rounded-sm p-8 lg:p-10">
-          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-5">Cauce Insight</p>
-          <h3 class="text-2xl font-extrabold text-ocean mb-1">Diagnóstico</h3>
-          <p class="text-sm text-ink/45 mb-7">4 – 6 semanas</p>
-          <p class="text-sm text-ink/65 leading-relaxed mb-7">
+        <div class="pop-border pop-shadow-md bg-cream rounded-[20px] p-8 lg:p-10">
+          <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-2 border-blue-black mb-5 inline-block">Cauce Insight</p>
+          <h3 class="text-2xl text-blue-black mb-1">Diagnóstico</h3>
+          <p class="text-sm text-blue-black/45 mb-7">4 – 6 semanas</p>
+          <p class="text-sm text-blue-black/65 leading-relaxed mb-7">
             Entregamos el mapa de comportamiento y la estrategia de intervención. Podés
             llevarlos internamente o regresar para la producción.
           </p>
-          <ul class="text-sm text-ink/60 space-y-2.5 mb-8">
+          <ul class="text-sm text-blue-black/60 space-y-2.5 mb-8">
             {['Entrevistas a stakeholders','Observación de campo','Diagnóstico COM-B','Mapa de comportamiento','Estrategia de intervención','Presentación de hallazgos'].map(i => (
-              <li class="flex gap-3"><span class="text-accent leading-none mt-0.5 flex-shrink-0">·</span>{i}</li>
+              <li class="flex gap-3"><span class="text-orange leading-none mt-0.5 flex-shrink-0">·</span>{i}</li>
             ))}
           </ul>
-          <p class="text-xs text-ink/35 mb-8 leading-relaxed">
+          <p class="text-xs text-blue-black/35 mb-8 leading-relaxed">
             Para empresas que quieren entender el problema antes de comprometerse con la producción.
           </p>
-          <a href="/contacto" class="block text-center bg-ocean text-sand text-sm font-semibold px-6 py-3 rounded-sm hover:bg-ocean/85 transition-colors">
+          <a href="/contacto" class="pop-btn pop-border pop-shadow-sm block text-center bg-ocean text-cream text-sm font-extrabold px-6 py-3 rounded-full">
             Hablemos sobre tu proyecto
           </a>
         </div>
 
         <!-- Cauce Studio -->
-        <div class="bg-ocean rounded-sm p-8 lg:p-10">
-          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-5">Cauce Studio</p>
-          <h3 class="text-2xl font-extrabold text-sand mb-1">Diagnóstico + Producción</h3>
-          <p class="text-sm text-sand/45 mb-7">12 – 20 semanas</p>
-          <p class="text-sm text-sand/65 leading-relaxed mb-7">
+        <div class="pop-border pop-shadow-md bg-ocean rounded-[20px] p-8 lg:p-10">
+          <p class="pop-badge text-xs px-3.5 py-1.5 bg-cream text-blue-black border-2 border-blue-black mb-5 inline-block">Cauce Studio</p>
+          <h3 class="text-2xl text-cream mb-1">Diagnóstico + Producción</h3>
+          <p class="text-sm text-cream/45 mb-7">12 – 20 semanas</p>
+          <p class="text-sm text-cream/65 leading-relaxed mb-7">
             El diagnóstico más la producción completa de la intervención que entra en campo.
           </p>
-          <ul class="text-sm text-sand/60 space-y-2.5 mb-8">
+          <ul class="text-sm text-cream/60 space-y-2.5 mb-8">
             {['Todo lo de Cauce Insight','Concepto y arquitectura narrativa','Diseño de personajes e historia','Producción audiovisual completa','Validación con usuarios finales','Entregables finales'].map(i => (
-              <li class="flex gap-3"><span class="text-accent leading-none mt-0.5 flex-shrink-0">·</span>{i}</li>
+              <li class="flex gap-3"><span class="text-orange leading-none mt-0.5 flex-shrink-0">·</span>{i}</li>
             ))}
           </ul>
-          <p class="text-xs text-sand/35 mb-8 leading-relaxed">
+          <p class="text-xs text-cream/35 mb-8 leading-relaxed">
             Para empresas listas para producir una pieza de cambio de comportamiento.
           </p>
-          <a href="/contacto" class="block text-center bg-sand text-ocean text-sm font-semibold px-6 py-3 rounded-sm hover:bg-cream transition-colors">
+          <a href="/contacto" class="pop-btn pop-border pop-shadow-sm block text-center bg-orange text-blue-black text-sm font-extrabold px-6 py-3 rounded-full">
             Hablemos sobre tu proyecto
           </a>
         </div>

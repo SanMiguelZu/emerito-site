@@ -9,38 +9,59 @@ const isEs = lang === 'es';
 
 const navLinks = isEs
   ? [
-      { href: '/metodologia', label: 'Metodología' },
-      { href: '/casos', label: 'Casos' },
       { href: '/trabajo', label: 'Trabajo' },
-      { href: '/equipo', label: 'Equipo' },
       { href: '/insights', label: 'Insights' },
-      { href: '/contacto', label: 'Contacto' },
+      { href: '/metodologia', label: 'Metodología' },
+      { href: '/equipo', label: 'Equipo' },
+      { href: '/#contacto', label: 'Contacto' },
     ]
   : [
-      { href: '/en/methodology', label: 'Methodology' },
-      { href: '/en/case-studies', label: 'Cases' },
       { href: '/en/work', label: 'Work' },
-      { href: '/en/team', label: 'Team' },
       { href: '/en/insights', label: 'Insights' },
-      { href: '/en/contact', label: 'Contact' },
+      { href: '/en/methodology', label: 'Methodology' },
+      { href: '/en/team', label: 'Team' },
+      { href: '/en#contacto', label: 'Contact' },
     ];
 
 const tagline = isEs
-  ? 'Comunicación que cambia comportamientos.'
-  : 'Communication that changes behavior.';
+  ? 'Contenido que la gente recuerda.'
+  : 'Content people remember.';
+
+const homeHref = isEs ? '/' : '/en';
+
+// Social links shown as brand icons (no X — replaced by TikTok).
+const socials = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/emerito-co',
+    icon: 'M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/emerito.co',
+    icon: 'M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 01-1.38-.9 3.72 3.72 0 01-.9-1.38c-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.38.66-.66 1.08-1.33 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.12a5.9 5.9 0 00-2.12-1.38c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.41-10.4a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z',
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@emerito.co',
+    icon: 'M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.3 0 .58.05.85.13V9.4a6.33 6.33 0 00-1-.08A6.34 6.34 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z',
+  },
+] as const;
 
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-ocean text-sand">
+<footer class="bg-blue-black text-cream">
   <!-- Three-column body -->
   <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
 
-    <!-- Left: wordmark + tagline -->
+    <!-- Left: logo + tagline -->
     <div>
-      <p class="font-extrabold text-xl tracking-tight mb-3">Emerito</p>
-      <p class="text-sand/55 text-sm leading-relaxed mb-5">{tagline}</p>
-      <p class="text-sand/35 text-xs tracking-wide">Medellín, Colombia</p>
+      <a href={homeHref} class="inline-flex items-center mb-5" aria-label="Emerito">
+        <img src="/images/EMERITO_LOGO_WHITE.png" alt="Emerito" class="h-[64px] w-auto" />
+      </a>
+      <p class="text-cream/55 text-sm leading-relaxed mb-5">{tagline}</p>
+      <p class="font-sans font-extrabold text-cream/35 text-xs tracking-wide uppercase">Medellín, Colombia</p>
     </div>
 
     <!-- Center: sitemap links -->
@@ -48,7 +69,7 @@ const year = new Date().getFullYear();
       {navLinks.map(link => (
         <a
           href={link.href}
-          class="text-sand/60 text-sm hover:text-sand transition-colors duration-200"
+          class="text-cream/60 text-sm font-medium hover:text-orange transition-colors duration-200"
         >
           {link.label}
         </a>
@@ -56,42 +77,40 @@ const year = new Date().getFullYear();
     </nav>
 
     <!-- Right: contact + social -->
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-4">
       <a
-        href="mailto:michael@emerito.co"
-        class="text-sand/60 text-sm hover:text-sand transition-colors duration-200"
+        href="mailto:miguel@emerito.co"
+        class="text-cream/60 text-sm font-medium hover:text-orange transition-colors duration-200"
       >
-        michael@emerito.co
+        miguel@emerito.co
       </a>
-      <!-- TODO: update social URLs once confirmed -->
-      <a
-        href="https://www.linkedin.com/company/emerito"
-        class="text-sand/60 text-sm hover:text-sand transition-colors duration-200"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        LinkedIn
-      </a>
-      <a
-        href="https://www.instagram.com/emerito.co"
-        class="text-sand/60 text-sm hover:text-sand transition-colors duration-200"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram
-      </a>
+      <div class="flex items-center gap-3">
+        {socials.map(s => (
+          <a
+            href={s.href}
+            class="inline-flex items-center justify-center w-9 h-9 rounded-full border-2 border-cream/20 text-cream/60 hover:text-orange hover:border-orange transition-colors duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={s.label}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-[18px] h-[18px]" aria-hidden="true">
+              <path d={s.icon} />
+            </svg>
+          </a>
+        ))}
+      </div>
     </div>
 
   </div>
 
   <!-- Bottom strip -->
-  <div class="border-t border-sand/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-sand/35">
+  <div class="border-t-[3px] border-cream/15">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 font-sans font-extrabold uppercase tracking-[0.08em] text-[11px] text-cream/35">
       <span>© Emerito {year}</span>
-      <span class="font-medium text-sand/50">Hecho en Medellín</span>
+      <span class="font-semibold text-cream/50">Hecho en Medellín</span>
       <a
         href={isEs ? '/privacidad' : '/en/privacy'}
-        class="hover:text-sand/60 transition-colors"
+        class="hover:text-orange transition-colors"
       >
         {isEs ? 'Privacidad' : 'Privacy'}
       </a>

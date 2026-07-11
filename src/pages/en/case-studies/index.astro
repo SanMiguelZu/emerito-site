@@ -9,46 +9,49 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   alternateHref="/casos"
 >
 
-  <section class="bg-sand py-24 lg:py-28">
+  <section class="bg-cream py-24 lg:py-28 border-b-[3px] border-blue-black">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-accent mb-6">Cases</p>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-ocean leading-[1.05] mb-6">
-        Case Studies
+      <p class="reveal pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">Cases</p>
+      <h1 class="reveal text-4xl sm:text-5xl text-blue-black leading-[1.05] mb-6">
+        Case <em class="italic text-orange">studies.</em>
       </h1>
-      <p class="text-lg text-ink/60 leading-relaxed max-w-2xl">
+      <p class="reveal text-lg text-blue-black/65 leading-relaxed max-w-2xl">
         Behavior-science-based communication, validated in the field.
         Full cases: problem, diagnosis, intervention, result.
       </p>
     </div>
   </section>
 
-  <section class="bg-white border-y border-ink/6 py-16 lg:py-20">
+  <section class="bg-cream py-16 lg:py-20 border-b-[3px] border-blue-black">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-        <figure class="bg-ink/8 rounded-sm aspect-[4/3] flex items-center justify-center">
-          <figcaption class="text-[10px] text-ink/25 font-mono text-center px-4">
-            [IMAGE: airfan_candles.jpg<br/>Candle row — storyboard still · 1200 × 900 px]
-          </figcaption>
+        <figure class="reveal pop-card pop-tile pop-border pop-shadow-md rounded-[22px] overflow-hidden aspect-[4/3] m-0">
+          <img
+            src="/images/Proyecto 1-Trabajo_Seguro_En_Alturas-AI/Imprudencio.webp"
+            alt="Andrés, lead character of the Working Safely at Heights case"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
         </figure>
 
-        <div>
-          <p class="text-[10px] font-bold tracking-widest uppercase text-accent mb-4">
+        <div class="reveal">
+          <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-5">
             Working safely at heights
           </p>
-          <h2 class="text-3xl font-extrabold text-ocean leading-tight mb-4">
-            Veteran, Not Reckless
+          <h2 class="text-3xl text-blue-black leading-tight mb-4">
+            Veteran, <em class="italic text-orange">not reckless.</em>
           </h2>
-          <p class="text-ink/65 leading-relaxed mb-3">
+          <p class="text-blue-black/65 leading-relaxed mb-3">
             How do we get veteran technicians to follow safety protocol when
             crew culture punishes compliance?
           </p>
-          <p class="text-xs text-ink/35 mb-8">
-            Client: Airfan · Industrial HVAC maintenance · 2025
+          <p class="font-mono text-xs text-blue-black/35 mb-8">
+            Client: Industrial HVAC maintenance company · 2025
           </p>
           <a
             href="/en/case-studies/working-safely-at-heights"
-            class="inline-block bg-ocean text-sand text-sm font-semibold px-6 py-3 rounded-sm hover:bg-ocean/85 transition-colors"
+            class="pop-btn pop-border pop-shadow-sm inline-block bg-orange text-blue-black text-sm font-extrabold px-6 py-3 rounded-full"
           >
             Read full case →
           </a>
@@ -58,11 +61,11 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <section class="bg-sand py-16 lg:py-20">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-      <p class="text-ink/45 text-sm mb-6">More cases in production.</p>
-      <p class="text-ink/65 mb-8">Want to be next?</p>
-      <a href="/en/contact" class="text-sm font-semibold text-ocean hover:text-accent transition-colors">
+  <section class="bg-cream py-16 lg:py-20">
+    <div class="reveal max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <p class="text-blue-black/45 text-sm mb-6">More cases in production.</p>
+      <p class="text-blue-black/65 mb-8">Want to be next?</p>
+      <a href="/en#contacto" class="pop-nav-link text-sm font-bold text-blue-black">
         Let's talk →
       </a>
     </div>

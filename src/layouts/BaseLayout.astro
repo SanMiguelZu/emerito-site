@@ -31,7 +31,7 @@ const xDefaultUrl = lang === 'es' ? canonicalUrl : (alternateUrl ?? canonicalUrl
 const ogImageUrl = new URL(ogImage, siteUrl).href;
 const ogLocale = lang === 'es' ? 'es_CO' : 'en_US';
 const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_CO';
-const pageTitle = `${title} — Emerito`;
+const pageTitle = `${title} | Emerito`;
 ---
 
 <!doctype html>
@@ -39,6 +39,20 @@ const pageTitle = `${title} — Emerito`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Tag Manager — GA4, Meta Pixel, and Clarity are managed as tags inside this container -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-T975GW49');
+    </script>
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -67,20 +81,43 @@ const pageTitle = `${title} — Emerito`;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,900&family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/Favicon.png" />
 
     <title>{pageTitle}</title>
   </head>
   <body class="min-h-screen flex flex-col bg-sand">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T975GW49"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
     <Nav lang={lang} currentPath={currentPath} alternateHref={alternateHref} />
     <main class="flex-1">
       <slot />
     </main>
     <Footer lang={lang} />
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      );
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el));
+    </script>
   </body>
 </html>

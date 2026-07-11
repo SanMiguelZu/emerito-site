@@ -11,24 +11,20 @@ const isEs = lang === 'es';
 
 const navLinks = isEs
   ? [
-      { href: '/metodologia', label: 'Metodología' },
-      { href: '/casos', label: 'Casos' },
       { href: '/trabajo', label: 'Trabajo' },
-      { href: '/equipo', label: 'Equipo' },
       { href: '/insights', label: 'Insights' },
-      { href: '/contacto', label: 'Contacto' },
+      { href: '/metodologia', label: 'Metodología' },
+      { href: '/equipo', label: 'Equipo' },
     ]
   : [
-      { href: '/en/methodology', label: 'Methodology' },
-      { href: '/en/case-studies', label: 'Cases' },
       { href: '/en/work', label: 'Work' },
-      { href: '/en/team', label: 'Team' },
       { href: '/en/insights', label: 'Insights' },
-      { href: '/en/contact', label: 'Contact' },
+      { href: '/en/methodology', label: 'Methodology' },
+      { href: '/en/team', label: 'Team' },
     ];
 
 const ctaLabel = isEs ? 'Hablemos' : "Let's talk";
-const ctaHref = isEs ? '/contacto' : '/en/contact';
+const ctaHref = isEs ? '/#contacto' : '/en#contacto';
 const altLabel = isEs ? 'EN' : 'ES';
 const altHref = alternateHref ?? (isEs ? '/en' : '/');
 const homeHref = isEs ? '/' : '/en';
@@ -42,92 +38,83 @@ function isActive(href: string): boolean {
 ---
 
 <!-- Fixed header -->
-<header class="fixed top-0 left-0 right-0 z-40 bg-sand/95 backdrop-blur-sm border-b border-ink/10">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+<header id="site-nav" class="sticky top-0 z-40 bg-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-[66px]">
 
     <!-- Logo wordmark -->
     <a
       href={homeHref}
-      class="flex-shrink-0 font-extrabold text-xl tracking-tight text-ocean hover:text-ocean/80 transition-colors"
-      aria-label="Emerito — inicio"
+      class="flex-shrink-0 inline-flex items-center"
+      aria-label={isEs ? 'Emerito, inicio' : 'Emerito, home'}
     >
-      Emerito
+      <img src="/images/Emerito Logo.png" alt="Emerito" class="h-[38px] w-auto" />
     </a>
 
     <!-- Desktop nav links -->
     <nav
-      class="hidden lg:flex items-center gap-7 text-sm font-medium"
+      class="hidden lg:flex items-center gap-7 text-sm"
       aria-label="Navegación principal"
     >
       {navLinks.map(link => (
         <a
           href={link.href}
           class={[
-            'transition-colors duration-200',
-            isActive(link.href)
-              ? 'text-ocean font-semibold'
-              : 'text-ink/60 hover:text-ocean',
+            'pop-nav-link font-bold',
+            isActive(link.href) ? 'text-orange' : 'text-blue-black',
           ].join(' ')}
           aria-current={isActive(link.href) ? 'page' : undefined}
         >
           {link.label}
         </a>
       ))}
-    </nav>
-
-    <!-- Desktop: lang toggle + CTA -->
-    <div class="hidden lg:flex items-center gap-4">
+      <a
+        href={ctaHref}
+        class="pop-btn pop-border bg-ocean text-cream text-sm font-bold px-5 py-2.5 rounded-full pop-shadow-sm"
+      >
+        {ctaLabel} →
+      </a>
       <a
         href={altHref}
-        class="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink/40 hover:text-ocean transition-colors"
+        class="font-sans text-[11px] font-extrabold tracking-[0.12em] uppercase text-blue-black/50 hover:text-orange transition-colors"
         aria-label={isEs ? 'Switch to English' : 'Cambiar a Español'}
       >
         {altLabel}
       </a>
-      <a
-        href={ctaHref}
-        class="bg-ocean text-sand text-sm font-semibold px-5 py-2 rounded-sm hover:bg-ocean/85 transition-colors"
-      >
-        {ctaLabel}
-      </a>
-    </div>
+    </nav>
 
     <!-- Mobile hamburger -->
     <button
       id="nav-open"
-      class="lg:hidden p-2 -mr-2 text-ocean"
+      class="lg:hidden p-2 -mr-2 text-blue-black"
       aria-label={isEs ? 'Abrir menú' : 'Open menu'}
       aria-expanded="false"
       aria-controls="mobile-nav"
     >
       <span class="flex flex-col gap-[5px]">
-        <span class="block w-6 h-[2px] bg-ocean rounded-full"></span>
-        <span class="block w-6 h-[2px] bg-ocean rounded-full"></span>
-        <span class="block w-4 h-[2px] bg-ocean rounded-full"></span>
+        <span class="block w-6 h-[3px] bg-blue-black rounded-full"></span>
+        <span class="block w-6 h-[3px] bg-blue-black rounded-full"></span>
+        <span class="block w-4 h-[3px] bg-blue-black rounded-full"></span>
       </span>
     </button>
 
   </div>
 </header>
 
-<!-- Spacer that keeps content below the fixed header -->
-<div class="h-16" aria-hidden="true"></div>
-
 <!-- Mobile full-screen overlay -->
 <div
   id="mobile-nav"
-  class="hidden fixed inset-0 z-50 bg-ocean flex-col"
+  class="hidden fixed inset-0 z-50 bg-blue-black flex-col"
   aria-label={isEs ? 'Menú móvil' : 'Mobile menu'}
   aria-hidden="true"
 >
   <!-- Mobile header row -->
-  <div class="flex items-center justify-between px-6 h-16 flex-shrink-0">
-    <a href={homeHref} class="font-extrabold text-xl tracking-tight text-sand">
-      Emerito
+  <div class="flex items-center justify-between px-6 h-[66px] flex-shrink-0 border-b-[3px] border-cream/15">
+    <a href={homeHref} class="inline-flex items-center">
+      <img src="/images/Emerito Logo.png" alt="Emerito" class="h-[34px] w-auto" />
     </a>
     <button
       id="nav-close"
-      class="p-2 -mr-2 text-sand"
+      class="p-2 -mr-2 text-cream"
       aria-label={isEs ? 'Cerrar menú' : 'Close menu'}
     >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -142,7 +129,7 @@ function isActive(href: string): boolean {
     {navLinks.map(link => (
       <a
         href={link.href}
-        class="text-sand text-3xl font-bold hover:text-accent transition-colors leading-tight"
+        class="font-display text-3xl font-medium italic text-cream hover:text-orange transition-colors leading-tight"
         data-mobile-link
       >
         {link.label}
@@ -154,15 +141,15 @@ function isActive(href: string): boolean {
   <div class="px-8 pb-12 flex items-center justify-between flex-shrink-0">
     <a
       href={altHref}
-      class="text-[11px] font-semibold tracking-[0.12em] uppercase text-sand/50 hover:text-sand transition-colors"
+      class="font-sans text-[11px] font-extrabold tracking-[0.12em] uppercase text-cream/50 hover:text-cream transition-colors"
     >
       {altLabel}
     </a>
     <a
       href={ctaHref}
-      class="bg-sand text-ocean text-sm font-semibold px-6 py-3 rounded-sm hover:bg-cream transition-colors"
+      class="pop-btn pop-border bg-orange text-blue-black text-sm font-bold px-6 py-3 rounded-full pop-shadow-sm"
     >
-      {ctaLabel}
+      {ctaLabel} →
     </a>
   </div>
 </div>
@@ -198,4 +185,10 @@ function isActive(href: string): boolean {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMenu();
   });
+
+  // Soft shadow under the nav, only once the page has scrolled a little.
+  const nav = document.getElementById('site-nav');
+  const onScroll = () => nav?.classList.toggle('nav-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 </script>
