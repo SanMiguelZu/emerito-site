@@ -479,6 +479,8 @@ const needs = [
         if (res.ok) {
           homeCard?.classList.add('hidden');
           homeSuccess?.classList.remove('hidden');
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'generate_lead', form_name: 'home_page', language: 'es' });
         } else {
           const data = (await res.json().catch(() => ({}))) as { errors?: { message: string }[] };
           if (homeError) {

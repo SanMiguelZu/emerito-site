@@ -141,6 +141,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       if (res.ok) {
         form.classList.add('hidden');
         successBox?.classList.remove('hidden');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead', form_name: 'contact_page', language: 'en' });
       } else {
         const data = await res.json().catch(() => ({})) as { errors?: { message: string }[] };
         if (errorBox) {
