@@ -1,11 +1,18 @@
 # Legacy URL redirects (old domain/CMS -> new Astro site)
 # 301 permanent redirects preserve SEO equity from the old pages.
+# Targets use trailing slashes to match canonical URLs and avoid a second redirect hop.
 
-/portfolio                              /trabajo         301
+/portfolio                              /trabajo/         301
 /contact                                /                 301
-/blog-emerito-creative-agency           /insights         301
-/cauce                                  /metodologia      301
+/blog-emerito-creative-agency           /insights/        301
+/cauce                                  /metodologia/     301
 
-/works/palmodromo-medellin              /trabajo/palmodromo-medellin    301
-/works/gro-op                           /trabajo/home-in-motion         301
-/works/zero-risk-zone                   /trabajo/zero-risk-zone         301
+/works/palmodromo-medellin              /trabajo/palmodromo-medellin/    301
+/works/gro-op                           /trabajo/home-in-motion/         301
+/works/zero-risk-zone                   /trabajo/zero-risk-zone/         301
+
+/post/medellins-animation-industry-in-transition                              /insights/la-industria-de-animacion-de-medellin-en-transicion/            301
+/post/the-great-pivot-from-technical-executioners-to-creative-orchestrators    /insights/el-gran-giro-de-ejecutores-tecnicos-a-orquestadores-creativos/  301
+/post/advertisement-animation-and-the-value-of-what-we-create                 /insights/lecciones-de-propiedad-intelectual-de-piragna-y-umana/         301
+/post/blog-ads-to-stories                                                     /insights/cuando-los-personajes-se-vuelven-cultura-frisby-sura/          301
+/post/medellin-creative-wave                                                  /insights/la-ola-creativa-de-medellin/                                    301
