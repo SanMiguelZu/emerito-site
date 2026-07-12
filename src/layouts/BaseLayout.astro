@@ -100,7 +100,7 @@ const pageTitle = `${title} | Emerito`;
         style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-    <Nav lang={lang} currentPath={currentPath} alternateHref={alternateHref} />
+    <Nav lang={lang} currentPath={currentPath} alternateHref={alternateHref ? withTrailingSlash(alternateHref) : undefined} />
     <main class="flex-1">
       <slot />
     </main>

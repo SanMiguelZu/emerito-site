@@ -31,7 +31,7 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map(post => (
             <article class="pop-tile">
-              <a href={`/en/insights/${post.id}`} class="block group">
+              <a href={`/en/insights/${post.id}/`} class="block group">
                 <figure class="pop-card pop-border pop-shadow-sm rounded-[16px] aspect-video overflow-hidden bg-ocean mb-4 m-0">
                   {post.data.cover ? (
                     <img
@@ -47,7 +47,7 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.
               </a>
               <p class="pop-badge text-[10px] px-2.5 py-1 bg-orange text-blue-black mb-2">{post.data.category}</p>
               <h2 class="text-lg font-bold text-blue-black leading-snug mb-2">
-                <a href={`/en/insights/${post.id}`} class="hover:text-orange transition-colors">{post.data.title}</a>
+                <a href={`/en/insights/${post.id}/`} class="hover:text-orange transition-colors">{post.data.title}</a>
               </h2>
               <p class="font-mono text-xs text-blue-black/40 mb-2">
                 {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}

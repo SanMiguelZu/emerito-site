@@ -9,25 +9,25 @@ const isEs = lang === 'es';
 
 const navLinks = isEs
   ? [
-      { href: '/trabajo', label: 'Trabajo' },
-      { href: '/insights', label: 'Insights' },
-      { href: '/metodologia', label: 'Metodología' },
-      { href: '/equipo', label: 'Equipo' },
+      { href: '/trabajo/', label: 'Trabajo' },
+      { href: '/insights/', label: 'Insights' },
+      { href: '/metodologia/', label: 'Metodología' },
+      { href: '/equipo/', label: 'Equipo' },
       { href: '/#contacto', label: 'Contacto' },
     ]
   : [
-      { href: '/en/work', label: 'Work' },
-      { href: '/en/insights', label: 'Insights' },
-      { href: '/en/methodology', label: 'Methodology' },
-      { href: '/en/team', label: 'Team' },
-      { href: '/en#contacto', label: 'Contact' },
+      { href: '/en/work/', label: 'Work' },
+      { href: '/en/insights/', label: 'Insights' },
+      { href: '/en/methodology/', label: 'Methodology' },
+      { href: '/en/team/', label: 'Team' },
+      { href: '/en/#contacto', label: 'Contact' },
     ];
 
 const tagline = isEs
   ? 'Contenido que la gente recuerda.'
   : 'Content people remember.';
 
-const homeHref = isEs ? '/' : '/en';
+const homeHref = isEs ? '/' : '/en/';
 
 // Social links shown as brand icons (no X — replaced by TikTok).
 const socials = [
@@ -109,7 +109,7 @@ const year = new Date().getFullYear();
       <span>© Emerito {year}</span>
       <span class="font-semibold text-cream/50">Hecho en Medellín</span>
       <a
-        href={isEs ? '/privacidad' : '/en/privacy'}
+        href={isEs ? '/privacidad/' : '/en/privacy/'}
         class="hover:text-orange transition-colors"
       >
         {isEs ? 'Privacidad' : 'Privacy'}
