@@ -1,29 +1,29 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => data.lang === 'en' && !data.draft);
+  const posts = await getCollection('blog', ({ data }) => data.lang === 'es' && !data.draft);
   return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
 }
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const dateStr = post.data.pubDate.toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
 <BaseLayout
   title={post.data.title}
   description={post.data.description}
-  lang="en"
-  alternateHref="/es/insights"
+  lang="es"
+  alternateHref="/insights"
 >
   <div class="pop-root relative w-full overflow-hidden">
 
     <!-- ══ HEADER ══ -->
     <section class="bg-cream pt-20 pb-14 px-6 lg:px-[46px] border-b-[3px] border-blue-black">
       <div class="max-w-4xl mx-auto">
-        <a href="/insights/" class="pop-nav-link inline-block font-mono text-[12px] font-bold tracking-[0.08em] uppercase text-blue-black/55 mb-7">← All insights</a>
+        <a href="/es/insights/" class="pop-nav-link inline-block font-mono text-[12px] font-bold tracking-[0.08em] uppercase text-blue-black/55 mb-7">← Todos los insights</a>
         <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">{post.data.category}</p>
         <h1 class="font-display font-medium text-[clamp(34px,4.6vw,64px)] leading-[0.95] tracking-[-0.02em] text-blue-black mb-5">
           {post.data.title}
@@ -33,7 +33,7 @@ const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric',
       </div>
     </section>
 
-    <!-- ══ COVER ══ -->
+    <!-- ══ PORTADA ══ -->
     {post.data.cover && (
       <div class="bg-cream px-6 lg:px-[46px] pt-12">
         <figure class="max-w-4xl mx-auto pop-border pop-shadow-md rounded-[20px] overflow-hidden m-0">
@@ -42,7 +42,7 @@ const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric',
       </div>
     )}
 
-    <!-- ══ ARTICLE ══ -->
+    <!-- ══ ARTÍCULO ══ -->
     <article class="bg-cream py-[70px] px-6 lg:px-[46px]">
       <div class="prose-pop max-w-3xl mx-auto">
         <Content />
@@ -53,14 +53,14 @@ const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric',
     <section class="bg-orange py-[70px] px-6 lg:px-[46px] text-center border-t-[3px] border-blue-black">
       <div class="max-w-[640px] mx-auto">
         <h2 class="font-display font-medium text-[clamp(28px,3.8vw,48px)] leading-[0.98] text-blue-black mb-6">
-          Making something <em class="italic">people should remember?</em>
+          ¿Estás creando algo <em class="italic">que la gente debería recordar?</em>
         </h2>
         <a
-          href="/#contacto"
+          href="/es/#contacto"
           class="pop-btn pop-border inline-block bg-blue-black text-cream text-[16px] font-extrabold px-8 py-4 rounded-full"
           style="box-shadow: 7px 7px 0 #FFF6E4;"
         >
-          Let's talk →
+          Hablemos →
         </a>
       </div>
     </section>

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Casos de estudio"
+  description="Comunicación basada en ciencia del comportamiento, validada en campo. Casos completos: problema, diagnóstico, intervención, resultado."
+  lang="es"
+  alternateHref="/case-studies"
+>
+
+  <!-- ─── 1. HERO ─────────────────────────────────────────────────── -->
+  <section class="bg-cream py-24 lg:py-28 border-b-[3px] border-blue-black">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="reveal pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">Casos</p>
+      <h1 class="reveal text-4xl sm:text-5xl text-blue-black leading-[1.05] mb-6">
+        Casos de <em class="not-italic italic text-orange">estudio.</em>
+      </h1>
+      <p class="reveal text-lg text-blue-black/65 leading-relaxed max-w-2xl">
+        Comunicación basada en ciencia del comportamiento, validada en campo.
+        Casos completos: problema, diagnóstico, intervención, resultado.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── 2. FEATURED CASE ─────────────────────────────────────────── -->
+  <section class="bg-cream py-16 lg:py-20 border-b-[3px] border-blue-black">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+        <figure class="reveal pop-card pop-tile pop-border pop-shadow-md rounded-[22px] overflow-hidden aspect-[4/3] m-0">
+          <img
+            src="/images/Proyecto 1-Trabajo_Seguro_En_Alturas-AI/Imprudencio.webp"
+            alt="Andrés, personaje principal del caso Trabajo Seguro en Alturas"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="reveal">
+          <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-5">
+            Trabajo seguro en alturas
+          </p>
+          <h2 class="text-3xl text-blue-black leading-tight mb-4">
+            Veterano, <em class="not-italic italic text-orange">no temerario.</em>
+          </h2>
+          <p class="text-blue-black/65 leading-relaxed mb-3">
+            ¿Cómo logramos que técnicos veteranos sigan los protocolos de seguridad
+            cuando la cultura de cuadrilla penaliza la obediencia?
+          </p>
+          <p class="font-mono text-xs text-blue-black/35 mb-8">
+            Cliente: Empresa de mantenimiento industrial HVAC · 2025
+          </p>
+          <a
+            href="/es/casos/trabajo-seguro-en-alturas/"
+            class="pop-btn pop-border pop-shadow-sm inline-block bg-orange text-blue-black text-sm font-extrabold px-6 py-3 rounded-full"
+          >
+            Leer caso completo →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. FUTURE CASES PLACEHOLDER ─────────────────────────────── -->
+  <section class="bg-cream py-16 lg:py-20">
+    <div class="reveal max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <p class="text-blue-black/45 text-sm mb-6">Más casos en producción.</p>
+      <p class="text-blue-black/65 mb-8">¿Querés ser el siguiente?</p>
+      <a
+        href="/es/#contacto"
+        class="pop-nav-link text-sm font-bold text-blue-black"
+      >
+        Hablemos →
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

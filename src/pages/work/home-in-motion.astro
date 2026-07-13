@@ -1,0 +1,43 @@
+---
+import ProjectLayout from '../../components/ProjectLayout.astro';
+// NOTE: the AI workflow is in development. Do not publish AI experiments until quality is portfolio-grade.
+---
+
+<ProjectLayout
+  alternateHref="/es/trabajo/home-in-motion"
+  title="Home in Motion"
+  label="Real estate content · In development"
+  description="3D reveal animations and AI-personalized listing content for real estate: the same space, marketed as many stories as there are buyers. A service in development, built with its first clients."
+  intro="What if buyers could see the space before it exists? <strong>Home in Motion</strong> turns renovations and listings into elegant 3D reveals: furniture appearing in place, materials changing, the final space unfolding <strong>before the first wall moves</strong>."
+  hero={{ type: 'video', src: '/images/HomeInMotion/InterioresHALA_Loop.mp4' }}
+  sections={[
+    {
+      text: 'The inspiration came from the reveal animations of <em>Property Brothers</em> (Hermanos a la Obra): elegant 3D sequences where the new space assembles itself in front of the client. That moment, when someone finally <strong>sees</strong> the result, is the moment they say yes. We wanted to build that moment.',
+      media: [
+        { type: 'img', src: '/images/HomeInMotion/Kitchen_Sketch.webp', alt: 'Kitchen sketch', caption: 'Sketch' },
+        { type: 'img', src: '/images/HomeInMotion/Kitchen_ColorPencil.webp', alt: 'Kitchen color pencil study', caption: 'Color study' },
+      ],
+    },
+    {
+      text: 'So we built it, twice: a living room and a kitchen, fully modeled, textured, and animated in Blender with <strong>realistic materials, lighting, and scale</strong>, plus a library of furniture and texture assets to dress any space. The animation is the differential: not a static render, but the transformation itself.',
+      media: [
+        { type: 'video', src: '/images/HomeInMotion/Render1_Loop.mp4', caption: 'The reveal' },
+        { type: 'video', src: '/images/HomeInMotion/Render2_Loop.mp4', caption: 'The transformation' },
+      ],
+    },
+    {
+      text: 'Then the market taught us something better. The people who need this most aren’t architects, who live inside their own CAD tools. It’s <strong>real estate marketing</strong>. With AI, a real apartment can be restyled again and again, and the vision becomes <strong>hyper-personalized listing content</strong>: the same apartment in Laureles marketed as a fun student flat to one audience and as a warm family home to another. One space, many stories, each ad speaking directly to its buyer.',
+    },
+    {
+      text: '<strong>Where it stands:</strong> the 3D craft is proven, and the AI workflow is in development. Interiors are detail-heavy and today’s models still produce artifacts, and we won’t publish work with glitches in it. The honest path is building the pipeline on a real listing, with a real client. That could be you.',
+    },
+  ]}
+  banner={{
+    badge: 'Pilot project',
+    title: 'One space, <em class="italic">many stories.</em>',
+    text: 'Have a listing that deserves better than twelve photos? Become the pilot: we build the workflow on your property, and you get marketing content nobody else in the market has.',
+    buttonText: 'Market it with us →',
+    href: '/#contacto',
+  }}
+  next={{ title: 'Palmódromo Medellín', href: '/work/palmodromo-medellin/' }}
+/>

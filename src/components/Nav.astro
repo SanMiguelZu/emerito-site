@@ -11,23 +11,23 @@ const isEs = lang === 'es';
 
 const navLinks = isEs
   ? [
-      { href: '/trabajo/', label: 'Trabajo' },
-      { href: '/insights/', label: 'Insights' },
-      { href: '/metodologia/', label: 'Metodología' },
-      { href: '/equipo/', label: 'Equipo' },
+      { href: '/es/trabajo/', label: 'Trabajo' },
+      { href: '/es/insights/', label: 'Insights' },
+      { href: '/es/metodologia/', label: 'Metodología' },
+      { href: '/es/equipo/', label: 'Equipo' },
     ]
   : [
-      { href: '/en/work/', label: 'Work' },
-      { href: '/en/insights/', label: 'Insights' },
-      { href: '/en/methodology/', label: 'Methodology' },
-      { href: '/en/team/', label: 'Team' },
+      { href: '/work/', label: 'Work' },
+      { href: '/insights/', label: 'Insights' },
+      { href: '/methodology/', label: 'Methodology' },
+      { href: '/team/', label: 'Team' },
     ];
 
 const ctaLabel = isEs ? 'Hablemos' : "Let's talk";
-const ctaHref = isEs ? '/#contacto' : '/en/#contacto';
+const ctaHref = isEs ? '/es/#contacto' : '/#contacto';
 const altLabel = isEs ? 'EN' : 'ES';
-const altHref = alternateHref ?? (isEs ? '/en/' : '/');
-const homeHref = isEs ? '/' : '/en/';
+const altHref = alternateHref ?? (isEs ? '/' : '/es/');
+const homeHref = isEs ? '/es/' : '/';
 
 function isActive(href: string): boolean {
   if (href === currentPath) return true;

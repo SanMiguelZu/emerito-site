@@ -14,8 +14,8 @@ interface Props {
 
 const {
   title,
-  description = 'Emerito — Comunicación que cambia comportamientos.',
-  lang = 'es',
+  description = 'Emerito — Content people remember.',
+  lang = 'en',
   alternateHref,
   ogImage = '/og-default.png',
   noindex = false,
@@ -27,8 +27,8 @@ const currentPath = Astro.url.pathname;
 const canonicalUrl = new URL(currentPath, siteUrl).href;
 const alternateUrl = alternateHref ? new URL(withTrailingSlash(alternateHref), siteUrl).href : null;
 const alternateLang = lang === 'es' ? 'en' : 'es';
-// x-default always points to the Spanish (root) version
-const xDefaultUrl = lang === 'es' ? canonicalUrl : (alternateUrl ?? canonicalUrl);
+// x-default always points to the English (root) version
+const xDefaultUrl = lang === 'en' ? canonicalUrl : (alternateUrl ?? canonicalUrl);
 const ogImageUrl = new URL(ogImage, siteUrl).href;
 const ogLocale = lang === 'es' ? 'es_CO' : 'en_US';
 const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_CO';

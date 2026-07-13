@@ -1,0 +1,94 @@
+---
+import ProjectLayout from '../../../components/ProjectLayout.astro';
+// Turnarounds de personaje: .webm VP9 transparente con .webp transparente como
+// poster de respaldo para navegadores que no reproducen video con alfa (Safari muestra el frame).
+
+const crew = [
+  { name: 'Piraña', webm: '/images/Palmodromo/Pirana_Alpha.webm', poster: '/images/Palmodromo/Pirana_Alpha.webp' },
+  { name: 'Motomami', webm: '/images/Palmodromo/Motomami_Alpha.webm', poster: '/images/Palmodromo/Motomami_Alpha.webp' },
+  { name: 'Alfa', webm: '/images/Palmodromo/Alfa_Alpha.webm', poster: '/images/Palmodromo/Alfa_Alpha.webp' },
+];
+---
+
+<ProjectLayout
+  lang="es"
+  alternateHref="/work/palmodromo-medellin"
+  title="Palmódromo Medellín"
+  label="Juegos y experiencias · En desarrollo"
+  description="Un juego de carreras nacido en Las Palmas, la legendaria vía de montaña de Medellín. Cultura de carros real, barrios reales, actitud real. En desarrollo, construido a la vista."
+  intro="Toda ciudad tiene una vía donde vive su cultura de carros. La nuestra es <strong>Las Palmas</strong>: una subida exigente llena de curvas, toda la ciudad brillando abajo, y gente que sube no solo a correr, sino a mostrar sus carros, hacer amigos y pertenecer. Palmódromo es esa experiencia, <strong>convertida en juego</strong>."
+  hero={{ type: 'video', src: '/images/Palmodromo/Palmodromo_Reel_Web.mp4' }}
+  slotAfter={2}
+  sections={[
+    {
+      text: 'Este proyecto es personal. Empezó décadas antes que el estudio, con un niño creciendo alrededor de la cultura de carreras de Las Palmas, y más tarde, noches subiendo esas curvas con amigos y sus carros. Palmódromo digitaliza esa sensación: piensa en <strong>el GTA de Colombia</strong>, pero hecho por gente que de verdad estuvo ahí.',
+      media: [
+        { type: 'img', src: '/images/Palmodromo/BMW_M4_LaBomba_V03.webp', alt: 'La Bomba, BMW M4 modificado', caption: 'La Bomba' },
+        { type: 'img', src: '/images/Palmodromo/Primax1.webp', alt: 'Entorno de Palmódromo, Las Palmas de noche', caption: 'Las Palmas' },
+      ],
+    },
+    {
+      text: 'La visión: el juego es <strong>gratis</strong>. Marcas locales sueltan gear exclusivo dentro del juego. Los jugadores pagan solo por los detalles que importan en esta cultura: los looks más exclusivos, o cambiar tu placa a <strong>444</strong>, como haría media Medellín. Los personajes salen de los arquetipos reales de la ciudad, cada uno atado a barrios reales.',
+    },
+    {
+      text: 'El amor por esta vía es real. Otros creadores ya llevaron Las Palmas al sim racing, y admiramos a todos los que construyen para compartir esta cultura con el mundo: son amigos de la casa. Nuestro aporte juega a lo que mejor hacemos, <strong>oficio visual y narrativa</strong>: Medellín como de verdad se ve, suena y se maneja, con sus personajes en el centro. Tenemos una base profunda de assets: carros, motos, personajes, animaciones. Con el pipeline asistido por IA de hoy podemos prototipar a una velocidad que no era posible cuando el proyecto empezó.',
+      media: [
+        { type: 'video', src: '/images/Palmodromo/Lights,Camera,Action.mp4', caption: 'Luz, cámara, acción' },
+      ],
+    },
+    {
+      text: '<em>El Palmódromo</em> no es solo un juego de carreras. Es un archivo cultural, una carta de amor a Medellín sobre cuatro ruedas. Queremos <strong>carros reales y colaboradores reales</strong> de la ciudad en el juego: gente que quiera ver su historia reflejada en él. Este es un proyecto hecho por y para la cultura.',
+      media: [
+        { type: 'video', src: '/images/Palmodromo/Dancing_Video_V010001-0150.mp4', caption: 'Hecho por la cultura' },
+        { type: 'video', src: '/images/Palmodromo/BikeRide_Video_V010001-0179.mp4', caption: 'En moto' },
+      ],
+    },
+  ]}
+  banner={{
+    badge: 'Hagámoslo realidad',
+    title: '¿Quieres que Palmódromo <em class="italic">exista?</em>',
+    text: 'Estamos construyendo esto a la vista. Si quieres entrar, como jugador, colaborador, marca, o alguien cuyo carro merece estar en el juego, déjanos tu contacto y te mantenemos cerca del proyecto.',
+    buttonText: 'Súbete →',
+    href: '/es/#contacto',
+  }}
+  next={{ title: 'Bacano Go!', href: '/es/trabajo/bacano-go/' }}
+>
+  <!-- ══ CONOCE A LA CUADRILLA: turnarounds transparentes saliendo de La Bomba ══ -->
+  <section class="bg-cream pt-[90px] pb-[110px] px-6 lg:px-[46px] overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal flex items-end justify-between gap-6 flex-wrap mb-[160px]">
+        <h2 class="font-display font-medium text-[clamp(34px,4.6vw,60px)] leading-[0.96] tracking-[-0.015em] text-blue-black">
+          Conoce a <em class="italic text-orange">la cuadrilla.</em>
+        </h2>
+        <p class="text-[15.5px] leading-[1.55] text-blue-black/70 max-w-[340px]">
+          Piraña, Motomami y Alfa: arquetipos de la ciudad, cada uno con una historia
+          y un barrio detrás.
+        </p>
+      </div>
+      <div class="relative mx-auto max-w-[940px] mb-[80px]">
+        <img
+          src="/images/Palmodromo/La Bomba BG.webp"
+          alt="La Bomba, escena de la gasolinera de Palmódromo"
+          class="pop-border pop-shadow-lg block mx-auto w-[80%] aspect-[16/9] object-cover rounded-[24px]"
+          loading="lazy"
+        />
+        <div class="absolute left-1/2 -translate-x-1/2 w-[113%] bottom-[-11%] flex items-end justify-center gap-[1%]">
+          {crew.map((c) => (
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              poster={c.poster}
+              aria-label={`${c.name}, turnaround del personaje`}
+              class:list={['pointer-events-none', 'w-[37%]']}
+              style="filter: drop-shadow(0 26px 22px rgba(6,34,47,.38));"
+            >
+              <source src={c.webm} type="video/webm" />
+            </video>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</ProjectLayout>

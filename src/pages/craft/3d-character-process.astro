@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// The 3D character process, told through San Miguel (Emerito's yellow frog).
+// TODO: refine copy with the original Behance write-up (behance.net/gallery/195194029/San-Miguel-Branding).
+const stages = [
+  {
+    no: '01',
+    title: 'Concept & exploration',
+    desc: 'Every character starts as a question: who is this, and what do they stand for? San Miguel began as pages of options, silhouettes, color tests, and attitudes, until one yellow frog refused to be discarded.',
+    media: [
+      { type: 'img', src: '/images/Personajes/Opciones.webp', alt: 'San Miguel concept options', caption: 'Options' },
+      { type: 'img', src: '/images/Personajes/Sanmiguel Zu_Noise_Low.webp', alt: 'San Miguel branding artwork', caption: 'Branding art' },
+    ],
+  },
+  {
+    no: '02',
+    title: 'Poses & personality',
+    desc: 'A character isn’t a model, it’s a personality. Pose sheets define how San Miguel stands, leans, celebrates, and sulks, so every future animation stays in character.',
+    media: [
+      { type: 'img', src: '/images/Personajes/Poses3.jpg', alt: 'San Miguel pose sheet', caption: 'Pose sheet' },
+    ],
+  },
+  {
+    no: '03',
+    title: 'Topology',
+    desc: 'The invisible craft: clean topology, the geometry flow of the 3D model, decides whether a face can smile without breaking. Boring to look at, impossible to skip.',
+    media: [
+      { type: 'img', src: '/images/Personajes/Topology.jpg', alt: 'San Miguel 3D topology wireframe', caption: 'Wireframe' },
+    ],
+  },
+  {
+    no: '04',
+    title: 'Look development',
+    desc: 'Materials, lighting, and render tests until the character looks the same in every shot: the exact yellow, the exact eyes, the exact charm.',
+    media: [
+      { type: 'img', src: '/images/Personajes/Render_V010070.webp', alt: 'San Miguel render test', caption: 'Render test' },
+    ],
+  },
+  {
+    no: '05',
+    title: 'Turntable',
+    desc: 'The rite of passage for every 3D character: a full rotation under neutral light. No angle to hide in.',
+    media: [
+      { type: 'video', src: '/images/Personajes/turntable.mp4', caption: 'Turntable' },
+    ],
+  },
+  {
+    no: '06',
+    title: 'Motion',
+    desc: 'Then the character comes alive: walk cycles first, personality later. If the walk reads as San Miguel from across the room, the rig is ready for anything, including questionable dance moves.',
+    media: [
+      { type: 'video', src: '/images/Personajes/WalkingCycleEdit_V01.mp4', caption: 'Walk cycle' },
+      { type: 'video', src: '/images/Personajes/FunnyDanceVideo0001-0137.mp4', caption: 'Questionable dance moves' },
+    ],
+  },
+] as const;
+---
+
+<BaseLayout
+  title="San Miguel: The 3D Character Design Process"
+  description="How a 3D character comes to life: concept, poses, topology, look development, turntable, and animation. The full character design process behind San Miguel, Emerito's yellow frog."
+  lang="en"
+  alternateHref="/es/oficio/proceso-de-personaje-3d"
+>
+  <div class="pop-root relative w-full overflow-hidden">
+
+    <!-- ══ HEADER ══ -->
+    <section class="bg-cream pt-20 pb-14 px-6 lg:px-[46px] border-b-[3px] border-blue-black">
+      <div class="max-w-7xl mx-auto">
+        <a href="/" class="pop-nav-link inline-block font-mono text-[12px] font-bold tracking-[0.08em] uppercase text-blue-black/55 mb-7">← Home</a>
+        <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">Character process</p>
+        <h1 class="font-display font-medium text-[clamp(40px,5.6vw,84px)] leading-[0.9] tracking-[-0.025em] text-blue-black mb-6">
+          How a 3D character <em class="italic text-orange">comes to life.</em>
+        </h1>
+        <p class="text-lg leading-[1.6] text-blue-black/70 max-w-[620px]">
+          Meet <strong>San Miguel</strong>, Emerito's yellow frog, and the full character
+          design process behind him: concept, poses, topology, look development, and motion.
+          The same pipeline behind every character we ship.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ STAGES ══ -->
+    <section class="bg-cream py-[80px] px-6 lg:px-[46px]">
+      <div class="max-w-7xl mx-auto flex flex-col gap-[90px]">
+        {stages.map((s, i) => (
+          <article class:list={['grid gap-10 items-center', 'lg:grid-cols-[0.9fr_1.1fr]']}>
+            <div class:list={['reveal', i % 2 === 1 ? 'lg:order-2' : '']}>
+              <span class="pop-badge text-xs px-3 py-1 bg-blue-black text-cream">Stage {s.no}</span>
+              <h2 class="font-display font-medium text-[clamp(26px,3.4vw,44px)] leading-[1] text-blue-black mt-4 mb-4">{s.title}</h2>
+              <p class="text-[16px] leading-[1.6] text-blue-black/75 max-w-[520px]">{s.desc}</p>
+            </div>
+            <div class:list={['reveal grid gap-5', s.media.length > 1 ? 'sm:grid-cols-2' : '', i % 2 === 1 ? 'lg:order-1' : '']}>
+              {s.media.map((m) => (
+                <figure class="pop-card pop-tile pop-border pop-shadow-md m-0 rounded-[20px] overflow-hidden bg-ocean relative">
+                  {m.type === 'video' ? (
+                    <video src={m.src} autoplay muted loop playsinline class="w-full aspect-[4/3] object-cover"></video>
+                  ) : (
+                    <img src={m.src} alt={m.alt ?? ''} class="w-full aspect-[4/3] object-cover" loading="lazy" />
+                  )}
+                  <span class="font-mono absolute bottom-3 left-3.5 text-[10px] font-bold tracking-[0.08em] uppercase text-cream/80 bg-blue-black/60 rounded-full px-2.5 py-1">{m.caption}</span>
+                </figure>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="bg-orange py-[80px] px-6 lg:px-[46px] text-center border-t-[3px] border-blue-black">
+      <div class="max-w-[680px] mx-auto">
+        <h2 class="font-display font-medium text-[clamp(30px,4.2vw,54px)] leading-[0.98] text-blue-black mb-4">
+          Your brand deserves <em class="italic">a face like this.</em>
+        </h2>
+        <p class="text-[16px] leading-[1.6] text-blue-black/75 mb-8">
+          Original character design, full IP, and the whole pipeline under one roof.
+        </p>
+        <a
+          href="/#contacto"
+          data-cursor="cta"
+          class="pop-btn pop-border inline-block bg-blue-black text-cream text-[16px] font-extrabold px-8 py-4 rounded-full"
+          style="box-shadow: 7px 7px 0 #FFF6E4;"
+        >
+          Let's design yours →
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

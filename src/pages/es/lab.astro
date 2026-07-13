@@ -1,53 +1,53 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
-// The Lab: rapid experiments in content creation. One day or less, shipped in the open.
-// Add new entries at the TOP of this array. Keep it honest: only real, finished experiments.
+// El Lab: experimentos rápidos de creación de contenido. Un día o menos, publicados a la vista.
+// Agrega nuevas entradas ARRIBA de este arreglo. Sé honesto: solo experimentos reales y terminados.
 const experiments = [
   {
     no: '001',
-    title: 'Cloth in motion',
-    tags: 'Cloth simulation · Blender',
-    desc: 'Garment simulation on a walking cycle: vivid, flowing pieces inspired by a costume-design collection, tested for drape, bounce, and attitude. The question behind it: can simulated fabric move like it owns the runway? And what happens when the model breakdances?',
+    title: 'Tela en movimiento',
+    tags: 'Simulación de tela · Blender',
+    desc: 'Simulación de prendas sobre un ciclo de caminado: piezas vivas y fluidas inspiradas en una colección de diseño de vestuario, probadas para caída, rebote y actitud. La pregunta detrás: ¿puede la tela simulada moverse como si fuera dueña de la pasarela? ¿Y qué pasa cuando la modelo hace breakdance?',
     media: [
-      { type: 'video', src: '/images/LAB/CatWalk_V020001-0109.mp4', caption: 'Catwalk' },
-      { type: 'video', src: '/images/LAB/Render_HipHop_V010001-0069.mp4', caption: 'Stress test' },
+      { type: 'video', src: '/images/LAB/CatWalk_V020001-0109.mp4', caption: 'Pasarela' },
+      { type: 'video', src: '/images/LAB/Render_HipHop_V010001-0069.mp4', caption: 'Prueba de estrés' },
     ],
   },
 ] as const;
 
-// Ideas queued for future experiments. Shown as intentions, never as finished work.
+// Ideas en cola para futuros experimentos. Se muestran como intenciones, nunca como trabajo terminado.
 const upNext = [
-  'Interactive 3D logo: particles you can push around with the cursor',
-  'AI video: restyling a real interior without artifacts',
-  'Code toys: small browser experiments with the Emerito characters',
+  'Logo 3D interactivo: partículas que puedes empujar con el cursor',
+  'Video con IA: reestilizar un interior real sin artefactos',
+  'Juguetes de código: pequeños experimentos en el navegador con los personajes de Emerito',
 ] as const;
 ---
 
 <BaseLayout
-  title="The Lab: Quick Content Creation Experiments"
-  description="Emerito's lab for quick content creation experiments: testing 3D, AI, simulation, and creative code techniques to prove viability and develop new ways to create content."
-  lang="en"
-  alternateHref="/es/lab"
+  title="El Lab: experimentos rápidos de creación de contenido"
+  description="El laboratorio de Emerito para experimentos rápidos de creación de contenido: probamos técnicas de 3D, IA, simulación y código creativo para validar su viabilidad y desarrollar nuevas formas de crear contenido."
+  lang="es"
+  alternateHref="/lab"
 >
   <div class="pop-root relative w-full overflow-hidden">
 
     <!-- ══ HEADER ══ -->
     <section class="bg-cream pt-20 pb-14 px-6 lg:px-[46px] border-b-[3px] border-blue-black">
       <div class="max-w-7xl mx-auto">
-        <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">The Lab</p>
+        <p class="pop-badge text-xs px-3.5 py-1.5 bg-orange text-blue-black border-[2.5px] border-blue-black mb-6">El Lab</p>
         <h1 class="font-display font-medium text-[clamp(40px,5.6vw,84px)] leading-[0.9] tracking-[-0.025em] text-blue-black mb-6">
-          Quick content creation <em class="italic text-orange">experiments.</em>
+          Experimentos rápidos de <em class="italic text-orange">creación de contenido.</em>
         </h1>
         <p class="text-lg leading-[1.6] text-blue-black/70 max-w-[620px]">
-          Different techniques, 3D, AI, simulation, creative code, tested to prove what's
-          viable and develop new ways to create content. One day or less per experiment,
-          published as-is. Some will be beautiful, some will be broken. That's the point.
+          Distintas técnicas, 3D, IA, simulación, código creativo, probadas para validar qué
+          es viable y desarrollar nuevas formas de crear contenido. Un día o menos por
+          experimento, publicado tal cual. Algunos serán hermosos, otros estarán rotos. Ese es el punto.
         </p>
       </div>
     </section>
 
-    <!-- ══ EXPERIMENTS ══ -->
+    <!-- ══ EXPERIMENTOS ══ -->
     <section class="bg-cream py-[80px] px-6 lg:px-[46px]">
       <div class="max-w-7xl mx-auto flex flex-col gap-[90px]">
         {experiments.map((e) => (
@@ -75,11 +75,11 @@ const upNext = [
       </div>
     </section>
 
-    <!-- ══ UP NEXT ══ -->
+    <!-- ══ PRÓXIMAMENTE ══ -->
     <section class="bg-blue-black py-[70px] px-6 lg:px-[46px] border-y-[3px] border-blue-black">
       <div class="max-w-7xl mx-auto">
         <h2 class="reveal font-display font-medium text-[clamp(26px,3.4vw,44px)] leading-[1] text-cream mb-8">
-          Up <em class="italic text-orange">next.</em>
+          Lo que <em class="italic text-orange">viene.</em>
         </h2>
         <div class="reveal grid md:grid-cols-3 gap-5">
           {upNext.map((idea, i) => (
@@ -96,18 +96,18 @@ const upNext = [
     <section class="bg-orange py-[80px] px-6 lg:px-[46px] text-center">
       <div class="max-w-[640px] mx-auto">
         <h2 class="font-display font-medium text-[clamp(30px,4.2vw,54px)] leading-[0.98] text-blue-black mb-4">
-          Got a challenge <em class="italic">for us?</em>
+          ¿Tienes un reto <em class="italic">para nosotros?</em>
         </h2>
         <p class="text-[16px] leading-[1.6] text-blue-black/75 mb-8">
-          If it can be done in a day, we want to try it.
+          Si se puede hacer en un día, queremos intentarlo.
         </p>
         <a
-          href="/#contacto"
+          href="/es/#contacto"
           data-cursor="cta"
           class="pop-btn pop-border inline-block bg-blue-black text-cream text-[16px] font-extrabold px-8 py-4 rounded-full"
           style="box-shadow: 7px 7px 0 #FFF6E4;"
         >
-          Send it →
+          Envíalo →
         </a>
       </div>
     </section>

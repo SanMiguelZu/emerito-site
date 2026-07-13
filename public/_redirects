@@ -1,21 +1,47 @@
-# Legacy URL redirects (old domain/CMS -> new Astro site)
-# 301 permanent redirects preserve SEO equity from the old pages.
-# Targets use trailing slashes to match canonical URLs and avoid a second redirect hop.
+# ─────────────────────────────────────────────────────────────────────────
+# Emerito redirects
+# Site is now ENGLISH-primary at the root; Spanish lives under /es/.
+# 301 = permanent (preserves SEO equity). Targets use trailing slashes to
+# match Astro's canonical URLs and avoid a second redirect hop.
+# ─────────────────────────────────────────────────────────────────────────
 
-/portfolio                              /trabajo/         301
-/contact                                /                 301
-/blog-emerito-creative-agency           /insights/        301
-/cauce                                  /metodologia/     301
+# ── Language swap: old English /en/* URLs now live at the root ──────────────
+/en/*                                   /:splat                          301
 
-/works/palmodromo-medellin              /trabajo/palmodromo-medellin/    301
-/works/gro-op                           /trabajo/home-in-motion/         301
-/works/zero-risk-zone                   /trabajo/zero-risk-zone/         301
+# ── Language swap: old Spanish root URLs now live under /es/ ────────────────
+/trabajo/*                              /es/trabajo/:splat               301
+/trabajo                                /es/trabajo/                     301
+/casos/*                                /es/casos/:splat                 301
+/casos                                  /es/casos/                       301
+/contacto                               /es/contacto/                    301
+/equipo                                 /es/equipo/                      301
+/metodologia                            /es/metodologia/                 301
+/oficio/*                               /es/oficio/:splat                301
+/privacidad                             /es/privacidad/                  301
 
-/post/medellins-animation-industry-in-transition                              /insights/la-industria-de-animacion-de-medellin-en-transicion/            301
-/post/the-great-pivot-from-technical-executioners-to-creative-orchestrators    /insights/el-gran-giro-de-ejecutores-tecnicos-a-orquestadores-creativos/  301
-/post/advertisement-animation-and-the-value-of-what-we-create                 /insights/lecciones-de-propiedad-intelectual-de-piragna-y-umana/         301
-/post/blog-ads-to-stories                                                     /insights/cuando-los-personajes-se-vuelven-cultura-frisby-sura/          301
-/post/medellin-creative-wave                                                  /insights/la-ola-creativa-de-medellin/                                    301
+# Spanish blog posts: the root /insights/ index is now English, but these
+# Spanish slugs have no English equivalent, so route each to its /es/ version.
+/insights/la-industria-de-animacion-de-medellin-en-transicion            /es/insights/la-industria-de-animacion-de-medellin-en-transicion/            301
+/insights/el-gran-giro-de-ejecutores-tecnicos-a-orquestadores-creativos  /es/insights/el-gran-giro-de-ejecutores-tecnicos-a-orquestadores-creativos/  301
+/insights/lecciones-de-propiedad-intelectual-de-piragna-y-umana          /es/insights/lecciones-de-propiedad-intelectual-de-piragna-y-umana/          301
+/insights/cuando-los-personajes-se-vuelven-cultura-frisby-sura           /es/insights/cuando-los-personajes-se-vuelven-cultura-frisby-sura/           301
+/insights/la-ola-creativa-de-medellin                                    /es/insights/la-ola-creativa-de-medellin/                                    301
 
-/works/web3                             /en/work/bacano-go/    301
-/works/journey-of-objects               /en/lab/               301
+# ── Legacy URLs (old domain / CMS) → current English-primary structure ──────
+/portfolio                              /work/                           301
+/contact                                /contact/                        301
+/blog-emerito-creative-agency           /insights/                       301
+/cauce                                  /methodology/                    301
+
+/works/palmodromo-medellin              /work/palmodromo-medellin/       301
+/works/gro-op                           /work/home-in-motion/            301
+/works/zero-risk-zone                   /work/zero-risk-zone/            301
+/works/web3                             /work/bacano-go/                 301
+/works/journey-of-objects               /lab/                            301
+
+# Old English blog URLs → their English articles
+/post/medellins-animation-industry-in-transition                              /insights/medellins-animation-industry-in-transition/                          301
+/post/the-great-pivot-from-technical-executioners-to-creative-orchestrators   /insights/the-great-pivot-from-technical-executioners-to-creative-orchestrators/  301
+/post/advertisement-animation-and-the-value-of-what-we-create                 /insights/intellectual-property-lessons-from-piragna-and-umana/                 301
+/post/blog-ads-to-stories                                                     /insights/when-characters-become-culture-frisby-sura/                          301
+/post/medellin-creative-wave                                                  /insights/medellin-creative-wave/                                              301
