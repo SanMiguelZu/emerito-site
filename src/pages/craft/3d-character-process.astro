@@ -1,57 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-// The 3D character process, told through San Miguel (Emerito's yellow frog).
-// TODO: refine copy with the original Behance write-up (behance.net/gallery/195194029/San-Miguel-Branding).
+// The 3D character process, shown through Emerito's yellow frog (kept unnamed).
 const stages = [
   {
     no: '01',
     title: 'Concept & exploration',
-    desc: 'Every character starts as a question: who is this, and what do they stand for? San Miguel began as pages of options, silhouettes, color tests, and attitudes, until one yellow frog refused to be discarded.',
+    desc: 'Every character starts as a question: who is this, and what do they stand for? It begins as pages of options — silhouettes, color tests, and attitudes — until one design refuses to be discarded.',
     media: [
-      { type: 'img', src: '/images/Personajes/Opciones.webp', alt: 'San Miguel concept options', caption: 'Options' },
-      { type: 'img', src: '/images/Personajes/Sanmiguel Zu_Noise_Low.webp', alt: 'San Miguel branding artwork', caption: 'Branding art' },
+      { type: 'img', src: '/images/Personajes/YellowFrog/Sanmiguel Zu_Noise_Low.webp', alt: 'Yellow frog character concept illustration', caption: 'Concept art', fit: 'natural' },
     ],
   },
   {
     no: '02',
-    title: 'Poses & personality',
-    desc: 'A character isn’t a model, it’s a personality. Pose sheets define how San Miguel stands, leans, celebrates, and sulks, so every future animation stays in character.',
+    title: '3D modeling',
+    desc: 'From flat sketch to a sculpted, watertight mesh. Clean topology — the geometry flow of the model — decides whether a face can smile without breaking. Boring to look at, impossible to skip.',
     media: [
-      { type: 'img', src: '/images/Personajes/Poses3.jpg', alt: 'San Miguel pose sheet', caption: 'Pose sheet' },
+      { type: 'img', src: '/images/Personajes/YellowFrog/Topology.jpg', alt: '3D model topology wireframe', caption: 'Wireframe', fit: 'natural' },
     ],
   },
   {
     no: '03',
-    title: 'Topology',
-    desc: 'The invisible craft: clean topology, the geometry flow of the 3D model, decides whether a face can smile without breaking. Boring to look at, impossible to skip.',
+    title: 'Texturing',
+    desc: 'Color, material, and surface detail turn a grey model into a character — the exact yellow, the exact charm, consistent from every angle and every light.',
     media: [
-      { type: 'img', src: '/images/Personajes/Topology.jpg', alt: 'San Miguel 3D topology wireframe', caption: 'Wireframe' },
+      { type: 'img', src: '/images/Personajes/YellowFrog/Poses3.jpg', alt: 'Character color and texture sheet', caption: 'Texturing', fit: 'natural' },
     ],
   },
   {
     no: '04',
-    title: 'Look development',
-    desc: 'Materials, lighting, and render tests until the character looks the same in every shot: the exact yellow, the exact eyes, the exact charm.',
-    media: [
-      { type: 'img', src: '/images/Personajes/Render_V010070.webp', alt: 'San Miguel render test', caption: 'Render test' },
-    ],
-  },
-  {
-    no: '05',
     title: 'Turntable',
     desc: 'The rite of passage for every 3D character: a full rotation under neutral light. No angle to hide in.',
     media: [
-      { type: 'video', src: '/images/Personajes/turntable.mp4', caption: 'Turntable' },
-    ],
-  },
-  {
-    no: '06',
-    title: 'Motion',
-    desc: 'Then the character comes alive: walk cycles first, personality later. If the walk reads as San Miguel from across the room, the rig is ready for anything, including questionable dance moves.',
-    media: [
-      { type: 'video', src: '/images/Personajes/WalkingCycleEdit_V01.mp4', caption: 'Walk cycle' },
-      { type: 'video', src: '/images/Personajes/FunnyDanceVideo0001-0137.mp4', caption: 'Questionable dance moves' },
+      { type: 'video', src: '/images/Personajes/YellowFrog/turntable.mp4', caption: 'Turntable' },
     ],
   },
 ] as const;
@@ -74,9 +55,9 @@ const stages = [
           How a 3D character <em class="italic text-orange">comes to life.</em>
         </h1>
         <p class="text-lg leading-[1.6] text-blue-black/70 max-w-[620px]">
-          Meet <strong>San Miguel</strong>, Emerito's yellow frog, and the full character
-          design process behind him: concept, poses, topology, look development, and motion.
-          The same pipeline behind every character we ship.
+          A look at our full character design process, from first sketch to final spin:
+          concept, 3D modeling, texturing, and turntable. The same pipeline behind every
+          character we ship.
         </p>
       </div>
     </section>
@@ -97,7 +78,7 @@ const stages = [
                   {m.type === 'video' ? (
                     <video src={m.src} autoplay muted loop playsinline class="w-full aspect-[4/3] object-cover"></video>
                   ) : (
-                    <img src={m.src} alt={m.alt ?? ''} class="w-full aspect-[4/3] object-cover" loading="lazy" />
+                    <img src={m.src} alt={m.alt ?? ''} class:list={['w-full', 'fit' in m && m.fit === 'natural' ? 'h-auto' : 'aspect-[4/3] object-cover']} loading="lazy" />
                   )}
                   <span class="font-mono absolute bottom-3 left-3.5 text-[10px] font-bold tracking-[0.08em] uppercase text-cream/80 bg-blue-black/60 rounded-full px-2.5 py-1">{m.caption}</span>
                 </figure>

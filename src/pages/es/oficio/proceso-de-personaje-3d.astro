@@ -1,56 +1,38 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-// El proceso de personaje 3D, contado a través de San Miguel (la rana amarilla de Emerito).
+// El proceso de personaje 3D, mostrado a través de la rana amarilla de Emerito (sin nombre).
 const stages = [
   {
     no: '01',
     title: 'Concepto y exploración',
-    desc: 'Todo personaje empieza como una pregunta: ¿quién es esto y qué representa? San Miguel empezó como páginas de opciones, siluetas, pruebas de color y actitudes, hasta que una rana amarilla se negó a ser descartada.',
+    desc: 'Todo personaje empieza como una pregunta: ¿quién es esto y qué representa? Empieza como páginas de opciones — siluetas, pruebas de color y actitudes — hasta que un diseño se niega a ser descartado.',
     media: [
-      { type: 'img', src: '/images/Personajes/Opciones.webp', alt: 'Opciones de concepto de San Miguel', caption: 'Opciones' },
-      { type: 'img', src: '/images/Personajes/Sanmiguel Zu_Noise_Low.webp', alt: 'Arte de marca de San Miguel', caption: 'Arte de marca' },
+      { type: 'img', src: '/images/Personajes/YellowFrog/Sanmiguel Zu_Noise_Low.webp', alt: 'Ilustración de concepto de la rana amarilla', caption: 'Arte de concepto', fit: 'natural' },
     ],
   },
   {
     no: '02',
-    title: 'Poses y personalidad',
-    desc: 'Un personaje no es un modelo, es una personalidad. Las hojas de poses definen cómo se para San Miguel, cómo se recuesta, celebra y se enfurruña, para que cada animación futura se mantenga en carácter.',
+    title: 'Modelado 3D',
+    desc: 'Del boceto plano a una malla esculpida y hermética. Una topología limpia — el flujo de geometría del modelo — decide si una cara puede sonreír sin romperse. Aburrida de ver, imposible de saltar.',
     media: [
-      { type: 'img', src: '/images/Personajes/Poses3.jpg', alt: 'Hoja de poses de San Miguel', caption: 'Hoja de poses' },
+      { type: 'img', src: '/images/Personajes/YellowFrog/Topology.jpg', alt: 'Wireframe de topología del modelo 3D', caption: 'Wireframe', fit: 'natural' },
     ],
   },
   {
     no: '03',
-    title: 'Topología',
-    desc: 'El oficio invisible: una topología limpia, el flujo de geometría del modelo 3D, decide si una cara puede sonreír sin romperse. Aburrida de ver, imposible de saltar.',
+    title: 'Texturizado',
+    desc: 'Color, material y detalle de superficie convierten un modelo gris en un personaje: el amarillo exacto, el encanto exacto, consistente desde cada ángulo y cada luz.',
     media: [
-      { type: 'img', src: '/images/Personajes/Topology.jpg', alt: 'Wireframe de topología 3D de San Miguel', caption: 'Wireframe' },
+      { type: 'img', src: '/images/Personajes/YellowFrog/Poses3.jpg', alt: 'Hoja de color y textura del personaje', caption: 'Texturizado', fit: 'natural' },
     ],
   },
   {
     no: '04',
-    title: 'Look development',
-    desc: 'Materiales, iluminación y pruebas de render hasta que el personaje se ve igual en cada toma: el amarillo exacto, los ojos exactos, el encanto exacto.',
-    media: [
-      { type: 'img', src: '/images/Personajes/Render_V010070.webp', alt: 'Prueba de render de San Miguel', caption: 'Prueba de render' },
-    ],
-  },
-  {
-    no: '05',
     title: 'Turntable',
     desc: 'El rito de paso de todo personaje 3D: una rotación completa bajo luz neutra. Ningún ángulo donde esconderse.',
     media: [
-      { type: 'video', src: '/images/Personajes/turntable.mp4', caption: 'Turntable' },
-    ],
-  },
-  {
-    no: '06',
-    title: 'Animación',
-    desc: 'Y entonces el personaje cobra vida: primero los ciclos de caminado, la personalidad después. Si el caminado se lee como San Miguel desde el otro lado del cuarto, el rig está listo para lo que sea, incluyendo pasos de baile cuestionables.',
-    media: [
-      { type: 'video', src: '/images/Personajes/WalkingCycleEdit_V01.mp4', caption: 'Ciclo de caminado' },
-      { type: 'video', src: '/images/Personajes/FunnyDanceVideo0001-0137.mp4', caption: 'Pasos de baile cuestionables' },
+      { type: 'video', src: '/images/Personajes/YellowFrog/turntable.mp4', caption: 'Turntable' },
     ],
   },
 ] as const;
@@ -73,9 +55,9 @@ const stages = [
           Cómo cobra vida <em class="italic text-orange">un personaje 3D.</em>
         </h1>
         <p class="text-lg leading-[1.6] text-blue-black/70 max-w-[620px]">
-          Conoce a <strong>San Miguel</strong>, la rana amarilla de Emerito, y todo el proceso
-          de diseño de personaje detrás de él: concepto, poses, topología, look development y
-          animación. El mismo pipeline detrás de cada personaje que entregamos.
+          Un vistazo a todo nuestro proceso de diseño de personaje, del primer boceto al giro
+          final: concepto, modelado 3D, texturizado y turntable. El mismo pipeline detrás de
+          cada personaje que entregamos.
         </p>
       </div>
     </section>
@@ -96,7 +78,7 @@ const stages = [
                   {m.type === 'video' ? (
                     <video src={m.src} autoplay muted loop playsinline class="w-full aspect-[4/3] object-cover"></video>
                   ) : (
-                    <img src={m.src} alt={m.alt ?? ''} class="w-full aspect-[4/3] object-cover" loading="lazy" />
+                    <img src={m.src} alt={m.alt ?? ''} class:list={['w-full', 'fit' in m && m.fit === 'natural' ? 'h-auto' : 'aspect-[4/3] object-cover']} loading="lazy" />
                   )}
                   <span class="font-mono absolute bottom-3 left-3.5 text-[10px] font-bold tracking-[0.08em] uppercase text-cream/80 bg-blue-black/60 rounded-full px-2.5 py-1">{m.caption}</span>
                 </figure>
