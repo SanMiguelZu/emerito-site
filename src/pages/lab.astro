@@ -5,8 +5,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 // Add new entries at the TOP of this array. Keep it honest: only real, finished experiments.
 const experiments = [
   {
+    no: '002',
+    title: 'Palmodromo: first gameplay',
+    tags: 'Character & vehicle physics · Claude Fable 5',
+    desc: 'The first playable moment of the Palmodromo: the character walks with full animations and can get in and out of vehicles, where the physics change on the fly. On foot, grounded character movement; behind the wheel, the world answers with vehicle physics. Two systems, one seamless swap.',
+    media: [
+      { type: 'video', src: '/images/Palmodromo/Palmodromo_Challenge02_Web.mp4', caption: 'First gameplay' },
+      { type: 'video', src: '/images/Palmodromo/ShoesInCables_Web.mp4', caption: 'Shoes in cables' },
+    ],
+  },
+  {
     no: '001',
-    title: 'Cloth in motion',
+    title: 'Cloth simulation',
     tags: 'Cloth simulation · Blender',
     desc: 'Garment simulation on a walking cycle: vivid, flowing pieces inspired by a costume-design collection, tested for drape, bounce, and attitude. The question behind it: can simulated fabric move like it owns the runway? And what happens when the model breakdances?',
     media: [
