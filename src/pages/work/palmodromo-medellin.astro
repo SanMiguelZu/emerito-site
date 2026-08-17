@@ -76,6 +76,7 @@ const crew = [
         <div class="absolute left-1/2 -translate-x-1/2 w-[113%] bottom-[-11%] flex items-end justify-center gap-[1%]">
           {crew.map((c, i) => (
             <video
+              data-alpha-video
               autoplay
               muted
               loop
@@ -92,4 +93,28 @@ const crew = [
       </div>
     </div>
   </section>
+
+  <script>
+    // iOS/iPadOS (and desktop Safari) decode VP9 but don't composite its alpha
+    // channel — the video plays with a solid black matte instead of transparency.
+    // There's no reliable feature-detect for "alpha support" specifically, so we
+    // detect the WebKit engine that has this limitation and swap those videos for
+    // their transparent .webp poster (still, but correctly composited).
+    const isAppleWebKit =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
+      /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    if (isAppleWebKit) {
+      document.querySelectorAll('video[data-alpha-video]').forEach((video) => {
+        const img = document.createElement('img');
+        img.src = video.getAttribute('poster') ?? '';
+        img.alt = video.getAttribute('aria-label') ?? '';
+        img.className = video.className;
+        const style = video.getAttribute('style');
+        if (style) img.setAttribute('style', style);
+        video.replaceWith(img);
+      });
+    }
+  </script>
 </ProjectLayout>

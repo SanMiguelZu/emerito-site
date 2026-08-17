@@ -75,6 +75,7 @@ const crew = [
         <div class="absolute left-1/2 -translate-x-1/2 w-[113%] bottom-[-11%] flex items-end justify-center gap-[1%]">
           {crew.map((c) => (
             <video
+              data-alpha-video
               autoplay
               muted
               loop
@@ -91,4 +92,28 @@ const crew = [
       </div>
     </div>
   </section>
+
+  <script>
+    // iOS/iPadOS (y Safari de escritorio) decodifican VP9 pero no componen su canal
+    // alfa: el video reproduce con una máscara negra sólida en vez de transparencia.
+    // No hay una forma confiable de detectar "soporte de alfa" directamente, así que
+    // detectamos el motor WebKit que tiene esta limitación y cambiamos esos videos
+    // por su .webp transparente (fijo, pero correctamente compuesto).
+    const isAppleWebKit =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
+      /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    if (isAppleWebKit) {
+      document.querySelectorAll('video[data-alpha-video]').forEach((video) => {
+        const img = document.createElement('img');
+        img.src = video.getAttribute('poster') ?? '';
+        img.alt = video.getAttribute('aria-label') ?? '';
+        img.className = video.className;
+        const style = video.getAttribute('style');
+        if (style) img.setAttribute('style', style);
+        video.replaceWith(img);
+      });
+    }
+  </script>
 </ProjectLayout>
