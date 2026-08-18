@@ -2,13 +2,14 @@
 import ProjectLayout from '../../components/ProjectLayout.astro';
 // TODO: replace the banner href with a dedicated waitlist/support form when built
 // (current contact form works, but a one-field email capture would convert better).
-// Character turnarounds: transparent VP9 .webm with a transparent .png poster as
-// fallback for browsers that can't play alpha video (Safari shows the still frame).
+// Character turnarounds: animated .webp with real alpha (built from the source
+// turntable frame sequences). Works everywhere, including iOS/Safari — unlike
+// VP9-alpha .webm, which iOS decodes but renders with a solid black matte.
 
 const crew = [
-  { name: 'Piraña', webm: '/images/Palmodromo/Pirana_Alpha.webm', poster: '/images/Palmodromo/Pirana_Alpha.webp' },
-  { name: 'Motomami', webm: '/images/Palmodromo/Motomami_Alpha.webm', poster: '/images/Palmodromo/Motomami_Alpha.webp' },
-  { name: 'Alfa', webm: '/images/Palmodromo/Alfa_Alpha.webm', poster: '/images/Palmodromo/Alfa_Alpha.webp' },
+  { name: 'Piraña', turnaround: '/images/Palmodromo/Pirana_Turnaround.webp' },
+  { name: 'Motomami', turnaround: '/images/Palmodromo/Motomami_Turnaround.webp' },
+  { name: 'Alfa', turnaround: '/images/Palmodromo/Alfa_Turnaround.webp' },
 ];
 ---
 
@@ -74,47 +75,16 @@ const crew = [
           loading="lazy"
         />
         <div class="absolute left-1/2 -translate-x-1/2 w-[113%] bottom-[-11%] flex items-end justify-center gap-[1%]">
-          {crew.map((c, i) => (
-            <video
-              data-alpha-video
-              autoplay
-              muted
-              loop
-              playsinline
-              poster={c.poster}
-              aria-label={`${c.name}, character turnaround`}
+          {crew.map((c) => (
+            <img
+              src={c.turnaround}
+              alt={`${c.name}, character turnaround`}
               class:list={['pointer-events-none', 'w-[37%]']}
               style="filter: drop-shadow(0 26px 22px rgba(6,34,47,.38));"
-            >
-              <source src={c.webm} type="video/webm" />
-            </video>
+            />
           ))}
         </div>
       </div>
     </div>
   </section>
-
-  <script>
-    // iOS/iPadOS (and desktop Safari) decode VP9 but don't composite its alpha
-    // channel — the video plays with a solid black matte instead of transparency.
-    // There's no reliable feature-detect for "alpha support" specifically, so we
-    // detect the WebKit engine that has this limitation and swap those videos for
-    // their transparent .webp poster (still, but correctly composited).
-    const isAppleWebKit =
-      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
-      /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-    if (isAppleWebKit) {
-      document.querySelectorAll('video[data-alpha-video]').forEach((video) => {
-        const img = document.createElement('img');
-        img.src = video.getAttribute('poster') ?? '';
-        img.alt = video.getAttribute('aria-label') ?? '';
-        img.className = video.className;
-        const style = video.getAttribute('style');
-        if (style) img.setAttribute('style', style);
-        video.replaceWith(img);
-      });
-    }
-  </script>
 </ProjectLayout>

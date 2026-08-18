@@ -1,12 +1,14 @@
 ---
 import ProjectLayout from '../../../components/ProjectLayout.astro';
-// Turnarounds de personaje: .webm VP9 transparente con .webp transparente como
-// poster de respaldo para navegadores que no reproducen video con alfa (Safari muestra el frame).
+// Turnarounds de personaje: .webp animado con alfa real (armado desde la
+// secuencia de frames del turntable original). Funciona en todos lados,
+// incluido iOS/Safari — a diferencia del .webm con VP9-alfa, que iOS decodifica
+// pero muestra con una máscara negra sólida en vez de transparencia.
 
 const crew = [
-  { name: 'Piraña', webm: '/images/Palmodromo/Pirana_Alpha.webm', poster: '/images/Palmodromo/Pirana_Alpha.webp' },
-  { name: 'Motomami', webm: '/images/Palmodromo/Motomami_Alpha.webm', poster: '/images/Palmodromo/Motomami_Alpha.webp' },
-  { name: 'Alfa', webm: '/images/Palmodromo/Alfa_Alpha.webm', poster: '/images/Palmodromo/Alfa_Alpha.webp' },
+  { name: 'Piraña', turnaround: '/images/Palmodromo/Pirana_Turnaround.webp' },
+  { name: 'Motomami', turnaround: '/images/Palmodromo/Motomami_Turnaround.webp' },
+  { name: 'Alfa', turnaround: '/images/Palmodromo/Alfa_Turnaround.webp' },
 ];
 ---
 
@@ -74,46 +76,15 @@ const crew = [
         />
         <div class="absolute left-1/2 -translate-x-1/2 w-[113%] bottom-[-11%] flex items-end justify-center gap-[1%]">
           {crew.map((c) => (
-            <video
-              data-alpha-video
-              autoplay
-              muted
-              loop
-              playsinline
-              poster={c.poster}
-              aria-label={`${c.name}, turnaround del personaje`}
+            <img
+              src={c.turnaround}
+              alt={`${c.name}, turnaround del personaje`}
               class:list={['pointer-events-none', 'w-[37%]']}
               style="filter: drop-shadow(0 26px 22px rgba(6,34,47,.38));"
-            >
-              <source src={c.webm} type="video/webm" />
-            </video>
+            />
           ))}
         </div>
       </div>
     </div>
   </section>
-
-  <script>
-    // iOS/iPadOS (y Safari de escritorio) decodifican VP9 pero no componen su canal
-    // alfa: el video reproduce con una máscara negra sólida en vez de transparencia.
-    // No hay una forma confiable de detectar "soporte de alfa" directamente, así que
-    // detectamos el motor WebKit que tiene esta limitación y cambiamos esos videos
-    // por su .webp transparente (fijo, pero correctamente compuesto).
-    const isAppleWebKit =
-      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
-      /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-    if (isAppleWebKit) {
-      document.querySelectorAll('video[data-alpha-video]').forEach((video) => {
-        const img = document.createElement('img');
-        img.src = video.getAttribute('poster') ?? '';
-        img.alt = video.getAttribute('aria-label') ?? '';
-        img.className = video.className;
-        const style = video.getAttribute('style');
-        if (style) img.setAttribute('style', style);
-        video.replaceWith(img);
-      });
-    }
-  </script>
 </ProjectLayout>
