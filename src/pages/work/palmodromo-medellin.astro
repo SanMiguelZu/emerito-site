@@ -76,15 +76,88 @@ const crew = [
         />
         <div class="absolute left-1/2 -translate-x-1/2 w-[113%] bottom-[-11%] flex items-end justify-center gap-[1%]">
           {crew.map((c) => (
-            <img
-              src={c.turnaround}
-              alt={`${c.name}, character turnaround`}
-              class:list={['pointer-events-none', 'w-[37%]']}
+            <canvas
+              data-turnaround={c.turnaround}
+              width="480"
+              height="854"
+              aria-label={`${c.name}, character turnaround`}
+              class:list={['pointer-events-none', 'w-[37%]', 'aspect-[480/854]']}
               style="filter: drop-shadow(0 26px 22px rgba(6,34,47,.38));"
-            />
+            ></canvas>
           ))}
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    // Animated images have no way to catch up if the device can't decode fast
+    // enough — they just fall behind and play the whole loop slower. We drive
+    // playback ourselves: each tick we compute which frame SHOULD be showing
+    // right now from the real clock, and draw that one, skipping ahead on
+    // slower devices instead of dragging the loop out. Falls back to the
+    // static .webp itself (still transparent, just not animated) if
+    // WebCodecs isn't available.
+    async function playTurnaround(canvas: HTMLCanvasElement) {
+      const src = canvas.dataset.turnaround;
+      if (!src || !('ImageDecoder' in window)) {
+        fallbackToImage(canvas);
+        return;
+      }
+      try {
+        const buf = await (await fetch(src)).arrayBuffer();
+        const decoder = new ImageDecoder({ data: buf, type: 'image/webp' });
+        await decoder.tracks.ready;
+        const frameCount = decoder.tracks.selectedTrack.frameCount;
+        if (!frameCount) throw new Error('no frames');
+
+        const FRAME_MS = 33; // matches the encode (30fps)
+        const totalMs = frameCount * FRAME_MS;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        const start = performance.now();
+        let lastFrame = -1;
+        let decoding = false;
+
+        function tick() {
+          const elapsed = (performance.now() - start) % totalMs;
+          const frameIndex = Math.min(frameCount - 1, Math.floor(elapsed / FRAME_MS));
+          if (frameIndex !== lastFrame && !decoding) {
+            decoding = true;
+            decoder
+              .decode({ frameIndex })
+              .then(({ image }) => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+                image.close();
+                lastFrame = frameIndex;
+                decoding = false;
+              })
+              .catch(() => {
+                decoding = false;
+              });
+          }
+          requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      } catch {
+        fallbackToImage(canvas);
+      }
+    }
+
+    function fallbackToImage(canvas: HTMLCanvasElement) {
+      const src = canvas.dataset.turnaround;
+      if (!src) return;
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = canvas.getAttribute('aria-label') ?? '';
+      img.className = canvas.className;
+      const style = canvas.getAttribute('style');
+      if (style) img.setAttribute('style', style);
+      canvas.replaceWith(img);
+    }
+
+    document.querySelectorAll<HTMLCanvasElement>('canvas[data-turnaround]').forEach(playTurnaround);
+  </script>
 </ProjectLayout>
